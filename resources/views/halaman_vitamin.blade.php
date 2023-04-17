@@ -120,7 +120,7 @@
                                              </div>
                                         </div>
                                         <div class="col-sm-4 label-on-right">
-                                             <code>Diisi Dengan "Pilih Vitamin Wajib"</code>
+                                             <code>Diisi Dengan "Memilih Vitamin Wajib"</code>
                                         </div>
                                    </div>
 
