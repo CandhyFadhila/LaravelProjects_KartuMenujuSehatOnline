@@ -134,6 +134,28 @@
                                         </div>
                                    </div>
 
+                                   <div class="row">
+                                        <label class="col-sm-2 col-form-label">Keterangan Penimbangan</label>
+                                        <div class="col-sm-6">
+                                             <div class="form-group bmd-form-group">
+                                                  <input
+                                                       class="form-control @error('keterangan_penimbangan') is-invalid @enderror"
+                                                       type="text" name="keterangan_penimbangan"
+                                                       id="keterangan_penimbangan" number="true"
+                                                       placeholder="Keterangan Penimbangan Ke-" aria-required="true"
+                                                       required="true" value="{{ old('keterangan_penimbangan') }}" />
+
+                                                  @error('keterangan_penimbangan')
+                                                       <small class="text-danger">
+                                                            {{ $message }}
+                                                       </small>
+                                                  @enderror
+                                             </div>
+                                        </div>
+                                        <div class="col-sm-4 label-on-right">
+                                             <code>Diisi Dengan "Penimbangan ke - (1,2, dst)"</code>
+                                        </div>
+                                   </div>
 
                                    <div class="row">
                                         <label class="col-sm-2 col-form-label">Berat Badan Saat ini</label>

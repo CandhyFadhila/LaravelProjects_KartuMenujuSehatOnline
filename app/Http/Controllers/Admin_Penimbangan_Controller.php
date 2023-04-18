@@ -89,6 +89,7 @@ class Admin_Penimbangan_Controller extends Controller
      {
           $request->validate([
                'umur_sekarang' => 'required|numeric',
+               'keterangan_penimbangan' => 'required',
                'bb_sekarang' => 'required|numeric',
                'pb_sekarang' => 'required|numeric',
                'jenis_kelamin' => ['required', 'in:perempuan,laki_laki'],
@@ -97,6 +98,8 @@ class Admin_Penimbangan_Controller extends Controller
           ], [
                'umur_sekarang' => 'Untuk melakukan perhitungan, Umur tidak boleh kosong',
                'umur_sekarang.numeric' => 'Umur Balita tidak boleh mengandung huruf',
+
+               'keterangan_penimbangan' => 'Agar data terstruktur, Keterangan Penimbangan tidak boleh kosong',
 
                'bb_sekarang' => 'Untuk melakukan perhitungan, BB Balita tidak boleh kosong',
                'bb_sekarang.numeric' => 'BB Balita tidak boleh mengandung huruf',
@@ -111,6 +114,10 @@ class Admin_Penimbangan_Controller extends Controller
 
           AdminKMS::create([
                'balita_id' => $request->balita_id,
+
+               'umur_sekarang' => $request->umur_sekarang,
+
+               'keterangan_penimbangan' => $request->keterangan_penimbangan,
 
                'bb_sekarang' => $request->bb_sekarang,
                'pb_sekarang' => $request->pb_sekarang,

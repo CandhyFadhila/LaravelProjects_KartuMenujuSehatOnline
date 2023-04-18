@@ -19,6 +19,10 @@ return new class extends Migration
                // ! ID ANAK
                $table->unsignedBigInteger('balita_id');
 
+               $table->string('umur_sekarang', 5)->nullable();
+
+               $table->string('keterangan_penimbangan', 50)->nullable();
+
                $table->string('bb_sekarang', 15)->nullable();
                $table->string('pb_sekarang', 15)->nullable();
                // ! BB/U
@@ -55,6 +59,14 @@ return new class extends Migration
                $table->string('vaksin_17')->nullable();
                $table->string('vaksin_18')->nullable();
                $table->string('vaksin_19')->nullable();
+               $table->string('vaksin_20')->nullable();
+               $table->string('vaksin_21')->nullable();
+               $table->string('vaksin_22')->nullable();
+               $table->string('vaksin_23')->nullable();
+               $table->string('vaksin_24')->nullable();
+               $table->string('vaksin_25')->nullable();
+               $table->string('vaksin_26')->nullable();
+               $table->string('vaksin_27')->nullable();
                // $table->string('tgl_vaksin_1')->nullable();
                // $table->string('tgl_vaksin_2')->nullable();
                // $table->string('tgl_vaksin_3')->nullable();

@@ -28,8 +28,10 @@
                                                             {{-- ! TAMBAH IF ELSE VALIDASI --}}
                                                             <option value="{{ $balita->balita_id }}"
                                                                  {{ old('balita_id') == $balita->balita_id ? 'selected' : '' }}>
-                                                                 {{ $balita->nama_balita }} - NIK
-                                                                 {{ $balita->nik_balita }}
+                                                                 {{ $balita->adminbalita->nama_balita }} - NIK
+                                                                 {{ $balita->adminbalita->nik_balita }} -
+                                                                 {{ $balita->keterangan_penimbangan }} pada
+                                                                 {{ $balita->tgl_timbang }}
                                                             </option>
                                                        @endforeach
 
@@ -84,45 +86,27 @@
                                         </div>
                                    </div>
 
-                                   {{-- <div class="row">
-                                        <label class="col-sm-2 col-form-label">
-                                             Tanggal Imunisasi Saat Ini
-                                        </label>
-                                        <div class="col-sm-6">
-                                             <div class="form-group bmd-form-group is-filled">
-                                                  <input
-                                                       class="form-control @error('tgl_vaksin') is-invalid @enderror datepicker"
-                                                       type="text" name="tgl_vaksin" id="tgl_vaksin"
-                                                       placeholder="Tanggal Imunisasi" required="true"
-                                                       value="{{ old('tgl_vaksin') }}" />
-
-                                                  @error('tgl_vaksin')
-                                                       <small class="text-danger">
-                                                            {{ $message }}
-                                                       </small>
-                                                  @enderror
-                                             </div>
-                                        </div>
-                                        <div class="col-sm-3 label-on-right">
-                                             <code>Diisi Dengan "Tanggal Imunisasi Saat Ini"</code>
-                                        </div>
-                                   </div> --}}
-
                                    <div class="row">
-                                        <label class="col-sm-2 col-form-label">Pilih Umur Vaksin</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Imunisasi Dasar Lengkap</label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group">
-                                                  <select id="vitamin_id" class="pilih-vaksin form-control"
-                                                       name="vitamin_id">
+                                                  <select id="vaksin_imunisasi" class="pilih-vaksin form-control"
+                                                       name="vaksin_imunisasi" onchange="fillForm()">
 
-                                                       <option value="option_select" disabled selected>Pilih Umur Vaksin
+                                                       <option value="option_select" disabled selected>Pilih Imunisasi Dasar
+                                                            Lengkap
+                                                       </option>
+
+                                                       <option value="Vitamin A - Biru">Vaksin Wajib Vitamin A - Biru
+                                                       </option>
+                                                       <option value="Vitamin A - Merah">Vaksin Wajib Vitamin A - Merah
                                                        </option>
 
                                                   </select>
                                              </div>
                                         </div>
                                         <div class="col-sm-4 label-on-right">
-                                             <code>Diisi Dengan "Pilih Vaksin Berdasarkan Umur Balita"</code>
+                                             <code>Diisi Dengan "Memilih Imunisasi Dasar Lengkap"</code>
                                         </div>
                                    </div>
 
@@ -132,8 +116,9 @@
                                         </label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group is-filled">
-                                                  <input id="nama_vaksin" type="text" class="form-control"
-                                                       placeholder="Nama Vaksin" readonly/>
+                                                  <input id="vaksinValue" name="vaksinValue" value="" type="text"
+                                                       class="form-control font-weight-bold" placeholder="Nama Vitamin"
+                                                       readonly />
                                              </div>
                                         </div>
                                         <div class="col-sm-3 label-on-right">
@@ -190,18 +175,37 @@
      <script>
           $(document).ready(function() {
                $('#balita_id').select2();
-               $('#vitamin_id').select2();
+               $('#vaksin_imunisasi').select2();
 
                @if (Session::has('success_imunisasi'))
                     Swal.fire({
                          icon: 'success',
-                         title: '<strong>Data Berhasil Tersimpan</strong>',
-                         html: 'Data yang anda inputkan telah <b>Berhasil</b> tersimpan',
+                         title: '<strong>Data Berhasil Diperbarui</strong>',
+                         html: 'Data pemberian Vaksin Dasar Wajib <b>Berhasil</b> diperbarui',
                          showConfirmButton: false,
                          timer: 2200,
+                         timerProgressBar: true
+                    });
+               @endif
+
+               @if (Session::has('error_imunisasi'))
+                    Swal.fire({
+                         icon: 'error',
+                         title: '<strong>Data Gagal Diperbarui</strong>',
+                         html: 'Anak tersebut sudah diberikan <b>Vaksin yang Dipilih</b> sebelumnya',
+                         showConfirmButton: false,
+                         timer: 2700,
                          timerProgressBar: true
                     });
                @endif
           });
      </script>
 @endsection
+
+<script>
+     function fillForm() {
+          var vaksin = document.getElementById("vaksin_imunisasi");
+          var vaksinValue = document.getElementById("vaksinValue");
+          vaksinValue.value = vaksin.value;
+     }
+</script>

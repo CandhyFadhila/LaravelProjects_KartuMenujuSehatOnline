@@ -7,6 +7,7 @@ use App\Models\AdminKMS;
 use App\Models\AdminBalita;
 use App\Models\AdminVitamin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Admin_Vitamin_Controller extends Controller
 {
@@ -17,14 +18,12 @@ class Admin_Vitamin_Controller extends Controller
       */
      public function index()
      {
-          $pilih_Vitamin = AdminVitamin::all();
           $pilih_Balita = AdminKMS::all();
 
           return view('halaman_vitamin', [
                "halaman" => "From Vitamin Anak",
                "active" => "vitamin_anak",
 
-               "pilih_Vitamin" => $pilih_Vitamin,
                "pilih_Balita" => $pilih_Balita
           ]);
      }
@@ -103,29 +102,30 @@ class Admin_Vitamin_Controller extends Controller
      }
 
      // ! STORE BALITA
-     public function storeVitamin(User $user, Request $request)
+     public function storeVitamin(Request $request)
      {
           $request->validate([
-               'tgl_vaksin' => 'required'
-          ], [
-               'tgl_vaksin' => 'Tanggal Imunisasi wajib diisi terlebih dahulu'
+               'vaksinValue' => 'nullable|string'
           ]);
 
-          if (AdminKMS::where('balita_id', $user->id)->exists()) {
-               AdminKMS::where('balita_id', $user->id)->update([
-                    'balita_id' => $request->balita_id,
-                    'vitamin_id' => $request->vitamin_id,
+          $balita_id = $request->input('balita_id');
+          $vaksin = $request->input('vaksin_vitamin');
 
-                    'tgl_vaksin' => $request->tgl_vaksin
-               ]);
-          } else {
-               AdminKMS::create([
-                    'balita_id' => $request->balita_id,
-                    'vitamin_id' => $request->vitamin_id,
-
-                    'tgl_vaksin' => $request->tgl_vaksin
-               ]);
+          if ($vaksin === 'Vitamin A - Biru') {
+               $column = 'vaksin_23';
+          } else if ($vaksin === 'Vitamin A - Merah') {
+               $column = 'vaksin_24';
           }
-          return back()->with('success_vitamin', 'Data Berhasil Disimpan');
+
+          //! Check if the selected column already has a value
+          $existingVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($column);
+
+          if (!empty($existingVaksin)) {
+               return back()->with('error_vitamin', 'Sudah Pernah Vaksin');
+          }
+
+          DB::table('admin_kms')->where('balita_id', $balita_id)->update([$column => $vaksin]);
+
+          return back()->with('success_vitamin', 'Vaksin updated successfully!');
      }
 }
