@@ -124,6 +124,30 @@
                                              <code>Otomatis Akan Terisi</code>
                                         </div>
                                    </div>
+
+                                   <div class="row">
+                                        <label class="col-sm-2 col-form-label">
+                                             Tanggal Vaksin Vitamin A
+                                        </label>
+                                        <div class="col-sm-6">
+                                             <div class="form-group bmd-form-group is-filled">
+                                                  <input
+                                                       class="form-control @error('tgl_vitamin') is-invalid @enderror datepicker"
+                                                       type="text" name="tgl_vitamin" id="tgl_vitamin"
+                                                       placeholder="Tanggal Vaksin Wajib" required="true"
+                                                       value="{{ old('tgl_vitamin') }}" />
+
+                                                  @error('tgl_vitamin')
+                                                       <small class="text-danger">
+                                                            {{ $message }}
+                                                       </small>
+                                                  @enderror
+                                             </div>
+                                        </div>
+                                        <div class="col-sm-3 label-on-right">
+                                             <code>Diisi Dengan "Tanggal Vaksin Vitamin A - Merah atau Biru"</code>
+                                        </div>
+                                   </div>
                               </div>
                               <div class="card-footer ml-auto mr-auto">
                                    <a href="#">
@@ -159,7 +183,7 @@
                     });
                @endif
 
-               @if (Session::has('error_vitamin'))
+               @if (Session::has('error_column_vitamin'))
                     Swal.fire({
                          icon: 'error',
                          title: '<strong>Data Gagal Diperbarui</strong>',

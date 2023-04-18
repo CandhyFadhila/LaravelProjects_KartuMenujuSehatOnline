@@ -105,26 +105,42 @@ class Admin_Vitamin_Controller extends Controller
      public function storeVitamin(Request $request)
      {
           $request->validate([
-               'vaksinValue' => 'nullable|string'
+               'vaksinValue' => 'nullable|string',
+
+               'tgl_vitamin' => 'required'
+          ], [
+               'tgl_vitamin.required' => 'Tanggal vaksin vitamin tidak boleh kosong'
           ]);
 
           $balita_id = $request->input('balita_id');
           $vaksin = $request->input('vaksin_vitamin');
+          $tgl_vaksin = $request->input('tgl_vitamin');
 
           if ($vaksin === 'Vitamin A - Biru') {
-               $column = 'vaksin_23';
-          } else if ($vaksin === 'Vitamin A - Merah') {
                $column = 'vaksin_24';
+               $tgl_column = 'tgl_vaksin_24';
+          } else if ($vaksin === 'Vitamin A - Merah') {
+               $column = 'vaksin_23';
+               $tgl_column = 'tgl_vaksin_23';
           }
 
-          //! Check if the selected column already has a value
+          //! Check if the vaksin column already has a value
           $existingVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($column);
 
           if (!empty($existingVaksin)) {
-               return back()->with('error_vitamin', 'Sudah Pernah Vaksin');
+               return back()->with('error_column_vitamin', 'Sudah Pernah Vaksin');
           }
 
-          DB::table('admin_kms')->where('balita_id', $balita_id)->update([$column => $vaksin]);
+          //! Check if the tgl_vaksin_1 column already has a value
+          $existingTglVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($tgl_column);
+
+          if (!empty($existingTglVaksin)) {
+               return back()->with('error_column_tgl_vitamin', 'Sudah Pernah Vaksin');
+          }
+
+          DB::table('admin_kms')
+          ->where('balita_id', $balita_id)
+          ->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
 
           return back()->with('success_vitamin', 'Vaksin updated successfully!');
      }
