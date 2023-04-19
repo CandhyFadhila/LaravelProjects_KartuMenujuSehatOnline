@@ -175,13 +175,6 @@ class Admin_Imunisasi_Controller extends Controller
                $column = 'vaksin_20';
                $tgl_column = 'tgl_vaksin_20';
           }
-          // else if ($vaksin === 'BCG Pertama') {
-          //      $column = 'vaksin_21';
-          //      $tgl_column = 'tgl_vaksin_21';
-          // } else if ($vaksin === 'BCG Pertama') {
-          //      $column = 'vaksin_22';
-          //      $tgl_column = 'tgl_vaksin_22';
-          // }
 
           //! Check if the selected column already has a value
           //! Check if the vaksin column already has a value

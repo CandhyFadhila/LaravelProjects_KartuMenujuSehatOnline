@@ -64,7 +64,7 @@ class Admin_Riwayat_Controller extends Controller
      public function show($id_balita)
      {
           $admin_Balita = AdminBalita::findOrFail($id_balita);
-          $admin_KMS = AdminKMS::where('balita_id', $id_balita)->get();
+          $admin_KMS = AdminKMS::where('balita_id', $id_balita)->paginate(10);
           return view('halaman_rekap_detail_riwayat', compact('admin_Balita', 'admin_KMS') , [
                "halaman" => "Detail Balita " . $admin_Balita->nama_balita,
                "active" => "rekap_riwayat_balita"
