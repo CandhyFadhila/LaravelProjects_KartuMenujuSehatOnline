@@ -139,8 +139,8 @@ class Admin_Vitamin_Controller extends Controller
           }
 
           DB::table('admin_kms')
-          ->where('balita_id', $balita_id)
-          ->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
+               ->where('balita_id', $balita_id)
+               ->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
 
           return back()->with('success_vitamin', 'Vaksin updated successfully!');
      }

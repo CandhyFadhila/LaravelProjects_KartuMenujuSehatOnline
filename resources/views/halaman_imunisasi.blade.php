@@ -97,9 +97,95 @@
                                                             Lengkap
                                                        </option>
 
-                                                       <option value="Vitamin A - Biru">Vaksin Wajib Vitamin A - Biru
+                                                       <option value="Hepatitis B (< 24 Jam)">Balita Umur 0 Bulan dan Belum
+                                                            Imunisasi
                                                        </option>
-                                                       <option value="Vitamin A - Merah">Vaksin Wajib Vitamin A - Merah
+
+                                                       <option value="BCG Pertama">Balita Umur 0 Bulan dan Sudah Imunisasi
+                                                            Hepatitis B
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 1 Pertama">Balita Umur 0 Bulan dan Sudah
+                                                            Imunisasi BCG
+                                                       </option>
+
+                                                       {{-- ! 1 BULAN --}}
+                                                       <option value="BCG Kedua">Balita Umur 1 - 11 Bulan dan Sudah Imunisasi
+                                                            BCG
+                                                            Fase 1
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 1 Kedua">Balita Umur 1 - 11 Bulan dan
+                                                            Sudah
+                                                            Imunisasi Polio Tetes 1 Fase 1
+                                                       </option>
+
+                                                       {{-- ! 2 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 1">Balita Umur 2 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            Polio Tetes 1 Fase 2
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 2">Balita Umur 2 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 1
+                                                       </option>
+
+                                                       <option value="** PCV 1">Balita Umur 2 - 11 Bulan dan Sudah Imunisasi
+                                                            Polio
+                                                            Tetes 2
+                                                       </option>
+
+                                                       {{-- ! 3 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 2">Balita Umur 3 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            PCV 1
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 3">Balita Umur 3 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 2
+                                                       </option>
+
+                                                       <option value="** PCV 2">Balita Umur 3 - 11 Bulan dan Sudah Imunisasi
+                                                            Polio
+                                                            Tetes 3
+                                                       </option>
+
+                                                       {{-- ! 4 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 3">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            PCV 2
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 4">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 3
+                                                       </option>
+
+                                                       <option value="Polio Suntik (IPV)">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi Polio Tetes 4
+                                                       </option>
+
+                                                       {{-- ! 8 - 9 Bulan --}}
+                                                       <option value="Campak-Rubella">Balita Umur 9 - 11 Bulan dan Sudah
+                                                            Imunisasi Polio Suntik (IPV)
+                                                       </option>
+
+                                                       <option value="** JE">Balita Umur 10 - 11 Bulan dan Sudah
+                                                            Imunisasi Campak-Rubella
+                                                       </option>
+
+                                                       <option value="** PCV 3">Balita Umur 12 Bulan Keatas dan Sudah
+                                                            Imunisasi JE
+                                                       </option>
+
+                                                       {{-- ! 18 - 24 Bulan --}}
+                                                       <option value="**** DPT-HB-Hib (lanjutan)">Balita Umur 18 - 24 Bulan
+                                                            dan Sudah
+                                                            Imunisasi PCV 3
+                                                       </option>
+
+                                                       <option value="**** Campak-Rubella (lanjutan)">Balita Umur 18 - 24
+                                                            Bulan dan Sudah
+                                                            Imunisasi Campak-Rubella
                                                        </option>
 
                                                   </select>
@@ -123,6 +209,32 @@
                                         </div>
                                         <div class="col-sm-3 label-on-right">
                                              <code>Otomatis Akan Terisi</code>
+                                        </div>
+                                   </div>
+
+                                   <div class="row">
+                                        <label class="col-sm-2 col-form-label">
+                                             Tanggal Pemberian Vaksin Dasar
+                                             Lengkap
+                                        </label>
+                                        <div class="col-sm-6">
+                                             <div class="form-group bmd-form-group is-filled">
+                                                  <input
+                                                       class="form-control @error('tgl_imunisasi') is-invalid @enderror datepicker"
+                                                       type="text" name="tgl_imunisasi" id="tgl_imunisasi"
+                                                       placeholder="Tanggal Vaksin Imunisasi Dasar Lengkap" required="true"
+                                                       value="{{ old('tgl_imunisasi') }}" />
+
+                                                  @error('tgl_imunisasi')
+                                                       <small class="text-danger">
+                                                            {{ $message }}
+                                                       </small>
+                                                  @enderror
+                                             </div>
+                                        </div>
+                                        <div class="col-sm-3 label-on-right">
+                                             <code>Diisi Dengan "Tanggal Vaksin Imunisasi Dasar
+                                                  Lengkap"</code>
                                         </div>
                                    </div>
                               </div>
@@ -188,11 +300,11 @@
                     });
                @endif
 
-               @if (Session::has('error_imunisasi'))
+               @if (Session::has('error_column_imunisasi'))
                     Swal.fire({
                          icon: 'error',
                          title: '<strong>Data Gagal Diperbarui</strong>',
-                         html: 'Anak tersebut sudah diberikan <b>Vaksin yang Dipilih</b> sebelumnya',
+                         html: 'Anak tersebut <b>Sudah Diberikan Vaksin Wajib</b> yang anda pilih sebelumnya',
                          showConfirmButton: false,
                          timer: 2700,
                          timerProgressBar: true
@@ -206,6 +318,6 @@
      function fillForm() {
           var vaksin = document.getElementById("vaksin_imunisasi");
           var vaksinValue = document.getElementById("vaksinValue");
-          vaksinValue.value = vaksin.value;
+          vaksinValue.value = " Vaksin ( " + vaksin.value + " )";
      }
 </script>

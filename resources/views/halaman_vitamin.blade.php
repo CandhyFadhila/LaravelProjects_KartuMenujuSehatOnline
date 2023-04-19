@@ -127,7 +127,7 @@
 
                                    <div class="row">
                                         <label class="col-sm-2 col-form-label">
-                                             Tanggal Vaksin Vitamin A
+                                             Tanggal Pemberian Vaksin Vitamin A
                                         </label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group is-filled">
@@ -227,6 +227,6 @@
      function fillForm() {
           var vaksin = document.getElementById("vaksin_vitamin");
           var vaksinValue = document.getElementById("vaksinValue");
-          vaksinValue.value = vaksin.value;
+          vaksinValue.value = " Vaksin ( " + vaksin.value + " )";
      }
 </script>

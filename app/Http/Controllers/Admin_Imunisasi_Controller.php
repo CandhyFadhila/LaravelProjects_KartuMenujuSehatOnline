@@ -104,26 +104,103 @@ class Admin_Imunisasi_Controller extends Controller
      public function storeImunisasi(Request $request)
      {
           $request->validate([
-               'vaksinValue' => 'nullable|string'
-          ]);
+               'vaksinValue' => 'nullable|string',
 
+               'tgl_imunisasi' => 'required'
+          ], [
+               'tgl_imunisasi.required' => 'Tanggal vaksin vitamin tidak boleh kosong'
+          ]);
           $balita_id = $request->input('balita_id');
           $vaksin = $request->input('vaksin_imunisasi');
+          $tgl_vaksin = $request->input('tgl_imunisasi');
 
-          if ($vaksin === 'Vitamin A - Biru') {
+          if ($vaksin === 'Hepatitis B (< 24 Jam)') {
                $column = 'vaksin_1';
-          } else if ($vaksin === 'Vitamin A - Merah') {
+               $tgl_column = 'tgl_vaksin_1';
+          } else if ($vaksin === 'BCG Pertama') {
                $column = 'vaksin_2';
+               $tgl_column = 'tgl_vaksin_2';
+          } else if ($vaksin === 'BCG Pertama') {
+               $column = 'vaksin_3';
+               $tgl_column = 'tgl_vaksin_3';
+          } else if ($vaksin === '* Polio Tetes 1 Pertama') {
+               $column = 'vaksin_4';
+               $tgl_column = 'tgl_vaksin_4';
+          } else if ($vaksin === 'BCG Kedua') {
+               $column = 'vaksin_5';
+               $tgl_column = 'tgl_vaksin_5';
+          } else if ($vaksin === '* Polio Tetes 1 Kedua') {
+               $column = 'vaksin_6';
+               $tgl_column = 'tgl_vaksin_6';
+          } else if ($vaksin === '* DPT-HB-Hib 1') {
+               $column = 'vaksin_7';
+               $tgl_column = 'tgl_vaksin_7';
+          } else if ($vaksin === '* Polio Tetes 2') {
+               $column = 'vaksin_8';
+               $tgl_column = 'tgl_vaksin_8';
+          } else if ($vaksin === '** PCV 1') {
+               $column = 'vaksin_9';
+               $tgl_column = 'tgl_vaksin_9';
+          } else if ($vaksin === '* DPT-HB-Hib 2') {
+               $column = 'vaksin_10';
+               $tgl_column = 'tgl_vaksin_10';
+          } else if ($vaksin === '* Polio Tetes 3') {
+               $column = 'vaksin_11';
+               $tgl_column = 'tgl_vaksin_11';
+          } else if ($vaksin === '** PCV 2') {
+               $column = 'vaksin_12';
+               $tgl_column = 'tgl_vaksin_12';
+          } else if ($vaksin === '* DPT-HB-Hib 3') {
+               $column = 'vaksin_13';
+               $tgl_column = 'tgl_vaksin_13';
+          } else if ($vaksin === '* Polio Tetes 4') {
+               $column = 'vaksin_14';
+               $tgl_column = 'tgl_vaksin_14';
+          } else if ($vaksin === 'Polio Suntik (IPV)') {
+               $column = 'vaksin_15';
+               $tgl_column = 'tgl_vaksin_15';
+          } else if ($vaksin === 'Campak-Rubella') {
+               $column = 'vaksin_16';
+               $tgl_column = 'tgl_vaksin_16';
+          } else if ($vaksin === '** JE') {
+               $column = 'vaksin_17';
+               $tgl_column = 'tgl_vaksin_17';
+          } else if ($vaksin === '** PCV 3') {
+               $column = 'vaksin_18';
+               $tgl_column = 'tgl_vaksin_18';
+          } else if ($vaksin === '**** DPT-HB-Hib (lanjutan)') {
+               $column = 'vaksin_19';
+               $tgl_column = 'tgl_vaksin_19';
+          } else if ($vaksin === '**** Campak-Rubella (lanjutan)') {
+               $column = 'vaksin_20';
+               $tgl_column = 'tgl_vaksin_20';
           }
+          // else if ($vaksin === 'BCG Pertama') {
+          //      $column = 'vaksin_21';
+          //      $tgl_column = 'tgl_vaksin_21';
+          // } else if ($vaksin === 'BCG Pertama') {
+          //      $column = 'vaksin_22';
+          //      $tgl_column = 'tgl_vaksin_22';
+          // }
 
           //! Check if the selected column already has a value
+          //! Check if the vaksin column already has a value
           $existingVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($column);
 
           if (!empty($existingVaksin)) {
-               return back()->with('error_imunisasi', 'Sudah Pernah Vaksin');
+               return back()->with('error_column_imunisasi', 'Sudah Pernah Vaksin');
           }
 
-          DB::table('admin_kms')->where('balita_id', $balita_id)->update([$column => $vaksin]);
+          //! Check if the tgl_vaksin_1 column already has a value
+          $existingTglVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($tgl_column);
+
+          if (!empty($existingTglVaksin)) {
+               return back()->with('error_column_tgl_imunisasi', 'Sudah Pernah Vaksin');
+          }
+
+          DB::table('admin_kms')
+               ->where('balita_id', $balita_id)
+               ->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
 
           return back()->with('success_imunisasi', 'Vaksin updated successfully!');
      }
