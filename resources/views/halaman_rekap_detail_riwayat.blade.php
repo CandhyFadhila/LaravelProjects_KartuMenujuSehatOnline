@@ -216,7 +216,7 @@
                     margin-right: 11px;
                     margin-left: 11px;
                     width: 3000px;
-                    height: 800px;
+                    height: auto;
                     overflow: auto;
                     position: relative;
                     border: 1px solid #5e5e5e;
@@ -230,7 +230,6 @@
 
                .tabel_vitamin thead,
                tr>th {
-                    position: sticky;
                     background: #A6D0DD;
                }
 
@@ -281,6 +280,80 @@
                }
 
                /* ! End css div_table_vitamin */
+
+               /* CSS for tabel_vitamin_lanjut */
+               .tabel_vitamin_lanjut {
+                    margin-top: 45px;
+                    margin-right: 11px;
+                    margin-left: 11px;
+                    width: 3000px;
+                    height: auto;
+                    overflow: auto;
+                    position: relative;
+                    border: 1px solid #5e5e5e;
+               }
+
+               .tabel_vitamin_lanjut table {
+                    border-spacing: 0;
+                    white-space: nowrap;
+                    table-layout: relative;
+               }
+
+               .tabel_vitamin_lanjut .umur {
+                    width: 100px;
+               }
+
+               .tabel_vitamin_lanjut thead,
+               tr>th {
+                    position: sticky;
+                    background: #A6D0DD;
+               }
+
+               .tabel_vitamin_lanjut thead {
+                    top: 0;
+                    z-index: 2;
+               }
+
+               .tabel_vitamin_lanjut tr>th {
+                    left: 0;
+                    z-index: 1;
+               }
+
+               .tabel_vitamin_lanjut thead tr>th:first-child {
+                    z-index: 3;
+               }
+
+               .tabel_vitamin_lanjut th,
+               td {
+                    height: 50px;
+                    border: 1px solid #5e5e5e;
+                    border-width: 0 0 1px 1px;
+                    text-align: left;
+                    padding: 10px;
+                    font-family: sans-serif;
+               }
+
+               .tabel_vitamin_lanjut td {
+                    background: #fff;
+               }
+
+               .tabel_vitamin_lanjut th:first-child {
+                    border-right-width: 1px;
+                    border-left: 0;
+               }
+
+               .tabel_vitamin_lanjut th+td,
+               th:first-child+th {
+                    border-left: 0;
+               }
+
+               .tabel_vitamin_lanjut tbody tr:last-child>* {
+                    border-bottom: 0;
+               }
+
+               .tabel_vitamin_lanjut tr>*:last-child {
+                    border-right: 0;
+               }
           </style>
      </section>
      <div class="container-fluid">
@@ -303,20 +376,48 @@
                                                        <table>
                                                             <thead>
                                                                  <tr class="table-success">
-                                                                      <th style="width: 100px">Umur (Bulan)</th>
-                                                                      <th class="text-center">0</th>
-                                                                      <th class="text-center">1</th>
-                                                                      <th class="text-center">2</th>
-                                                                      <th class="text-center">3</th>
-                                                                      <th class="text-center">4</th>
-                                                                      <th class="text-center">5</th>
-                                                                      <th class="text-center">6</th>
-                                                                      <th class="text-center">7</th>
-                                                                      <th class="text-center">8</th>
-                                                                      <th class="text-center">9</th>
-                                                                      <th class="text-center">10</th>
-                                                                      <th class="text-center">11</th>
-                                                                      <th class="text-center">12+***</th>
+                                                                      <th>
+                                                                           <div style="width: 210px">Umur (Bulan)
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">0
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">1
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">2
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">3
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">4
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">5
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">6
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">7
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">8
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">9
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">10
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">11
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 100px">12+***
+                                                                      </th>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>Vaksin</th>
@@ -327,8 +428,9 @@
                                                             <tbody>
                                                                  <tr>
                                                                       <th>Hepatitis B (< 24 Jam)</th>
-                                                                                @foreach ($admin_KMS as $kms)
-                                                                      <td>{{ $kms->tgl_vaksin_1 }}</td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_1 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-dark text-white"></td>
@@ -341,12 +443,15 @@
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-danger text-white"></td>
-                                                                      @endforeach
                                                                  </tr>
                                                                  <tr>
                                                                       <th>BCG</th>
-                                                                      <td></td>
-                                                                      <td></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_2 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_3 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
@@ -361,8 +466,12 @@
                                                                  </tr>
                                                                  <tr>
                                                                       <th>* Polio Tetes 1</th>
-                                                                      <td></td>
-                                                                      <td></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_4 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_5 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
@@ -379,7 +488,9 @@
                                                                       <th>* DPT-HB-Hib 1</th>
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-dark text-white"></td>
-                                                                      <td></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_6 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
@@ -395,7 +506,9 @@
                                                                       <th>* Polio Tetes 2</th>
                                                                       <td class="bg-dark text-white"></td>
                                                                       <td class="bg-dark text-white"></td>
-                                                                      <td></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_7 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
                                                                       <td class="bg-warning"></td>
@@ -409,163 +522,369 @@
                                                                  </tr>
                                                                  <tr>
                                                                       <th>** PCV 1</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_8 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>* DPT-HB-Hib 2</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_9 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>* Polio Tetes 3</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_10 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>** PCV 2</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_11 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>* DPT-HB-Hib 3</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_12 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>* Polio Tetes 4</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_13 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>Polio Suntik (IPV)</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_14 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>Campak-Rubella</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_15 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>** JE</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
-                                                                      <td class="bg-warning">10/05/2023</td>
-                                                                      <td class="bg-danger text-white">10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_16 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                      <td class="bg-danger text-white"></td>
                                                                  </tr>
                                                                  <tr>
                                                                       <th>** PCV 3</th>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td class="bg-dark text-white">10/05/2023</td>
-                                                                      <td>10/05/2023</td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="bg-dark text-white"></td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_17 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+                                                  <div class="tabel_vitamin_lanjut">
+                                                       <table>
+                                                            <thead>
+                                                                 <tr class="table-success">
+                                                                      <th class="umur">
+                                                                           <div style="width: 210px">Umur (Bulan)
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 370px">18
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 370px">24
+                                                                      </th>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <th>Vaksin</th>
+                                                                      <th colspan="3" class="text-center">Tanggal
+                                                                           Pemberian Vaksin</th>
+                                                                 </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <th>**** DPT-HB-Hib (lanjutan)</th>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_18 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <th>**** Campak-Rubella (lanjutan)</th>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_19 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="bg-warning"></td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+
+     {{-- ! KMS VITAMIN TGL 23 - 26 --}}
+     <section>
+          <style>
+               /* CSS for tabel_vitamin_a */
+               .tabel_vitamin_a {
+                    margin-right: 11px;
+                    margin-left: 11px;
+                    width: 3000px;
+                    height: auto;
+                    overflow: auto;
+                    position: relative;
+                    border: 1px solid #5e5e5e;
+               }
+
+               .tabel_vitamin_a table {
+                    border-spacing: 0;
+                    white-space: nowrap;
+                    table-layout: relative;
+               }
+
+               .tabel_vitamin_a .umur {
+                    width: 100px;
+               }
+
+               .tabel_vitamin_a thead,
+               tr>th {
+                    position: sticky;
+                    background: #A6D0DD;
+               }
+
+               .tabel_vitamin_a thead {
+                    top: 0;
+                    z-index: 2;
+               }
+
+               .tabel_vitamin_a tr>th {
+                    left: 0;
+                    z-index: 1;
+               }
+
+               .tabel_vitamin_a thead tr>th:first-child {
+                    z-index: 3;
+               }
+
+               .tabel_vitamin_a th,
+               td {
+                    height: 50px;
+                    border: 1px solid #5e5e5e;
+                    border-width: 0 0 1px 1px;
+                    text-align: left;
+                    padding: 10px;
+                    font-family: sans-serif;
+               }
+
+               .tabel_vitamin_a td {
+                    background: #fff;
+               }
+
+               .tabel_vitamin_a th:first-child {
+                    border-right-width: 1px;
+                    border-left: 0;
+               }
+
+               .tabel_vitamin_a th+td,
+               th:first-child+th {
+                    border-left: 0;
+               }
+
+               .tabel_vitamin_a tbody tr:last-child>* {
+                    border-bottom: 0;
+               }
+
+               .tabel_vitamin_a tr>*:last-child {
+                    border-right: 0;
+               }
+          </style>
+     </section>
+     <div class="container-fluid">
+          <div class="row">
+               <div class="col-md-12">
+                    <form id="ImunisasiBalita" class="form-horizontal" novalidate="novalidate">
+                         @csrf
+                         <div class="card">
+                              <div class="card-header card-header-success">
+                                   <h4 class="card-title">KMS Vitamin A - <strong class="font-weight-bold">Anak
+                                             {{ $admin_Balita->nama_balita }}
+                                        </strong></h4>
+                              </div>
+
+                              <div class="card-body">
+                                   <div class="material-datatables">
+                                        <div class="dataTables_wrapper dt-bootstrap4">
+                                             <div class="row">
+                                                  <div class="tabel_vitamin_a">
+                                                       <table>
+                                                            <thead>
+                                                                 <tr class="table-success">
+                                                                      <th class="umur">
+                                                                           <div style="width: 210px">Bulan
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 370px">Oktober
+                                                                      </th>
+                                                                      <th class="text-center">
+                                                                           <div style="width: 370px">November
+                                                                      </th>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <th>Vaksin</th>
+                                                                      <th colspan="3" class="text-center">Tanggal
+                                                                           Pemberian Vitamin</th>
+                                                                 </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <th>Vitamin A (Merah)</th>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_23 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_24 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <th>Vitamin A (Biru)</th>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_25 ?? 'Belum Vaksin' }}
+                                                                      </td>
+                                                                      <td class="text-center">
+                                                                           {{ $get_tgl_vaksin->tgl_vaksin_26 ?? 'Belum Vaksin' }}
+                                                                      </td>
                                                                  </tr>
                                                             </tbody>
                                                        </table>

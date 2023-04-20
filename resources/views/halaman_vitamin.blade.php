@@ -96,9 +96,20 @@
                                                        <option value="option_select" disabled selected>Pilih Vitamin Wajib
                                                        </option>
 
-                                                       <option value="Vitamin A - Biru">Vaksin Wajib Vitamin A - Biru
+                                                       <option value="Vitamin A - Merah (Oktober)">Vaksin Wajib Vitamin A -
+                                                            Merah (Oktober)
                                                        </option>
-                                                       <option value="Vitamin A - Merah">Vaksin Wajib Vitamin A - Merah
+
+                                                       <option value="Vitamin A - Biru (Oktober)">Vaksin Wajib Vitamin A -
+                                                            Biru (Oktober)
+                                                       </option>
+
+                                                       <option value="Vitamin A - Merah (November)">Vaksin Wajib Vitamin A -
+                                                            Merah (November)
+                                                       </option>
+
+                                                       <option value="Vitamin A - Biru (November)">Vaksin Wajib Vitamin A -
+                                                            Biru (November)
                                                        </option>
 
                                                   </select>

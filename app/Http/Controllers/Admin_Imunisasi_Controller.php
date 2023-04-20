@@ -120,60 +120,57 @@ class Admin_Imunisasi_Controller extends Controller
           } else if ($vaksin === 'BCG Pertama') {
                $column = 'vaksin_2';
                $tgl_column = 'tgl_vaksin_2';
-          } else if ($vaksin === 'BCG Pertama') {
+          } else if ($vaksin === 'BCG Kedua') {
                $column = 'vaksin_3';
                $tgl_column = 'tgl_vaksin_3';
           } else if ($vaksin === '* Polio Tetes 1 Pertama') {
                $column = 'vaksin_4';
                $tgl_column = 'tgl_vaksin_4';
-          } else if ($vaksin === 'BCG Kedua') {
+          } else if ($vaksin === 'Polio Tetes 1 Kedua') {
                $column = 'vaksin_5';
                $tgl_column = 'tgl_vaksin_5';
-          } else if ($vaksin === '* Polio Tetes 1 Kedua') {
+          }  else if ($vaksin === '* DPT-HB-Hib 1') {
                $column = 'vaksin_6';
                $tgl_column = 'tgl_vaksin_6';
-          } else if ($vaksin === '* DPT-HB-Hib 1') {
+          } else if ($vaksin === '* Polio Tetes 2') {
                $column = 'vaksin_7';
                $tgl_column = 'tgl_vaksin_7';
-          } else if ($vaksin === '* Polio Tetes 2') {
+          } else if ($vaksin === '** PCV 1') {
                $column = 'vaksin_8';
                $tgl_column = 'tgl_vaksin_8';
-          } else if ($vaksin === '** PCV 1') {
+          } else if ($vaksin === '* DPT-HB-Hib 2') {
                $column = 'vaksin_9';
                $tgl_column = 'tgl_vaksin_9';
-          } else if ($vaksin === '* DPT-HB-Hib 2') {
+          } else if ($vaksin === '* Polio Tetes 3') {
                $column = 'vaksin_10';
                $tgl_column = 'tgl_vaksin_10';
-          } else if ($vaksin === '* Polio Tetes 3') {
+          } else if ($vaksin === '** PCV 2') {
                $column = 'vaksin_11';
                $tgl_column = 'tgl_vaksin_11';
-          } else if ($vaksin === '** PCV 2') {
+          } else if ($vaksin === '* DPT-HB-Hib 3') {
                $column = 'vaksin_12';
                $tgl_column = 'tgl_vaksin_12';
-          } else if ($vaksin === '* DPT-HB-Hib 3') {
+          } else if ($vaksin === '* Polio Tetes 4') {
                $column = 'vaksin_13';
                $tgl_column = 'tgl_vaksin_13';
-          } else if ($vaksin === '* Polio Tetes 4') {
+          } else if ($vaksin === 'Polio Suntik (IPV)') {
                $column = 'vaksin_14';
                $tgl_column = 'tgl_vaksin_14';
-          } else if ($vaksin === 'Polio Suntik (IPV)') {
+          } else if ($vaksin === 'Campak-Rubella') {
                $column = 'vaksin_15';
                $tgl_column = 'tgl_vaksin_15';
-          } else if ($vaksin === 'Campak-Rubella') {
+          } else if ($vaksin === '** JE') {
                $column = 'vaksin_16';
                $tgl_column = 'tgl_vaksin_16';
-          } else if ($vaksin === '** JE') {
+          } else if ($vaksin === '** PCV 3') {
                $column = 'vaksin_17';
                $tgl_column = 'tgl_vaksin_17';
-          } else if ($vaksin === '** PCV 3') {
+          } else if ($vaksin === '**** DPT-HB-Hib (lanjutan)') {
                $column = 'vaksin_18';
                $tgl_column = 'tgl_vaksin_18';
-          } else if ($vaksin === '**** DPT-HB-Hib (lanjutan)') {
+          } else if ($vaksin === '**** Campak-Rubella (lanjutan)') {
                $column = 'vaksin_19';
                $tgl_column = 'tgl_vaksin_19';
-          } else if ($vaksin === '**** Campak-Rubella (lanjutan)') {
-               $column = 'vaksin_20';
-               $tgl_column = 'tgl_vaksin_20';
           }
 
           //! Check if the selected column already has a value

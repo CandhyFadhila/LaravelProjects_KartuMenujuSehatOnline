@@ -116,12 +116,18 @@ class Admin_Vitamin_Controller extends Controller
           $vaksin = $request->input('vaksin_vitamin');
           $tgl_vaksin = $request->input('tgl_vitamin');
 
-          if ($vaksin === 'Vitamin A - Biru') {
-               $column = 'vaksin_24';
-               $tgl_column = 'tgl_vaksin_24';
-          } else if ($vaksin === 'Vitamin A - Merah') {
+          if ($vaksin === 'Vitamin A - Merah (Oktober)') {
                $column = 'vaksin_23';
                $tgl_column = 'tgl_vaksin_23';
+          } else if ($vaksin === 'Vitamin A - Merah (November)') {
+               $column = 'vaksin_24';
+               $tgl_column = 'tgl_vaksin_24';
+          } else if ($vaksin === 'Vitamin A - Biru (Oktober)') {
+               $column = 'vaksin_25';
+               $tgl_column = 'tgl_vaksin_25';
+          } else if ($vaksin === 'Vitamin A - Biru (November)') {
+               $column = 'vaksin_26';
+               $tgl_column = 'tgl_vaksin_26';
           }
 
           //! Check if the vaksin column already has a value
