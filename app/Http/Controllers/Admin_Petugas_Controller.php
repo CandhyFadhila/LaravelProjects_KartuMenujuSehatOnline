@@ -25,7 +25,7 @@ class Admin_Petugas_Controller extends Controller
                     ->paginate(5);
           } else {
                // ! GET DATA DARI DB
-               $data_Petugas = AdminPetugas::orderBy('nama_petugas', 'asc')->paginate($paginate);
+               $data_Petugas = AdminPetugas::orderBy('created_at', 'asc')->paginate($paginate);
           }
 
           

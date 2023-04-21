@@ -26,7 +26,7 @@ class Admin_Balita_Controller extends Controller
                     ->orderBy('nama_balita', 'ASC')
                     ->paginate(5);
           } else {
-               $data_Balita = AdminBalita::orderBy('nama_balita', 'asc')->paginate($paginate);
+               $data_Balita = AdminBalita::orderBy('created_at', 'asc')->paginate($paginate);
           }
 
           return view('halaman_balita', [

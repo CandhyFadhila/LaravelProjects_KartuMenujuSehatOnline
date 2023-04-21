@@ -100,7 +100,7 @@ class Admin_Imunisasi_Controller extends Controller
           echo json_encode($get_Balita);
      }
 
-     // ! STORE BALITA
+     // ! STORE IMUNISASI
      public function storeImunisasi(Request $request)
      {
           $request->validate([
