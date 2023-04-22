@@ -3728,6 +3728,7 @@
                     const genderValue = radio.value;
                     console.log(genderValue, "BB/PB");
 
+                    {{-- ! IF LAKI_LAKI CHECKED --}}
                     if (genderValue === 'laki_laki') {
                          if (umur >= 0 && umur <= 24) {
                               if (bb < bb_pb_laki_median) {
@@ -3811,45 +3812,94 @@
 
                     }
 
+                    {{-- ! IF PEREMPUAN CHECKED --}}
                     if (genderValue === 'perempuan') {
-                         if (bb < bb_pb_perempuan_median) {
-                              {{-- ! BB < Median --}}
-                              var a = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
-                              var b = parseFloat(bb_pb_perempuan_median) - parseFloat(bb_pb_perempuan_min_1);
-                              var bb_pb_rumus_satu = a / b;
-                              document.getElementById('hasil_bb_pb').value = bb_pb_rumus_satu.toFixed(1);
-                              if (bb_pb_rumus_satu < -3) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
-                              } else if (bb_pb_rumus_satu >= -3 && bb_pb_rumus_satu < -2) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
-                              } else if (bb_pb_rumus_satu >= -2 && bb_pb_rumus_satu <= 1) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
-                              } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
-                                   document.getElementById('hasil_kategori_bb_pb').value =
-                                        'Beresiko Gizi Lebih';
-                              } else if (bb_pb_rumus_satu > 3) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
-                              };
+                         if (umur >= 0 && umur <= 24) {
+                              if (bb < bb_pb_perempuan_median) {
+                                   {{-- ! BB < Median --}}
+                                   var a = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
+                                   var b = parseFloat(bb_pb_perempuan_median) - parseFloat(
+                                        bb_pb_perempuan_min_1);
+                                   var bb_pb_rumus_satu = a / b;
+                                   document.getElementById('hasil_bb_pb').value = bb_pb_rumus_satu.toFixed(1);
+                                   if (bb_pb_rumus_satu < -3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
+                                   } else if (bb_pb_rumus_satu >= -3 && bb_pb_rumus_satu < -2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
+                                   } else if (bb_pb_rumus_satu >= -2 && bb_pb_rumus_satu <= 1) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                   } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
+                                   };
 
-                         } else if (bb > bb_pb_perempuan_median) {
-                              {{-- ! BB > Median --}}
-                              var c = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
-                              var d = parseFloat(bb_pb_perempuan_plus_1) - parseFloat(bb_pb_perempuan_median);
-                              var bb_pb_rumus_dua = c / d;
-                              document.getElementById('hasil_bb_pb').value = bb_pb_rumus_dua.toFixed(1);
-                              if (bb_pb_rumus_dua < -3) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
-                              } else if (bb_pb_rumus_dua >= -3 && bb_pb_rumus_dua < -2) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
-                              } else if (bb_pb_rumus_dua >= -2 && bb_pb_rumus_dua <= 1) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
-                              } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
-                                   document.getElementById('hasil_kategori_bb_pb').value =
-                                        'Beresiko Gizi Lebih';
-                              } else if (bb_pb_rumus_dua > 3) {
-                                   document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
-                              };
+                              } else if (bb > bb_pb_perempuan_median) {
+                                   {{-- ! BB > Median --}}
+                                   var c = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
+                                   var d = parseFloat(bb_pb_perempuan_plus_1) - parseFloat(
+                                        bb_pb_perempuan_median);
+                                   var bb_pb_rumus_dua = c / d;
+                                   document.getElementById('hasil_bb_pb').value = bb_pb_rumus_dua.toFixed(1);
+                                   if (bb_pb_rumus_dua < -3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
+                                   } else if (bb_pb_rumus_dua >= -3 && bb_pb_rumus_dua < -2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
+                                   } else if (bb_pb_rumus_dua >= -2 && bb_pb_rumus_dua <= 1) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                   } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_dua > 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
+                                   };
+                              }
                          }
+
+                         if (umur > 24 && umur <= 60) {
+                              if (bb < bb_pb_perempuan_median) {
+                                   {{-- ! BB < Median --}}
+                                   var a = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
+                                   var b = parseFloat(bb_pb_perempuan_median) - parseFloat(
+                                        bb_pb_perempuan_min_1);
+                                   var bb_pb_rumus_satu = a / b;
+                                   document.getElementById('hasil_bb_pb').value = bb_pb_rumus_satu.toFixed(1);
+                                   if (bb_pb_rumus_satu < -3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
+                                   } else if (bb_pb_rumus_satu >= -3 && bb_pb_rumus_satu < -2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
+                                   } else if (bb_pb_rumus_satu >= -2 && bb_pb_rumus_satu <= 1) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                   } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
+                                   };
+
+                              } else if (bb > bb_pb_perempuan_median) {
+                                   {{-- ! BB > Median --}}
+                                   var c = parseFloat(bb) - parseFloat(bb_pb_perempuan_median);
+                                   var d = parseFloat(bb_pb_perempuan_plus_1) - parseFloat(
+                                        bb_pb_perempuan_median);
+                                   var bb_pb_rumus_dua = c / d;
+                                   document.getElementById('hasil_bb_pb').value = bb_pb_rumus_dua.toFixed(1);
+                                   if (bb_pb_rumus_dua < -3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Buruk';
+                                   } else if (bb_pb_rumus_dua >= -3 && bb_pb_rumus_dua < -2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Kurang';
+                                   } else if (bb_pb_rumus_dua >= -2 && bb_pb_rumus_dua <= 1) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                   } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_dua > 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
+                                   };
+                              }
+                         }
+
                     }
                }
           })
