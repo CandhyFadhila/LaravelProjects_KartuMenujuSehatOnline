@@ -25,7 +25,7 @@ class Admin_Orangtua_Controller extends Controller
                     ->orderBy('nama_ibu', 'ASC')
                     ->paginate(5);
           } else {
-               $data_Orangtua = AdminOrangtua::orderBy('created_at', 'asc')->paginate($paginate);
+               $data_Orangtua = AdminOrangtua::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
           return view('halaman_orangtua', [

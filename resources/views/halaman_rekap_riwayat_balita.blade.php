@@ -49,11 +49,11 @@
                                                             <div class="row">
                                                                  <div class="col-lg-12 border bg-light mb-3">
                                                                       <div class="col-md-10 float-left"
-                                                                           style="margin:0px 0 10px">
+                                                                           style="margin:24px 0 15px">
                                                                            <h4 class="text-dark font-weight-bold">{{ $balita->nama_balita }} - NIK
                                                                                 {{ $balita->nik_balita }}</h4>
                                                                       </div>
-                                                                      <div class="col" style="margin:10px 0 0px">
+                                                                      <div class="col" style="margin:12px 0 15px">
                                                                            <a
                                                                                 href="{{ url('admin/rekap_riwayat_balita/detail/' . $balita->id_balita) }}">
                                                                                 <button type="submit"

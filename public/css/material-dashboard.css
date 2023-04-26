@@ -2619,6 +2619,7 @@ a .material-icons {
 /* ! END UPLOAD FILES */
 
 /* ! DATATABLES */
+/* 
 div.dataTables_wrapper div.dataTables_paginate {
     margin: 0;
     white-space: nowrap;
@@ -2722,7 +2723,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 
 a {
     color: #9c27b0;
-}
+} */
 
 /* ! bmd-form-group */
 .bmd-form-group.is-focused.form-control,

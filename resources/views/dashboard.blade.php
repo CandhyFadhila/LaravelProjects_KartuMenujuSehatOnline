@@ -1,111 +1,91 @@
 @extends('layout.main')
 
 @section('isi_content')
+     <section>
+          <style>
+               /* Text Opening 1 */
+               @import url("https://fonts.googleapis.com/css?family=Public+Sans&display=swap");
+
+               .konten {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+               }
+
+               .konten img {
+                    width: 200px;
+                    height: 200px;
+                    margin-bottom: 2.8rem;
+               }
+
+               .konten h1 {
+                    font-family: 'Public Sans', sans-serif;
+                    font-size: 68px;
+                    color: #747474;
+               }
+
+               .konten h1 span.text {
+                    padding: 0;
+                    padding-right: 4px;
+                    border-right: 2px solid #747474;
+                    animation: blink 0.75s infinite;
+               }
+
+               .blue {
+                    color: #4480ff;
+               }
+
+               .green {
+                    color: #4caf50;
+               }
+
+               .yellow {
+                    color: #f4b400;
+               }
+
+               @keyframes blink {
+                    from {
+                         border: none;
+                    }
+
+                    to {
+                         border-color: 2px solid #747474;
+                    }
+               }
+
+               @media screen and (max-width: 670px) {
+                    .konten h1 {
+                         font-size: 40px;
+                    }
+
+                    .konten img {
+                         width: 75px;
+                         height: 75px;
+                    }
+               }
+
+               @media screen and (max-width: 400px) {
+                    .konten h1 {
+                         font-size: 32px;
+                    }
+               }
+          </style>
+     </section>
+
      <div class="container-fluid">
           <div class="row">
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                         <div class="card-header card-header-warning card-header-icon">
-                              <div class="card-icon">
-                                   <i class="material-icons">groups</i>
-                              </div>
-                              <p class="card-category">Total Balita</p>
-                              <h3 class="card-title">DB</h3>
-                         </div>
-                         <div class="card-footer">
-                              <div class="stats">
-                                   <i class="material-icons">add</i>
-                                   <a href="/balita/add_data_balita">Tambah Data Balita</a>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                         <div class="card-header card-header-success card-header-icon">
-                              <div class="card-icon">
-                                   <i class="material-icons">check_circle</i>
-                              </div>
-                              <p class="card-category">Status Gizi Baik</p>
-                              <h3 class="card-title">DB</h3>
-                         </div>
-                         <div class="card-footer">
-                              <div class="stats">
-                                   <i class="material-icons">table_chart</i>
-                                   <a href="/balita">
-                                        Lihat Tabel Balita</a>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                         <div class="card-header card-header-danger card-header-icon">
-                              <div class="card-icon">
-                                   <i class="material-icons">info_outline</i>
-                              </div>
-                              <p class="card-category">Status Gizi Buruk</p>
-                              <h3 class="card-title">DB</h3>
-                         </div>
-                         <div class="card-footer">
-                              <div class="stats">
-                                   <i class="material-icons text-danger">warning</i> Wajib
-                                   Imunisasi
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                         <div class="card-header card-header-info card-header-icon">
-                              <div class="card-icon">
-                                   <i class="material-icons">vaccines</i>
-                              </div>
-                              <p class="card-category">Vaksin</p>
-                              <h3 class="card-title">DB</h3>
-                         </div>
-                         <div class="card-footer">
-                              <div class="stats">
-                                   <i class="material-icons">table_chart</i>
-                                   <a href="admin/vitamin"> Lihat Tabel Vaksin</a>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </div>
-          <div class="row">
-               <div class="col-md-12">
-                    <div class="card">
-                         <div class="card-header card-header-primary">
-                              <h4 class="card-title">Petugas Posyandu</h4>
-                              <p class="card-category">
-                                   Petugas posyandu aktif Kecamatan Gayamsari
-                              </p>
-                         </div>
-                         <div class="card-body table-responsive">
-                              <table class="table table-hover">
-                                   <thead class="text-primary">
-                                        <th>No</th>
-                                        <th>Name</th>
-                                        <th>Alamat</th>
-                                        <th>Role</th>
-
-                                   </thead>
-                                   <tbody>
-                                        <tr>
-                                             <td>1</td>
-                                             <td>Dakota Rice</td>
-                                             <td>$36,738</td>
-                                             <td>Bidan</td>
-                                        </tr>
-                                   </tbody>
-                              </table>
-                         </div>
-                    </div>
+               <div class="col-md-12 konten">
+                    <img src="{{ asset('img/hug.png') }}" />
+                    <h1><span class="text blue">Lindungi</span> anak dari Stunting</h1>
                </div>
           </div>
      </div>
 @endsection
+
 @section('script_select2')
      <script>
           $(document).ready(function() {
@@ -116,6 +96,63 @@
                @if (Session::has('sudah_pernah_login'))
                     toastr.warning("{{ Session::get('sudah_pernah_login') }}");
                @endif
+          });
+     </script>
+
+     <script>
+          $(document).ready(function() {
+               const words = ["Lindungi", "Jaga", "Pantau"],
+                    colors = ["blue", "green", "yellow"],
+                    text = document.querySelector(".text");
+
+               // Generator (iterate from 0-3)
+               function* generator() {
+                    var index = 0;
+                    while (true) {
+                         yield index++;
+
+                         if (index > 2) {
+                              index = 0;
+                         }
+                    }
+               }
+
+               // Printing effect
+               function printChar(word) {
+                    let i = 0;
+                    text.innerHTML = "";
+                    text.classList.add(colors[words.indexOf(word)]);
+                    let id = setInterval(() => {
+                         if (i >= word.length) {
+                              deleteChar();
+                              clearInterval(id);
+                         } else {
+                              text.innerHTML += word[i];
+                              i++;
+                         }
+                    }, 500);
+               }
+
+               // Deleting effect
+               function deleteChar() {
+                    let word = text.innerHTML;
+                    let i = word.length - 1;
+                    let id = setInterval(() => {
+                         if (i >= 0) {
+                              text.innerHTML = text.innerHTML.substring(0, text.innerHTML.length - 1);
+                              i--;
+                         } else {
+                              text.classList.remove(colors[words.indexOf(word)]);
+                              printChar(words[gen.next().value]);
+                              clearInterval(id);
+                         }
+                    }, 260);
+               }
+
+               // Initializing generator
+               let gen = generator();
+
+               printChar(words[gen.next().value]);
           });
      </script>
 @endsection

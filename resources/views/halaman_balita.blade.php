@@ -89,8 +89,8 @@
                                                                       <td>{{ $balita->tgl_lahir }}</td>
                                                                       <td>{{ $balita->adminorangtua->nama_ibu }}</td>
                                                                       <td>{{ $balita->jenis_kelamin }}</td>
-                                                                      <td>{{ $balita->bb_lahir ?? "Belum Diketahui" }} gr</td>
-                                                                      <td>{{ $balita->pb_lahir ?? "Belum Diketahui" }} Cm</td>
+                                                                      <td>{{ $balita->bb_lahir ?? "~ Belum Diketahui ~" }} gr</td>
+                                                                      <td>{{ $balita->pb_lahir ?? "~ Belum Diketahui ~" }} Cm</td>
                                                                       <td class="text-center">
                                                                            <a href='{{ url('admin/balita/' . $balita->id_balita . '/edit') }}'
                                                                                 class="btn btn-warning btn-sm">Edit

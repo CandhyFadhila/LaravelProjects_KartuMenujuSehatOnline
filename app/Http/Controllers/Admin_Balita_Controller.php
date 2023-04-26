@@ -26,7 +26,7 @@ class Admin_Balita_Controller extends Controller
                     ->orderBy('nama_balita', 'ASC')
                     ->paginate(5);
           } else {
-               $data_Balita = AdminBalita::orderBy('created_at', 'asc')->paginate($paginate);
+               $data_Balita = AdminBalita::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
           return view('halaman_balita', [
@@ -141,13 +141,9 @@ class Admin_Balita_Controller extends Controller
      {
           // ! VALIDASI DATA
           $request->validate([
-               'nama_balita' => 'required',
-               'bb_lahir' => 'required',
-               'pb_lahir' => 'required'
+               'nama_balita' => 'required'
           ], [
-               'nama_balita' => 'Nama Balita tidak boleh kosong',
-               'bb_lahir' => 'Berat Badan tidak boleh kosong',
-               'pb_lahir' => 'Panjang Badan tidak boleh kosong'
+               'nama_balita' => 'Nama Balita tidak boleh kosong'
           ]);
 
           // TODO | KIRI DARI TABEL - KANAN DARI INPUTAN

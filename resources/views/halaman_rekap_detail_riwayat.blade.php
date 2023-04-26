@@ -11,7 +11,7 @@
                                    <div class="card-icon">
                                         <i class="material-icons">post_add</i>
                                    </div>
-                                   <h4 class="card-title">Detail Riwayat Balita dan Anak dari | <strong
+                                   <h4 class="card-title">Detail Riwayat Balita dan Anak |  <strong
                                              class="font-weight-bold">
                                              <u>{{ $admin_Balita->nama_balita }}</u>
                                         </strong>
@@ -103,7 +103,7 @@
                                              <div class="form-group bmd-form-group">
                                                   <input class="form-control font-weight-bold" type="text" number="true"
                                                        name="bb_lahir" id="bb_lahir"
-                                                       value="{{ $admin_Balita->bb_lahir }} Kilogram" disabled />
+                                                       value="{{ $admin_Balita->bb_lahir ?? '~ Belum Diketahui ~ ' }} Kilogram" disabled />
                                              </div>
                                         </div>
                                    </div>
@@ -113,7 +113,7 @@
                                              <div class="form-group bmd-form-group">
                                                   <input class="form-control font-weight-bold" type="text" number="true"
                                                        name="pb_lahir" id="pb_lahir"
-                                                       value="{{ $admin_Balita->pb_lahir }} Cm" disabled />
+                                                       value="{{ $admin_Balita->pb_lahir ?? '-- Belum Diketahui -- ' }} Cm" disabled />
                                              </div>
                                         </div>
                                    </div>
