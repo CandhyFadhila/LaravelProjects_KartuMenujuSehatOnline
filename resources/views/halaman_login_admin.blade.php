@@ -35,18 +35,15 @@
 
                          <div class="row justify-content-center">
                               <div class="col-md-5 form-group text-center">
-                                   <button class="btn btn-block btn-primary rounded-0 py-2 px-4" type="submit"
-                                        name="submit">Masuk</button>
+                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit"
+                                        name="submit"
+                                        style="background-image: linear-gradient(to right, #457fca 0%, #5691c8  51%, #457fca  100%)">Masuk</button>
                                    <label for="terms" class="form-check-label custom-label">
-                                        Belum punya akun? - <a href="/session_admin/registrasi" class="custom-link">
+                                        Belum punya akun? - <a href="{{ url('session_admin/registrasi') }}" class="custom-link">
                                              Buat Akun
                                         </a>
-
                                    </label>
-
                               </div>
-
-
                          </div>
                     </form>
                </div>

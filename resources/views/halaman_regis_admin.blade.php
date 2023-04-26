@@ -51,10 +51,10 @@
 
                          <div class="row justify-content-center">
                               <div class="col-md-5 form-group text-center">
-                                   <button class="btn btn-block btn-primary rounded-0 py-2 px-4" type="submit"
+                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit"
                                         name="submit">Daftar Akun</button>
                                    <label for="terms" class="form-check-label custom-label">
-                                        Sudah punya akun? - <a href="/session_admin" class="custom-link">
+                                        Sudah punya akun? - <a href="{{ url('session_admin') }}" class="custom-link">
                                              Login
                                         </a>
 
