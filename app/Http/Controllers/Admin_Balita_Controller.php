@@ -69,9 +69,7 @@ class Admin_Balita_Controller extends Controller
                'nik_balita' => 'required|numeric|unique:admin_balita,nik_balita',
                'tgl_lahir' => 'required',
                'orangtua_id' => 'required',
-               'jenis_kelamin' => ['required', 'in:P,L'],
-               'bb_lahir' => 'required',
-               'pb_lahir' => 'required'
+               'jenis_kelamin' => ['required', 'in:P,L']
           ], [
                'nama_balita' => 'Nama Balita tidak boleh kosong',
 
@@ -81,9 +79,7 @@ class Admin_Balita_Controller extends Controller
 
                'tgl_lahir' => 'Tanggal Lahir tidak boleh kosong',
                'orangtua_id' => 'Silahkan pilih Nama Ibu terlebih dahulu',
-               'jenis_kelamin' => 'Silahkan pilih Jenis Kelamin terlebih dahulu',
-               'bb_lahir' => 'Berat Badan tidak boleh kosong',
-               'pb_lahir' => 'Panjang Badan tidak boleh kosong'
+               'jenis_kelamin' => 'Silahkan pilih Jenis Kelamin terlebih dahulu'
           ]);
 
           // TODO | KIRI DARI TABEL - KANAN DARI INPUTAN

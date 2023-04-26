@@ -20,8 +20,8 @@ return new class extends Migration
                $table->string('nama_balita');
                $table->string('tgl_lahir');
                $table->string('jenis_kelamin');
-               $table->string('bb_lahir');
-               $table->string('pb_lahir');
+               $table->string('bb_lahir')->nullable();
+               $table->string('pb_lahir')->nullable();
                $table->timestamps();
           });
 

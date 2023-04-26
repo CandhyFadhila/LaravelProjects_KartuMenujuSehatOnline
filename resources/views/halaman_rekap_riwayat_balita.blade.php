@@ -50,8 +50,8 @@
                                                                  <div class="col-lg-12 border bg-light mb-3">
                                                                       <div class="col-md-10 float-left"
                                                                            style="margin:0px 0 10px">
-                                                                           <h3 class="text-dark font-weight-bold">{{ $balita->nama_balita }} - NIK
-                                                                                {{ $balita->nik_balita }}</h3>
+                                                                           <h4 class="text-dark font-weight-bold">{{ $balita->nama_balita }} - NIK
+                                                                                {{ $balita->nik_balita }}</h4>
                                                                       </div>
                                                                       <div class="col" style="margin:10px 0 0px">
                                                                            <a
