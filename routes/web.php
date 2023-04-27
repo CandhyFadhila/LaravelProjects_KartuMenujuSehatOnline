@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin_Imunisasi_Controller;
 use App\Http\Controllers\Admin_Vitamin_Controller;
 use App\Http\Controllers\Admin_Penimbangan_Controller;
 use App\Http\Controllers\Admin_Riwayat_Controller;
-
+use App\Http\Controllers\Orangtua_Dashboard_Controller;
 //TODO --- USER SECTION ---
 use App\Http\Controllers\User_Auth_Controller;
 /*
@@ -31,9 +31,10 @@ Route::controller(User_Auth_Controller::class)->group(function () {
      Route::get('session_users', 'index');
 
      Route::post('session_users/login', 'login');
-
-     Route::get('/', 'user_main');
 });
+
+Route::get('/', [Orangtua_Dashboard_Controller::class, 'index'])->name('halaman_ortu')->middleware('middleware_admin');
+
 
 // ? ADMIN SECTION
 // !LOGIN ADMIN

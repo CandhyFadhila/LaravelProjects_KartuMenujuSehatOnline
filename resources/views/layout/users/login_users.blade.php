@@ -12,14 +12,14 @@
 
      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
 
-     <link rel="stylesheet" href="{{ asset('user_login/fonts/icomoon/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('admin_login_registrasi/fonts/icomoon/style.css') }}">
 
 
      <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="{{ asset('user_login/css/bootstrap.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('admin_login_registrasi/css/bootstrap.min.css') }}">
 
      <!-- Style -->
-     <link rel="stylesheet" href="{{ asset('user_login/css/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('admin_login_registrasi/css/style.css') }}">
 
 </head>
 
@@ -36,13 +36,18 @@
      </div>
 
 
+     <script src="{{ asset('admin_login_registrasi/js/jquery-3.3.1.min.js') }}"></script>
+     <script src="{{ asset('admin_login_registrasi/js/popper.min.js') }}"></script>
+     <script src="{{ asset('admin_login_registrasi/js/bootstrap.min.js') }}"></script>
+     <script src="{{ asset('admin_login_registrasi/js/main.js') }}"></script>
 
-     <script src="{{ asset('user_login/js/jquery-3.3.1.min.js') }}"></script>
-     <script src="{{ asset('user_login/js/popper.min.js') }}"></script>
-     <script src="{{ asset('user_login/js/bootstrap.min.js') }}"></script>
+     {{-- ! SWEATALERT2 + TOASTR --}}
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-     @yield('js_user')
-     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+     @yield('script_notifications')
+
 
 </body>
 

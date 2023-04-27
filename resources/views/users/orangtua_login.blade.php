@@ -3,36 +3,63 @@
 @section('login_user')
      <div class="row align-items-stretch justify-content-center no-gutters">
           <div class="col-md-7">
+
                <div class="form h-100 contact-wrap p-5">
                     <h3 class="text-center">Login</h3>
-                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                    <form class="mb-5" action="/session_users/login" method="POST">
+                         @csrf
                          <div class="row mb-5">
                               <div class="col-md-12 form-group mb-3">
-                                   <label for="" class="col-form-label">Nomor Induk Keluarga/NIK *</label>
-                                   <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="NIK Anda">
+                                   <label for="nik_ibu" class="col-form-label">NIK Ibu *</label>
+                                   <input type="text" class="form-control" name="nik_ibu" id="nik_ibu" placeholder="Masukkan NIK dari Ibu Anak">
+                                   @error('nik_ibu')
+                                        <small class="text-danger">
+                                             {{ $message }}
+                                        </small>
+                                   @enderror
                               </div>
                          </div>
+
                          <div class="row justify-content-center">
                               <div class="col-md-5 form-group text-center">
-                                   <input type="submit" value="Masuk"
-                                        class="btn btn-block btn-primary rounded-0 py-2 px-4">
-                                   <span class="submitting"></span>
+                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit" name="submit"
+                                        style="background-image: linear-gradient(to right, #457fca 0%, #5691c8  51%, #457fca  100%)">Masuk</button>
                               </div>
                          </div>
                     </form>
-
-                    <div id="form-message-warning mt-4"></div>
-                    <div id="form-message-success">
-                         Your message was sent, thank you!
-                    </div>
-
                </div>
           </div>
      </div>
 @endsection
 
-@section('js_user')
-     <script src="{{ asset('user_login/js/jquery.validate.min.js') }}"></script>
-     <script src="{{ asset('user_login/js/main.js') }}"></script>
+@section('script_notifications')
+     <script>
+          $(document).ready(function() {
+               @if (Session::has('success_orangtua'))
+                    toastr.info("{{ Session::get('success_orangtua') }}");
+               @endif
+
+               @if (Session::has('error_nik'))
+                    Swal.fire({
+                         icon: 'error',
+                         title: '<strong>Login Gagal</strong>',
+                         html: 'NIK yang anda masukkan <b>Tidak Valid</b>',
+                         showConfirmButton: true,
+                         timer: 2700,
+                         timerProgressBar: true
+                    });
+               @endif
+
+               @if (Session::has('error_session_users'))
+                    Swal.fire({
+                         icon: 'question',
+                         title: '<strong>Oops..</strong>',
+                         html: 'Anda belum <b>Login</b>, Silahkan <b>Login</b> terlebih dahulu',
+                         showConfirmButton: true,
+                         timer: 3000,
+                         timerProgressBar: true
+                    });
+               @endif
+          });
+     </script>
 @endsection
