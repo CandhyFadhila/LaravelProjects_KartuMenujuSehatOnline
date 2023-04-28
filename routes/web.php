@@ -33,7 +33,7 @@ Route::controller(User_Auth_Controller::class)->group(function () {
      Route::post('session_users/login', 'login');
 });
 
-Route::get('/', [Orangtua_Dashboard_Controller::class, 'index'])->name('halaman_ortu')->middleware('middleware_admin');
+Route::get('/', [Orangtua_Dashboard_Controller::class, 'index'])->name('index.orangtua');
 
 
 // ? ADMIN SECTION

@@ -3,18 +3,19 @@
      <div class="section-title">
           <h2>KMS Anak Anda</h2>
           <p>Silahkan anda piilih terlebih dahulu nama
-               anak anda, Namun jika anak anda tidak lebih dari 1 maka otomatis akan ditampilkan.</p>
+               anak anda.</p>
 
           <div class="btn-group mt-4">
-               <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Pilih Nama Anak Anda
-               </button>
-               <ul class="dropdown-menu">
-                    <li><a class="dropdown-item">Jatmiko</a></li>
-                    <li><a class="dropdown-item">Haris</a></li>
-                    <li><a class="dropdown-item">Something else here</a></li>
-               </ul>
+               <select id="balita_id" class="js-example-basic-single form-control" name="balita_id">
+                    <option value="option_select" disabled selected>Pilih Nama Balita
+                    </option>
+
+                    @foreach ($balita as $balita)
+                         <option value="{{ $balita->id_balita }}">{{ $balita->nama_balita }} - NIK
+                              {{ $balita->nik_balita }}</option>
+                    @endforeach
+
+               </select>
           </div>
      </div>
 
@@ -87,6 +88,9 @@
 
 @section('kurva_kms')
      <script src="https://code.highcharts.com/highcharts.js"></script>
+     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+     <script src="https://code.highcharts.com/modules/export-data.js"></script>
+     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
      {{-- ! BERAT BADAN SECTION --}}
      <script>

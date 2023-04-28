@@ -10,13 +10,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class AdminOrangtua extends Model implements Authenticatable
 {
      use \Illuminate\Auth\Authenticatable;
-     
+
      use HasFactory;
 
      // ! CUSTOM NAMA TABLE
      public $table = 'admin_orangtua';
 
      // ! YANG TIDAK BOLEH DIISI
+     protected $primaryKey = 'id_orangtua';
+
      protected $guarded = ['id_orangtua'];
 
      public function adminbalita()

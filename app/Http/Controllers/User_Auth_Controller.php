@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -22,24 +23,28 @@ class User_Auth_Controller extends Controller
 
      public function login(Request $request)
      {
-          Session::flash('nik_ibu', $request->nik_ibu);
-          $request->validate([
-               'nik_ibu' => 'required|numeric',
-               'password' => 'required'
-          ], [
-               'nik_ibu.required' => 'NIK tidak boleh kosong',
-               'nik_ibu.numeric' => 'NIK tidak boleh mengandung huruf',
-               'password.required' => 'Password tidak boleh kosong'
-          ]);
+          // ! DIFERENT WAY
+          $nik_ibu = $request->input('nik_ibu');
 
-          $info_login = [
-               'nik_ibu' => $request->nik_ibu,
-               'password' => $request->password
-          ];
+          $orangtua = DB::table('admin_orangtua')->where('nik_ibu', $nik_ibu)->first();
 
-          if (Auth::attempt($info_login)) {
-               return redirect('/')->with('success_orangtua', 'Selamat Datang, "' . Auth::user()->nama_ibu . '" di Halaman KMS Online');
+          if ($orangtua) {
+               // user found, log them in
+               // ! create variable to store data in toastr
+               $nama_ibu = $orangtua->nama_ibu;
+               $id_orangtua = $orangtua->id_orangtua;
+
+               // ! Create session to store data in dashboard
+               session([
+                    'nama_ibu' => $nama_ibu,
+                    'id_orangtua' => $id_orangtua,
+               ]);
+
+               // TODO | Then Login in
+               Auth::loginUsingId($orangtua->id_orangtua);
+               return redirect('/')->with('success_orangtua', 'Selamat Datang, Ibu "' . $nama_ibu . '" di Halaman KMS Online');
           } else {
+               // user not found, redirect back to login page
                return redirect('session_users')->with('error_nik', 'Login gagal, NIK yang anda masukkan salah.');
           }
      }

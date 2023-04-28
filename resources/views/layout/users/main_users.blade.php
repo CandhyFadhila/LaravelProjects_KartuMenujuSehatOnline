@@ -9,13 +9,15 @@
      <meta content="" name="description">
      <meta content="" name="keywords">
 
+     <meta name="csrf_token" content="{{ csrf_token() }}">
+
      <!-- Favicons -->
-     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/motherhood.png') }}" />
+     <link rel="icon" sizes="76x76" href="{{ asset('img/motherhood.png') }}" />
      <link rel="icon" type="image/png" href="{{ asset('img/motherhood.png') }}" />
 
      <!-- Google Fonts -->
-     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-          rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+     
 
      <!-- Vendor CSS Files -->
      <link href="{{ asset('user_page/assets/vendor/aos/aos.css') }}" rel="stylesheet">
@@ -27,6 +29,13 @@
 
      <!-- Template Main CSS File -->
      <link href="{{ asset('user_page/assets/css/style.css') }}" rel="stylesheet">
+
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+     {{-- ! AJAX --}}
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
      <!-- =======================================================
   * Template Name: MyResume - v4.10.0
@@ -58,7 +67,7 @@
 
      </section>
      <!-- End Hero -->
-     
+
 
      <main id="main">
 
@@ -113,6 +122,7 @@
                class="bi bi-arrow-up-short"></i></a>
 
      <!-- Vendor JS Files -->
+     <script src="{{ asset('js/core/jquery.min.js') }}"></script>
      <script src="{{ asset('user_page/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
      <script src="{{ asset('user_page/assets/vendor/aos/aos.js') }}"></script>
      <script src="{{ asset('user_page/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -124,6 +134,14 @@
 
      <!-- Template Main JS File -->
      <script src="{{ asset('user_page/assets/js/main.js') }}"></script>
+
+     {{-- ! NOTIFIKASI APIK + SEARCH BAR --}}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+     @yield('script_select2')
 
      {{-- ! KURVA --}}
      @yield('kurva_kms')
