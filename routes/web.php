@@ -33,7 +33,11 @@ Route::controller(User_Auth_Controller::class)->group(function () {
      Route::post('session_users/login', 'login');
 });
 
-Route::get('/', [Orangtua_Dashboard_Controller::class, 'index'])->name('index.orangtua');
+Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
+     Route::get('/', 'index');
+
+     Route::get('/balita/{id}', 'getBalita')->name('getBalita_orangtua');
+});
 
 
 // ? ADMIN SECTION

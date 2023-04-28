@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminOrangtua;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class User_Auth_Controller extends Controller
           // ! DIFERENT WAY
           $nik_ibu = $request->input('nik_ibu');
 
-          $orangtua = DB::table('admin_orangtua')->where('nik_ibu', $nik_ibu)->first();
+          $orangtua = AdminOrangtua::where('nik_ibu', $nik_ibu)->first();
 
           if ($orangtua) {
                // user found, log them in

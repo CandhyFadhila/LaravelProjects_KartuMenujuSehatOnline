@@ -143,6 +143,8 @@
 
      @yield('script_select2')
 
+     @yield('select_auto')
+
      {{-- ! KURVA --}}
      @yield('kurva_kms')
 

@@ -21,7 +21,9 @@
 
      <div class="row">
           <div class="pt-4 pt-lg-0 content">
-               <h3>Nama ANAK</h3>
+               <div class="col">
+                    <input id="nama_balita" type="text" class="form-control" placeholder="Nama Balita" readonly />
+               </div>
                <p class="fst-italic">
                     Berikut adalah detail identitas anak anda yang sudah terdaftar pada sistem kami.
                </p>
@@ -30,18 +32,27 @@
                          <ul>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
-                                   <strong>Nama:</strong>
-                                   <span>Aliando</span>
+                                   <strong>NIK :</strong>
+                                   <div class="col">
+                                        <input id="nik_balita" type="text" class="form-control span"
+                                             placeholder="Nama Balita" readonly />
+                                   </div>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
-                                   <strong>Tanggal Lahir:</strong>
-                                   <span>12/05/2003</span>
+                                   <strong>Tanggal Lahir :</strong>
+                                   <div class="col">
+                                        <input id="tgl_lahir" type="text" class="form-control"
+                                             placeholder="Tanggal Lahir Balita" readonly />
+                                   </div>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
-                                   <strong>Nama Ortu:</strong>
-                                   <span>Sukinem</span>
+                                   <strong>Jenis Kelamin :</strong>
+                                   <div class="col">
+                                        <input id="jenis_kelamin" type="text" class="form-control"
+                                             placeholder="Jenis Kelamin Balita" readonly />
+                                   </div>
                               </li>
                          </ul>
                     </div>
@@ -49,18 +60,20 @@
                          <ul>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
-                                   <strong>Jenis Kelamin:</strong>
-                                   <span>L</span>
-                              </li>
-                              <li>
-                                   <i class="bi bi-chevron-right"></i>
                                    <strong>Berat Badan saat lahir:</strong>
-                                   <span>3 Kg</span>
+                                   <div class="col">
+                                        <input id="bb_lahir" type="text" class="form-control"
+                                             placeholder="BB saat Lahir" readonly />
+                                             <p>Gram</p>
+                                   </div>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>Panjang Badan saat lahir:</strong>
-                                   <span>15 Cm</span>
+                                   <div class="col">
+                                        <input id="pb_lahir" type="text" class="form-control"
+                                             placeholder="PB saat Lahir" readonly /> Cm
+                                   </div>
                               </li>
                          </ul>
                     </div>
@@ -72,11 +85,11 @@
                </p>
           </div>
           <div class="row mt-4">
-               <div class="col-lg-6">
+               <div class="col-lg-12">
                     <div id="chartKMS_bb_u" data-highcharts-chart="0" style="overflow: hidden;" aria-hidden="false">
                     </div>
                </div>
-               <div class="col-lg-6">
+               <div class="col-lg-12 mt-4">
                     <div id="chartKMS_tb_u" data-highcharts-chart="1" style="overflow: hidden;" aria-hidden="false">
                     </div>
 
@@ -85,6 +98,35 @@
      </div>
 
 </div>
+
+@section('select_auto')
+     <script>
+          $(document).ready(function() {
+               $('#balita_id').change(function() {
+                    var id = $(this).val();
+                    var url = '{{ route('getBalita_orangtua', ':id') }}';
+                    url = url.replace(':id', id);
+
+                    $.ajax({
+                         url: url,
+                         type: 'GET',
+                         dataType: 'json',
+                         success: function(data) {
+                              if (data !== null) {
+                                   $('#nama_balita').val(data.nama_balita);
+                                   $('#nama_balita').val(data.nama_balita);
+                                   $('#tgl_lahir').val(data.tgl_lahir);
+                                   $('#nik_balita').val(data.nik_balita);
+                                   $('#jenis_kelamin').val(data.jenis_kelamin);
+                                   $('#bb_lahir').val(data.bb_lahir);
+                                   $('#pb_lahir').val(data.pb_lahir);
+                              }
+                         }
+                    })
+               });
+          })
+     </script>
+@endsection
 
 @section('kurva_kms')
      <script src="https://code.highcharts.com/highcharts.js"></script>

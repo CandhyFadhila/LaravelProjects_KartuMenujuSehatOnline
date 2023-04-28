@@ -25,6 +25,6 @@ class AdminBalita extends Model
 
      public function adminkms()
      {
-          return $this->hasMany(AdminKMS::class);
+          return $this->hasMany(AdminKMS::class, 'balita_id');
      }
 }

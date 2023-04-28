@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminBalita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class Orangtua_Dashboard_Controller extends Controller
           $nama_ibu = session('nama_ibu');
           $orangtua_id = session('id_orangtua');
 
-          $balita = DB::table('admin_balita')
+          $balita = AdminBalita::with('adminkms')
                ->where('orangtua_id', $orangtua_id)
                ->get();
 
@@ -22,48 +23,12 @@ class Orangtua_Dashboard_Controller extends Controller
                "nama_ibu" => $nama_ibu,
                "balita" => $balita
           ]);
+     }
 
-          // if ($balita->isEmpty()) {
-          //      // No balita associated with the logged-in user
-          //      return view('users.orangtua_dashboard', [
-          //           "halaman" => "Halaman OrangTua",
-          //           "nama_ibu" => $nama_ibu,
-          //      ]);
-          // }
-          // if ($balita->count() == 1) {
-          //      // Only one balita associated with the logged-in user
-          //      $balita = $balita->first();
-          //      $kms = DB::table('admin_kms')
-          //           ->where('balita_id', $balita->id_balita)
-          //           ->first();
-          //      return view('users.orangtua_dashboard', [
-          //           "halaman" => "Halaman OrangTua",
-          //           "nama_ibu" => $nama_ibu,
-          //           "kms" => $kms,
-          //      ]);
-          // } else {
-          //      // Multiple balita associated with the logged-in user
-          //      return view('users.orangtua_dashboard', compact('balita'), [
-          //           "halaman" => "Halaman OrangTua"
-          //      ]);
-          // }
+     public function getBalita($id = 0)
+     {
+          $get_Balita = AdminBalita::firstWhere('id_balita', $id);
 
-
-
-          // if ($balita) {
-          //      $kms = DB::table('admin_kms')
-          //           ->where('balita_id', $balita->id_balita)
-          //           ->first();
-
-          //      return view('users.orangtua_dashboard', [
-          //           "halaman" => "Halaman OrangTua",
-          //           "nama_ibu" => $nama_ibu,
-          //           "kms" => $kms,
-          //      ]);
-          // } else {
-          //      return view('users.orangtua_dashboard', [
-          //           "halaman" => "Halaman OrangTua"
-          //      ]);
-          // }
+          echo json_encode($get_Balita);
      }
 }
