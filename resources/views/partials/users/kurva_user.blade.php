@@ -22,7 +22,7 @@
      <div class="row">
           <div class="pt-4 pt-lg-0 content">
                <div class="col">
-                    <input id="nama_balita" type="text" class="form-control" placeholder="Nama Balita" readonly />
+                    <h3 id="nama_balita">Nama Balita</h3>
                </div>
                <p class="fst-italic">
                     Berikut adalah detail identitas anak anda yang sudah terdaftar pada sistem kami.
@@ -33,26 +33,17 @@
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>NIK :</strong>
-                                   <div class="col">
-                                        <input id="nik_balita" type="text" class="form-control span"
-                                             placeholder="Nama Balita" readonly />
-                                   </div>
+                                   <span id="nik_balita">NIK Balita</span>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>Tanggal Lahir :</strong>
-                                   <div class="col">
-                                        <input id="tgl_lahir" type="text" class="form-control"
-                                             placeholder="Tanggal Lahir Balita" readonly />
-                                   </div>
+                                   <span id="tgl_lahir">Tanggal Lahir Balita</span>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>Jenis Kelamin :</strong>
-                                   <div class="col">
-                                        <input id="jenis_kelamin" type="text" class="form-control"
-                                             placeholder="Jenis Kelamin Balita" readonly />
-                                   </div>
+                                   <span id="jenis_kelamin">Jenis Kelamin Balita</span>
                               </li>
                          </ul>
                     </div>
@@ -61,19 +52,12 @@
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>Berat Badan saat lahir:</strong>
-                                   <div class="col">
-                                        <input id="bb_lahir" type="text" class="form-control"
-                                             placeholder="BB saat Lahir" readonly />
-                                             <p>Gram</p>
-                                   </div>
+                                   <span id="bb_lahir">Berat Badan Balita</span>
                               </li>
                               <li>
                                    <i class="bi bi-chevron-right"></i>
                                    <strong>Panjang Badan saat lahir:</strong>
-                                   <div class="col">
-                                        <input id="pb_lahir" type="text" class="form-control"
-                                             placeholder="PB saat Lahir" readonly /> Cm
-                                   </div>
+                                   <span id="pb_lahir">Panjang Badan Balita</span>
                               </li>
                          </ul>
                     </div>
@@ -113,13 +97,12 @@
                          dataType: 'json',
                          success: function(data) {
                               if (data !== null) {
-                                   $('#nama_balita').val(data.nama_balita);
-                                   $('#nama_balita').val(data.nama_balita);
-                                   $('#tgl_lahir').val(data.tgl_lahir);
-                                   $('#nik_balita').val(data.nik_balita);
-                                   $('#jenis_kelamin').val(data.jenis_kelamin);
-                                   $('#bb_lahir').val(data.bb_lahir);
-                                   $('#pb_lahir').val(data.pb_lahir);
+                                   $('#nama_balita').text(data.nama_balita);
+                                   $('#tgl_lahir').text(data.tgl_lahir);
+                                   $('#nik_balita').text(data.nik_balita);
+                                   $('#jenis_kelamin').text(data.jenis_kelamin);
+                                   $('#bb_lahir').text(data.bb_lahir);
+                                   $('#pb_lahir').text(data.pb_lahir);
                               }
                          }
                     })
