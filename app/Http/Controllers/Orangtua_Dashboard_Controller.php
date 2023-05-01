@@ -14,14 +14,18 @@ class Orangtua_Dashboard_Controller extends Controller
           $nama_ibu = session('nama_ibu');
           $orangtua_id = session('id_orangtua');
 
-          $balita = AdminBalita::with('adminkms')
+          $balita_kms = AdminBalita::with(['adminkms' => function ($query) {
+               $query->select(['balita_id', 'umur_sekarang', 'sd_bb_u', 'sd_pb_u', 'sd_bb_pb', 'tgl_timbang'])
+                    ->orderBy('created_at', 'asc')
+                    ->latest('tgl_vaksin_1');
+          }])
                ->where('orangtua_id', $orangtua_id)
                ->get();
 
           return view('users.orangtua_dashboard', [
                "halaman" => "Halaman OrangTua",
                "nama_ibu" => $nama_ibu,
-               "balita" => $balita
+               "balita" => $balita_kms
           ]);
      }
 

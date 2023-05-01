@@ -76,7 +76,10 @@
                <div class="col-lg-12 mt-4">
                     <div id="chartKMS_tb_u" data-highcharts-chart="1" style="overflow: hidden;" aria-hidden="false">
                     </div>
-
+               </div>
+               <div class="col-lg-12 mt-4">
+                    <div id="chartKMS_bb_pb" data-highcharts-chart="2" style="overflow: hidden;" aria-hidden="false">
+                    </div>
                </div>
           </div>
      </div>
@@ -124,7 +127,7 @@
                     type: 'line'
                },
                title: {
-                    text: 'Berat Badan menurut Umur'
+                    text: 'Berat Badan menurut Umur (Laki - laki)'
                },
                subtitle: {
                     text: 'Source: Kartu Menuju Sehat Online (KMS)'
@@ -243,7 +246,8 @@
                }, {
                     name: '',
                     marker: {
-                         enabled: true
+                         enabled: true,
+                         symbol: 'circle'
                     },
                     color: 'black',
                     lineWidth: 0.2,
@@ -257,7 +261,7 @@
                }],
                navigation: {
                     buttonOptions: {
-                         enabled: false
+                         enabled: true
                     }
                }
           });
@@ -270,7 +274,7 @@
                     type: 'line'
                },
                title: {
-                    text: 'Tinggi Badan menurut Umur'
+                    text: 'Tinggi Badan menurut Umur (Laki - laki)'
                },
                subtitle: {
                     text: 'Source: Kartu Menuju Sehat Online (KMS)'
@@ -280,7 +284,8 @@
                },
                tooltip: {
                     headerFormat: 'Umur: {point.x} Bulan<br>',
-                    pointFormat: 'Tinggi: {point.y:.1f} Cm',
+                    pointFormat: 'Tinggi: {point.y:.1f} Cm<br>',
+                    footerFormat: 'Tanggal: {point.z}<br>',
                     shared: true
                },
                legend: {
@@ -391,7 +396,8 @@
                }, {
                     name: '',
                     marker: {
-                         enabled: true
+                         enabled: true,
+                         symbol: 'circle',
                     },
                     color: 'black',
                     lineWidth: 0.2,
@@ -405,7 +411,7 @@
                }],
                navigation: {
                     buttonOptions: {
-                         enabled: false
+                         enabled: true
                     }
                }
           });
