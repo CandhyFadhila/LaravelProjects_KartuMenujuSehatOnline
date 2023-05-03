@@ -10,7 +10,7 @@
                     <option value="option_select" disabled selected>Pilih Nama Balita
                     </option>
 
-                    @foreach ($balita as $balita)
+                    @foreach ($balita_kms as $balita)
                          <option value="{{ $balita->id_balita }}">{{ $balita->nama_balita }} - NIK
                               {{ $balita->nik_balita }}</option>
                     @endforeach
@@ -100,12 +100,31 @@
                          dataType: 'json',
                          success: function(data) {
                               if (data !== null) {
-                                   $('#nama_balita').text(data.nama_balita);
-                                   $('#tgl_lahir').text(data.tgl_lahir);
-                                   $('#nik_balita').text(data.nik_balita);
-                                   $('#jenis_kelamin').text(data.jenis_kelamin);
-                                   $('#bb_lahir').text(data.bb_lahir);
-                                   $('#pb_lahir').text(data.pb_lahir);
+                                   $('#nama_balita').html(data.nama_balita);
+                                   $('#tgl_lahir').html(data.tgl_lahir);
+                                   $('#nik_balita').html(data.nik_balita);
+                                   $('#jenis_kelamin').html(data.jenis_kelamin);
+                                   $('#bb_lahir').html(data.bb_lahir);
+                                   $('#pb_lahir').html(data.pb_lahir);
+                                   $('#tgl_vaksin_1').html(data.tgl_vaksin_1);
+                                   $('#tgl_vaksin_2').html(data.tgl_vaksin_2);
+                                   $('#tgl_vaksin_3').html(data.tgl_vaksin_3);
+                                   $('#tgl_vaksin_4').html(data.tgl_vaksin_4);
+                                   $('#tgl_vaksin_5').html(data.tgl_vaksin_5);
+                                   $('#tgl_vaksin_6').html(data.tgl_vaksin_6);
+                                   $('#tgl_vaksin_7').html(data.tgl_vaksin_7);
+                                   $('#tgl_vaksin_8').html(data.tgl_vaksin_8);
+                                   $('#tgl_vaksin_9').html(data.tgl_vaksin_9);
+                                   $('#tgl_vaksin_10').html(data.tgl_vaksin_10);
+                                   $('#tgl_vaksin_11').html(data.tgl_vaksin_11);
+                                   $('#tgl_vaksin_12').html(data.tgl_vaksin_12);
+                                   $('#tgl_vaksin_13').html(data.tgl_vaksin_13);
+                                   $('#tgl_vaksin_14').html(data.tgl_vaksin_14);
+                                   $('#tgl_vaksin_15').html(data.tgl_vaksin_15);
+                                   $('#tgl_vaksin_16').html(data.tgl_vaksin_16);
+                                   $('#tgl_vaksin_17').html(data.tgl_vaksin_17);
+                                   $('#tgl_vaksin_18').html(data.tgl_vaksin_18);
+                                   $('#tgl_vaksin_19').html(data.tgl_vaksin_19);
                               }
                          }
                     })

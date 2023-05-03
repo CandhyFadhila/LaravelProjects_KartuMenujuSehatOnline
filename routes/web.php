@@ -36,7 +36,7 @@ Route::controller(User_Auth_Controller::class)->group(function () {
 Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
      Route::get('/', 'index');
 
-     Route::get('/balita/{id}', 'getBalita')->name('getBalita_orangtua');
+     Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua');
 });
 
 
