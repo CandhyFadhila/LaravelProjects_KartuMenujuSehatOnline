@@ -104,30 +104,17 @@
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);
-                                   $('#bb_lahir').html(data.bb_lahir);
-                                   $('#pb_lahir').html(data.pb_lahir);
-                                   $('#tgl_vaksin_1').html(data.tgl_vaksin_1);
-                                   $('#tgl_vaksin_2').html(data.tgl_vaksin_2);
-                                   $('#tgl_vaksin_3').html(data.tgl_vaksin_3);
-                                   $('#tgl_vaksin_4').html(data.tgl_vaksin_4);
-                                   $('#tgl_vaksin_5').html(data.tgl_vaksin_5);
-                                   $('#tgl_vaksin_6').html(data.tgl_vaksin_6);
-                                   $('#tgl_vaksin_7').html(data.tgl_vaksin_7);
-                                   $('#tgl_vaksin_8').html(data.tgl_vaksin_8);
-                                   $('#tgl_vaksin_9').html(data.tgl_vaksin_9);
-                                   $('#tgl_vaksin_10').html(data.tgl_vaksin_10);
-                                   $('#tgl_vaksin_11').html(data.tgl_vaksin_11);
-                                   $('#tgl_vaksin_12').html(data.tgl_vaksin_12);
-                                   $('#tgl_vaksin_13').html(data.tgl_vaksin_13);
-                                   $('#tgl_vaksin_14').html(data.tgl_vaksin_14);
-                                   $('#tgl_vaksin_15').html(data.tgl_vaksin_15);
-                                   $('#tgl_vaksin_16').html(data.tgl_vaksin_16);
-                                   $('#tgl_vaksin_17').html(data.tgl_vaksin_17);
-                                   $('#tgl_vaksin_18').html(data.tgl_vaksin_18);
-                                   $('#tgl_vaksin_19').html(data.tgl_vaksin_19);
+                                   $('#bb_lahir').html(data.bb_lahir + ' Kg');
+                                   $('#pb_lahir').html(data.pb_lahir + ' Cm');
+                              } else {
+                                   $('#bb_lahir').html('Belum terupdate');
+                                   $('#pb_lahir').html('Belum terupdate');
                               }
-                         }
-                    })
+                         },
+                         // error: function(jqXHR, textStatus, errorThrown) {
+                         //      console.log(textStatus, errorThrown);
+                         // }
+                    });
                });
           })
      </script>
