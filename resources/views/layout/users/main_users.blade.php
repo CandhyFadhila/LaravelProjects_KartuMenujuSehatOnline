@@ -188,6 +188,79 @@
           .tabel_vitamin_lanjut tr>*:last-child {
                border-right: 0;
           }
+
+          /* CSS for tabel_vitamin_a */
+          .tabel_vitamin_a {
+               margin-top: 45px;
+               margin-left: 11px;
+               margin-right: 11px;
+               width: auto;
+               height: auto;
+               overflow: auto;
+               position: relative;
+               border: 1px solid #5e5e5e;
+          }
+
+          .tabel_vitamin_a table {
+               border-spacing: 0;
+               white-space: nowrap;
+               table-layout: relative;
+          }
+
+          .tabel_vitamin_a .umur {
+               width: 400px;
+          }
+
+          .tabel_vitamin_a thead,
+          tr>th {
+               background: #A6D0DD;
+          }
+
+          .tabel_vitamin_a thead {
+               top: 0;
+               z-index: 2;
+          }
+
+          .tabel_vitamin_a tr>th {
+               left: 0;
+               z-index: 1;
+          }
+
+          .tabel_vitamin_a thead tr>th:first-child {
+               z-index: 3;
+          }
+
+          .tabel_vitamin_a th,
+          td {
+               height: 50px;
+               border: 1px solid #5e5e5e;
+               border-width: 0 0 1px 1px;
+               text-align: left;
+               padding: 10px;
+               font-family: sans-serif;
+          }
+
+          .tabel_vitamin_a td {
+               background: #fff;
+          }
+
+          .tabel_vitamin_a th:first-child {
+               border-right-width: 1px;
+               border-left: 0;
+          }
+
+          .tabel_vitamin_a th+td,
+          th:first-child+th {
+               border-left: 0;
+          }
+
+          .tabel_vitamin_a tbody tr:last-child>* {
+               border-bottom: 0;
+          }
+
+          .tabel_vitamin_a tr>*:last-child {
+               border-right: 0;
+          }
      </style>
 </head>
 
@@ -280,13 +353,6 @@
                                                   <i class="bi bi-chevron-right"></i>
                                                   <strong>Panjang Badan saat lahir:</strong>
                                                   <span id="pb_lahir">Panjang Badan Balita</span>
-                                             </li>
-
-                                             {{-- ! TESTING --}}
-                                             <li>
-                                                  <i class="bi bi-chevron-right"></i>
-                                                  <strong>TGL VAKSIN:</strong>
-                                                  <span id="tgl_vaksin_3">TGL VAKSIN</span>
                                              </li>
                                         </ul>
                                    </div>
@@ -392,7 +458,7 @@
                                              <tbody>
                                                   <tr>
                                                        <th>Hepatitis B (< 24 Jam)</th>
-                                                       <td class="text-center" id="tgl_vaksin_1">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_1">
                                                        </td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -409,9 +475,9 @@
                                                   </tr>
                                                   <tr>
                                                        <th>BCG</th>
-                                                       <td class="text-center" id="tgl_vaksin_2">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_2">
                                                        </td>
-                                                       <td class="text-center" id="tgl_vaksin_3">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_3">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -427,9 +493,9 @@
                                                   </tr>
                                                   <tr>
                                                        <th>* Polio Tetes 1</th>
-                                                       <td class="text-center" id="tgl_vaksin_4">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_4">
                                                        </td>
-                                                       <td class="text-center" id="tgl_vaksin_5">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_5">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -447,7 +513,7 @@
                                                        <th>* DPT-HB-Hib 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_6">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_6">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -464,7 +530,7 @@
                                                        <th>* Polio Tetes 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_7">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_7">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -481,7 +547,7 @@
                                                        <th>** PCV 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_8">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_8">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -499,7 +565,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_9">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_9">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -516,7 +582,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_10">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_10">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -533,7 +599,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_11">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_11">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -551,7 +617,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_12">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_12">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -568,7 +634,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_13">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_13">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -585,7 +651,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_14">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_14">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -607,7 +673,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_15">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_15">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-warning"></td>
@@ -625,7 +691,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_16">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_16">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                        <td class="bg-danger text-white"></td>
@@ -644,7 +710,7 @@
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
-                                                       <td class="text-center" id="tgl_vaksin_17">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_17">
                                                        </td>
                                                   </tr>
                                              </tbody>
@@ -674,15 +740,54 @@
                                              <tbody>
                                                   <tr>
                                                        <th>**** DPT-HB-Hib (lanjutan)</th>
-                                                       <td class="text-center" id="tgl_vaksin_18">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_18">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                   </tr>
                                                   <tr>
                                                        <th>**** Campak-Rubella (lanjutan)</th>
-                                                       <td class="text-center" id="tgl_vaksin_19">Belum Vaksin
+                                                       <td class="text-center" id="tgl_vaksin_19">
                                                        </td>
                                                        <td class="bg-warning"></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </div>
+
+                                   <div class="tabel_vitamin_a">
+                                        <table>
+                                             <thead>
+                                                  <tr class="table-success">
+                                                       <th class="umur">
+                                                            <div style="width: 210px">Bulan
+                                                       </th>
+                                                       <th class="text-center">
+                                                            <div style="width: 370px">Oktober
+                                                       </th>
+                                                       <th class="text-center">
+                                                            <div style="width: 370px">November
+                                                       </th>
+                                                  </tr>
+                                                  <tr>
+                                                       <th>Vaksin</th>
+                                                       <th colspan="3" class="text-center">Tanggal
+                                                            Pemberian Vitamin</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <th>Vitamin A (Merah)</th>
+                                                       <td class="text-center" id="tgl_vaksin_23">
+                                                       </td>
+                                                       <td class="text-center" id="tgl_vaksin_24">
+                                                       </td>
+                                                  </tr>
+                                                  <tr>
+                                                       <th>Vitamin A (Biru)</th>
+                                                       <td class="text-center" id="tgl_vaksin_25">
+                                                       </td>
+                                                       <td class="text-center" id="tgl_vaksin_26">
+                                                       </td>
                                                   </tr>
                                              </tbody>
                                         </table>
@@ -769,8 +874,10 @@
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);
-                                   $('#bb_lahir').html(data.bb_lahir + ' Kg');
-                                   $('#pb_lahir').html(data.pb_lahir + ' Cm');
+                                   $('#bb_lahir').html(data.bb_lahir ??
+                                        '~Data Belum Terupdate~' + ' Kg');
+                                   $('#pb_lahir').html(data.pb_lahir ??
+                                        '~Data Belum Terupdate~' + ' Cm');
 
                                    {{-- ! TGL IMUNISASI --}}
                                    var kms_url = '{{ route('getBalitaImun', ':id') }}';
@@ -782,110 +889,114 @@
                                         dataType: 'json',
                                         success: function(kms_data) {
                                              if (kms_data !== null) {
-                                                  console.log(kms_data);
                                                   $('#tgl_vaksin_1').html(
                                                        kms_data
-                                                       .tgl_vaksin_1);
-                                                  $('#tgl_vaksin_2').html(
-                                                       kms_data
-                                                       .tgl_vaksin_2);
-                                                  $('#tgl_vaksin_3').html(
-                                                       kms_data
-                                                       .tgl_vaksin_3);
-                                                  $('#tgl_vaksin_4').html(
-                                                       kms_data
-                                                       .tgl_vaksin_4);
-                                                  $('#tgl_vaksin_5').html(
-                                                       kms_data
-                                                       .tgl_vaksin_5);
-                                                  $('#tgl_vaksin_6').html(
-                                                       kms_data
-                                                       .tgl_vaksin_6);
-                                                  $('#tgl_vaksin_7').html(
-                                                       kms_data
-                                                       .tgl_vaksin_7);
-                                                  $('#tgl_vaksin_8').html(
-                                                       kms_data
-                                                       .tgl_vaksin_8);
-                                                  $('#tgl_vaksin_9').html(
-                                                       kms_data
-                                                       .tgl_vaksin_9);
-                                                  $('#tgl_vaksin_10').html(
-                                                       kms_data
-                                                       .tgl_vaksin_10);
-                                                  $('#tgl_vaksin_11').html(
-                                                       kms_data
-                                                       .tgl_vaksin_11);
-                                                  $('#tgl_vaksin_12').html(
-                                                       kms_data
-                                                       .tgl_vaksin_12);
-                                                  $('#tgl_vaksin_13').html(
-                                                       kms_data
-                                                       .tgl_vaksin_13);
-                                                  $('#tgl_vaksin_14').html(
-                                                       kms_data
-                                                       .tgl_vaksin_14);
-                                                  $('#tgl_vaksin_15').html(
-                                                       kms_data
-                                                       .tgl_vaksin_15);
-                                                  $('#tgl_vaksin_16').html(
-                                                       kms_data
-                                                       .tgl_vaksin_16);
-                                                  $('#tgl_vaksin_17').html(
-                                                       kms_data
-                                                       .tgl_vaksin_17);
-                                                  $('#tgl_vaksin_18').html(
-                                                       kms_data
-                                                       .tgl_vaksin_18);
-                                                  $('#tgl_vaksin_19').html(
-                                                       kms_data
-                                                       .tgl_vaksin_19);
-                                             } else {
-                                                  $('#tgl_vaksin_1').html(
+                                                       .tgl_vaksin_1 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_2').html(
+                                                       kms_data
+                                                       .tgl_vaksin_2 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_3').html(
+                                                       kms_data
+                                                       .tgl_vaksin_3 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_4').html(
+                                                       kms_data
+                                                       .tgl_vaksin_4 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_5').html(
+                                                       kms_data
+                                                       .tgl_vaksin_5 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_6').html(
+                                                       kms_data
+                                                       .tgl_vaksin_6 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_7').html(
+                                                       kms_data
+                                                       .tgl_vaksin_7 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_8').html(
+                                                       kms_data
+                                                       .tgl_vaksin_8 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_9').html(
+                                                       kms_data
+                                                       .tgl_vaksin_9 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_10').html(
+                                                       kms_data
+                                                       .tgl_vaksin_10 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_11').html(
+                                                       kms_data
+                                                       .tgl_vaksin_11 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_12').html(
+                                                       kms_data
+                                                       .tgl_vaksin_12 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_13').html(
+                                                       kms_data
+                                                       .tgl_vaksin_13 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_14').html(
+                                                       kms_data
+                                                       .tgl_vaksin_14 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_15').html(
+                                                       kms_data
+                                                       .tgl_vaksin_15 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_16').html(
+                                                       kms_data
+                                                       .tgl_vaksin_16 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_17').html(
+                                                       kms_data
+                                                       .tgl_vaksin_17 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_18').html(
+                                                       kms_data
+                                                       .tgl_vaksin_18 ??
                                                        'Belum Vaksin');
                                                   $('#tgl_vaksin_19').html(
+                                                       kms_data
+                                                       .tgl_vaksin_19 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_20').html(
+                                                       kms_data
+                                                       .tgl_vaksin_20 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_21').html(
+                                                       kms_data
+                                                       .tgl_vaksin_21 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_22').html(
+                                                       kms_data
+                                                       .tgl_vaksin_22 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_23').html(
+                                                       kms_data
+                                                       .tgl_vaksin_23 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_24').html(
+                                                       kms_data
+                                                       .tgl_vaksin_24 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_25').html(
+                                                       kms_data
+                                                       .tgl_vaksin_25 ??
+                                                       'Belum Vaksin');
+                                                  $('#tgl_vaksin_26').html(
+                                                       kms_data
+                                                       .tgl_vaksin_26 ??
                                                        'Belum Vaksin');
                                              }
                                         }
                                    })
 
-                              } else {
-                                   $('#bb_lahir').html('Belum terupdate');
-                                   $('#pb_lahir').html('Belum terupdate');
                               }
                          }
                     });

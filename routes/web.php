@@ -28,18 +28,20 @@ use App\Http\Controllers\User_Auth_Controller;
 
 // ? USER SECTION
 Route::controller(User_Auth_Controller::class)->group(function () {
+     // TODO ~~~ JANGAN LUPA MIDDLEWARE USER SUDAH LOGIN ~~~
      Route::get('session_users', 'index');
 
      Route::post('session_users/login', 'login');
 });
 
 Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
+     // TODO ~~~ JANGAN LUPA MIDDLEWARE USER SUDAH LOGIN ~~~
      Route::get('/', 'index');
 
-     // ! JANGAN LUPA MIDDLEWARE
-     Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua')->middleware('middleware_admin');
+     // TODO ~~~ JANGAN LUPA MIDDLEWARE USER ~~~
+     Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua');
 
-     Route::get('/balita/imun/{id}', 'getBalitaImun')->name('getBalitaImun')->middleware('middleware_admin');
+     Route::get('/balita/imun/{id}', 'getBalitaImun')->name('getBalitaImun');
 });
 
 
