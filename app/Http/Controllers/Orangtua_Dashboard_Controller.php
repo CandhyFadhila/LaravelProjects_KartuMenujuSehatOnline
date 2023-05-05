@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminBalita;
+use App\Models\AdminKMS;
 
 class Orangtua_Dashboard_Controller extends Controller
 {
@@ -31,5 +32,12 @@ class Orangtua_Dashboard_Controller extends Controller
           $get_Balita = AdminBalita::firstWhere('id_balita', $id);
 
           echo json_encode($get_Balita);
+     }
+
+     public function getBalitaImun($id = 0)
+     {
+          $get_Balita_imun = AdminKMS::firstWhere('balita_id', $id);
+
+          echo json_encode($get_Balita_imun);
      }
 }

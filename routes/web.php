@@ -36,7 +36,10 @@ Route::controller(User_Auth_Controller::class)->group(function () {
 Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
      Route::get('/', 'index');
 
-     Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua');
+     // ! JANGAN LUPA MIDDLEWARE
+     Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua')->middleware('middleware_admin');
+
+     Route::get('/balita/imun/{id}', 'getBalitaImun')->name('getBalitaImun')->middleware('middleware_admin');
 });
 
 
