@@ -50,7 +50,7 @@
                     });
                @endif
 
-               @if (Session::has('error_session_users'))
+               @if (Session::has('error_session_user'))
                     Swal.fire({
                          icon: 'question',
                          title: '<strong>Oops..</strong>',

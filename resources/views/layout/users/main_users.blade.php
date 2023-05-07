@@ -380,6 +380,10 @@
                                         aria-hidden="false">
                                    </div>
                               </div>
+                              <p>Dari hasil kurva tersebut, Anak <strong id="nama_anak">Nama Balita</strong> memiliki keterangan sebagai berikut.</p>
+
+                              {{-- TODO TABLE IN HERE --}}
+
                          </div>
                     </div>
                </div>
@@ -394,7 +398,7 @@
 
                     <div class="section-title">
                          <h2>Imunisasi Anak</h2>
-                         <p>Setelah melakukan penimbangan anak anda pada posyandu terdekat, hasil akan ditampilkan
+                         <p>Setelah melakukan imunisasi anak anda pada posyandu terdekat, hasil akan ditampilkan
                               dibawah ini beserta
                               hasil status gizi anak anda.</p>
                     </div>
@@ -871,6 +875,7 @@
                          success: function(data) {
                               if (data !== null) {
                                    $('#nama_balita').html(data.nama_balita);
+                                   $('#nama_anak').html(data.nama_balita);
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);

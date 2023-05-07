@@ -103,7 +103,7 @@
                                              <div class="form-group bmd-form-group">
                                                   <input class="form-control font-weight-bold" type="text" number="true"
                                                        name="bb_lahir" id="bb_lahir"
-                                                       value="{{ $admin_Balita->bb_lahir ?? '~ Belum Diketahui ~ ' }} Kilogram" disabled />
+                                                       value="{{ $admin_Balita->bb_lahir ?? '~ Data Belum Terupdate ~' }} Kilogram" disabled />
                                              </div>
                                         </div>
                                    </div>
@@ -113,7 +113,7 @@
                                              <div class="form-group bmd-form-group">
                                                   <input class="form-control font-weight-bold" type="text" number="true"
                                                        name="pb_lahir" id="pb_lahir"
-                                                       value="{{ $admin_Balita->pb_lahir ?? '-- Belum Diketahui -- ' }} Cm" disabled />
+                                                       value="{{ $admin_Balita->pb_lahir ?? '~ Data Belum Terupdate ~ ' }} Cm" disabled />
                                              </div>
                                         </div>
                                    </div>
@@ -147,6 +147,9 @@
                                                                  <tr role="row" class="table-danger">
                                                                       <th scope="col" class="font-weight-bold">
                                                                            Keterangan
+                                                                      </th>
+                                                                      <th scope="col" class="font-weight-bold">
+                                                                           Umur
                                                                       </th>
                                                                       <th scope="col" class="font-weight-bold">
                                                                            BB Timbang
@@ -183,13 +186,14 @@
                                                                            <td scope="row">
                                                                                 {{ $kms->keterangan_penimbangan }} pada
                                                                                 {{ $kms->tgl_timbang }}</td>
-                                                                           <td>{{ $kms->bb_sekarang }} Kg</td>
-                                                                           <td>{{ $kms->pb_sekarang }} Cm</td>
-                                                                           <td>{{ $kms->sd_bb_u }}</td>
+                                                                           <td>{{ $kms->umur_sekarang }} Bulan</td>
+                                                                           <td class="text-center">{{ $kms->bb_sekarang }} Kg</td>
+                                                                           <td class="text-center">{{ $kms->pb_sekarang }} Cm</td>
+                                                                           <td class="text-center">{{ $kms->sd_bb_u }} SD</td>
                                                                            <td>{{ $kms->kategori_bb_u }}</td>
-                                                                           <td>{{ $kms->sd_pb_u }}</td>
+                                                                           <td class="text-center">{{ $kms->sd_pb_u }} SD</td>
                                                                            <td>{{ $kms->kategori_pb_u }}</td>
-                                                                           <td>{{ $kms->sd_bb_pb }}</td>
+                                                                           <td class="text-center">{{ $kms->sd_bb_pb }} SD</td>
                                                                            <td>{{ $kms->kategori_bb_pb }}</td>
                                                                       </tr>
                                                                  @endforeach

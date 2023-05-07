@@ -78,11 +78,7 @@ class Admin_Penimbangan_Controller extends Controller
       */
      public function update(Request $request, $id)
      {
-          // AdminBalita::create([
-          //      'balita_id' => $request->balita_id,
-          //      'bb_sekarang' => $request->bb_sekarang,
-          //      'pb_sekarang' => $request->pb_sekarang
-          // ]);
+          // 
      }
 
      public function storePenimbangan(Request $request)
@@ -134,7 +130,7 @@ class Admin_Penimbangan_Controller extends Controller
 
                'tgl_timbang' => $request->tgl_timbang
           ]);
-          
+
           return back()->with('success_penimbangan', 'Data Berhasil Disimpan');
      }
 
