@@ -380,7 +380,8 @@
                                         aria-hidden="false">
                                    </div>
                               </div>
-                              <p>Dari hasil kurva tersebut, Anak <strong id="nama_anak">Nama Balita</strong> memiliki keterangan sebagai berikut.</p>
+                              <p>Dari hasil kurva tersebut, Anak <strong id="nama_anak">Nama Balita</strong> memiliki
+                                   keterangan sebagai berikut.</p>
 
                               {{-- TODO TABLE IN HERE --}}
 
