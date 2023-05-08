@@ -470,27 +470,7 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody id="kms_table_body">
-                                                            <tr>
-                                                                 <td>
-                                                                      <span id="keterangan_penimbangan">
-                                                                      </span>
-                                                                      pada
-                                                                      <span id="tgl_timbang">
-                                                                      </span>
-                                                                 </td>
-                                                                 <td class="text-center" id="umur_sekarang">
-                                                                 </td>
-                                                                 <td class="text-center" id="bb_sekarang">
-                                                                 </td>
-                                                                 <td class="text-center" id="pb_sekarang">
-                                                                 </td>
-                                                                 <td class="text-center" id="kategori_bb_u">
-                                                                 </td>
-                                                                 <td class="text-center" id="kategori_pb_u">
-                                                                 </td>
-                                                                 <td class="text-center" id="kategori_bb_pb">
-                                                                 </td>
-                                                            </tr>
+                                                            
                                                        </tbody>
                                                   </table>
                                              </div>
@@ -575,7 +555,7 @@
                                                   <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="13" class="text-center">Tanggal
-                                                            Pemberian Vaksin</th>
+                                                            Pemberian Vaksin Imunisasi</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
@@ -848,7 +828,7 @@
                                                        style="background-color: #198754;
                                                   ">
                                                        <th colspan="15" class="text-center text-white">Tabel
-                                                            Pemberian Vaksin Imunisasi</th>
+                                                            Pemberian Vaksin Imunisasi (Lanjutan)</th>
                                                   </tr>
                                                   <tr style="background-color: #A0D8B3;"">
                                                        <th class="umur">
@@ -864,7 +844,7 @@
                                                   <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
-                                                            Pemberian Vaksin</th>
+                                                            Pemberian Vaksin Imunisasi</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
@@ -909,7 +889,7 @@
                                                   <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
-                                                            Pemberian Vitamin</th>
+                                                            Pemberian Vaksin Vitamin Wajib</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
