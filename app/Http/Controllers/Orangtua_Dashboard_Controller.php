@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AdminBalita;
 use App\Models\AdminKMS;
+use App\Models\AdminBalita;
+use Illuminate\Http\Request;
 
 class Orangtua_Dashboard_Controller extends Controller
 {
@@ -14,6 +15,7 @@ class Orangtua_Dashboard_Controller extends Controller
 
           $balita_kms = AdminBalita::where('orangtua_id', $orangtua_id)
                ->get();
+          
 
           return view('users.orangtua_dashboard', [
                "halaman" => "Halaman OrangTua",
@@ -34,5 +36,12 @@ class Orangtua_Dashboard_Controller extends Controller
           $get_Balita_imun = AdminKMS::where('balita_id', $id)->first();
 
           echo json_encode($get_Balita_imun);
+     }
+
+     public function getBalitaDetail($id = 0)
+     {
+          $get_Balita_detail = AdminKMS::where('balita_id', $id)->get();
+
+          echo json_encode($get_Balita_detail);
      }
 }

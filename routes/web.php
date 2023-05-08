@@ -36,12 +36,14 @@ Route::controller(User_Auth_Controller::class)->group(function () {
 
 Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
      // TODO ~~~ JANGAN LUPA MIDDLEWARE USER SUDAH LOGIN ~~~
-     Route::get('/', 'index');
+     Route::get('/', 'index')->middleware('middleware_user');
 
      // TODO ~~~ JANGAN LUPA MIDDLEWARE USER ~~~
      Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua')->middleware('middleware_user');
 
      Route::get('/balita/imun/{id}', 'getBalitaImun')->name('getBalitaImun')->middleware('middleware_user');
+
+     Route::get('/balita/kms/detail/{id}', 'getBalitaDetail')->name('getBalitaDetail')->middleware('middleware_user');
 });
 
 

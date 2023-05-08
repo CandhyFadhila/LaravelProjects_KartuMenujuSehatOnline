@@ -63,11 +63,6 @@
                table-layout: relative;
           }
 
-          .tabel_vitamin thead,
-          tr>th {
-               background: #A6D0DD;
-          }
-
           .tabel_vitamin thead {
                top: 0;
                z-index: 2;
@@ -138,11 +133,6 @@
                width: 400px;
           }
 
-          .tabel_vitamin_lanjut thead,
-          tr>th {
-               background: #A6D0DD;
-          }
-
           .tabel_vitamin_lanjut thead {
                top: 0;
                z-index: 2;
@@ -211,11 +201,6 @@
                width: 400px;
           }
 
-          .tabel_vitamin_a thead,
-          tr>th {
-               background: #A6D0DD;
-          }
-
           .tabel_vitamin_a thead {
                top: 0;
                z-index: 2;
@@ -259,6 +244,69 @@
           }
 
           .tabel_vitamin_a tr>*:last-child {
+               border-right: 0;
+          }
+
+          /* CSS for tabel_detail_kms */
+          .tabel_detail_kms {
+               margin-left: 11px;
+               margin-right: 11px;
+               width: auto;
+               height: auto;
+               overflow: auto;
+               position: relative;
+               border: 1px solid #5e5e5e;
+          }
+
+          .tabel_detail_kms table {
+               border-spacing: 0;
+               white-space: nowrap;
+               table-layout: relative;
+          }
+
+          .tabel_detail_kms thead {
+               top: 0;
+               z-index: 2;
+          }
+
+          .tabel_detail_kms tr>th {
+               left: 0;
+               z-index: 1;
+          }
+
+          .tabel_detail_kms thead tr>th:first-child {
+               z-index: 3;
+          }
+
+          .tabel_detail_kms th,
+          td {
+               height: 50px;
+               border: 1px solid #5e5e5e;
+               border-width: 0 0 1px 1px;
+               text-align: left;
+               padding: 10px;
+               font-family: sans-serif;
+          }
+
+          .tabel_detail_kms td {
+               background: #fff;
+          }
+
+          .tabel_detail_kms th:first-child {
+               border-right-width: 1px;
+               border-left: 0;
+          }
+
+          .tabel_detail_kms th+td,
+          th:first-child+th {
+               border-left: 0;
+          }
+
+          .tabel_detail_kms tbody tr:last-child>* {
+               border-bottom: 0;
+          }
+
+          .tabel_detail_kms tr>*:last-child {
                border-right: 0;
           }
      </style>
@@ -380,11 +428,75 @@
                                         aria-hidden="false">
                                    </div>
                               </div>
-                              <p>Dari hasil kurva tersebut, Anak <strong id="nama_anak">Nama Balita</strong> memiliki
+                         </div>
+                         <div class="container mt-4">
+                              <p class="text-center">Dari hasil kurva tersebut, Anak <strong id="nama_anak">Nama
+                                        Balita</strong> memiliki
                                    keterangan sebagai berikut.</p>
 
-                              {{-- TODO TABLE IN HERE --}}
-
+                              <div class="row">
+                                   <div class="pt-5 pt-lg-0">
+                                        <div class="container">
+                                             <div class="tabel_detail_kms">
+                                                  <table>
+                                                       <thead>
+                                                            <tr style="background-color: #dc3545">
+                                                                 <th colspan="15" class="text-center text-white">
+                                                                      Tabel Detail Penimbangan</th>
+                                                            </tr>
+                                                            <tr style="background-color: #FCC8D1">
+                                                                 <th class="keterangan">
+                                                                      <div style="width: 310px">Keterangan
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 150px">Umur
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 150px">BB Timbang
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 150px">PB Ukur
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 300px">Kategori Berat Badan
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 300px">Kategori Panjang Badan
+                                                                 </th>
+                                                                 <th class="text-center">
+                                                                      <div style="width: 300px">Kategori Panjang Badan
+                                                                           Berat Badan
+                                                                 </th>
+                                                            </tr>
+                                                       </thead>
+                                                       <tbody id="kms_table_body">
+                                                            <tr>
+                                                                 <td>
+                                                                      <span id="keterangan_penimbangan">
+                                                                      </span>
+                                                                      pada
+                                                                      <span id="tgl_timbang">
+                                                                      </span>
+                                                                 </td>
+                                                                 <td class="text-center" id="umur_sekarang">
+                                                                 </td>
+                                                                 <td class="text-center" id="bb_sekarang">
+                                                                 </td>
+                                                                 <td class="text-center" id="pb_sekarang">
+                                                                 </td>
+                                                                 <td class="text-center" id="kategori_bb_u">
+                                                                 </td>
+                                                                 <td class="text-center" id="kategori_pb_u">
+                                                                 </td>
+                                                                 <td class="text-center" id="kategori_bb_pb">
+                                                                 </td>
+                                                            </tr>
+                                                       </tbody>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>
@@ -399,9 +511,9 @@
 
                     <div class="section-title">
                          <h2>Imunisasi Anak</h2>
-                         <p>Setelah melakukan imunisasi anak anda pada posyandu terdekat, hasil akan ditampilkan
-                              dibawah ini beserta
-                              hasil status gizi anak anda.</p>
+                         <p>Setelah imunisasi anak anda dilakukan pada posyandu terdekat, hasil imunisasi akan
+                              ditampilkan
+                              dibawah ini.</p>
                     </div>
 
                     <div class="row">
@@ -410,7 +522,13 @@
                                    <div class="tabel_vitamin">
                                         <table>
                                              <thead>
-                                                  <tr class="table-success">
+                                                  <tr
+                                                       style="background-color: #198754;
+                                                  ">
+                                                       <th colspan="15" class="text-center text-white">Tabel
+                                                            Pemberian Vaksin Imunisasi</th>
+                                                  </tr>
+                                                  <tr style="background-color: #A0D8B3;">
                                                        <th class="umur">
                                                             <div style="width: 210px">Umur (Bulan)
                                                        </th>
@@ -454,7 +572,7 @@
                                                             <div style="width: 100px">12+***
                                                        </th>
                                                   </tr>
-                                                  <tr>
+                                                  <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="13" class="text-center">Tanggal
                                                             Pemberian Vaksin</th>
@@ -462,7 +580,8 @@
                                              </thead>
                                              <tbody>
                                                   <tr>
-                                                       <th>Hepatitis B (< 24 Jam)</th>
+                                                       <th style="background-color:#ABD9FF;">Hepatitis B (< 24
+                                                                 Jam)</th>
                                                        <td class="text-center" id="tgl_vaksin_1">
                                                        </td>
                                                        <td class="bg-dark text-white"></td>
@@ -479,7 +598,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>BCG</th>
+                                                       <th style="background-color:#ABD9FF;">BCG</th>
                                                        <td class="text-center" id="tgl_vaksin_2">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_3">
@@ -497,7 +616,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* Polio Tetes 1</th>
+                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 1</th>
                                                        <td class="text-center" id="tgl_vaksin_4">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_5">
@@ -515,7 +634,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* DPT-HB-Hib 1</th>
+                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_6">
@@ -532,7 +651,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* Polio Tetes 2</th>
+                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_7">
@@ -549,7 +668,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>** PCV 1</th>
+                                                       <th style="background-color:#ABD9FF;">** PCV 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_8">
@@ -566,7 +685,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* DPT-HB-Hib 2</th>
+                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -583,7 +702,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* Polio Tetes 3</th>
+                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -600,7 +719,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>** PCV 2</th>
+                                                       <th style="background-color:#ABD9FF;">** PCV 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -617,7 +736,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* DPT-HB-Hib 3</th>
+                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -634,7 +753,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>* Polio Tetes 4</th>
+                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 4</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -651,7 +770,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>Polio Suntik (IPV)</th>
+                                                       <th style="background-color:#ABD9FF;">Polio Suntik (IPV)</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -668,7 +787,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>Campak-Rubella</th>
+                                                       <th style="background-color:#ABD9FF;">Campak-Rubella</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -685,7 +804,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>** JE</th>
+                                                       <th style="background-color:#ABD9FF;">** JE</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -702,7 +821,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>** PCV 3</th>
+                                                       <th style="background-color:#ABD9FF;">** PCV 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -725,7 +844,13 @@
                                    <div class="tabel_vitamin_lanjut">
                                         <table>
                                              <thead>
-                                                  <tr class="table-success">
+                                                  <tr
+                                                       style="background-color: #198754;
+                                                  ">
+                                                       <th colspan="15" class="text-center text-white">Tabel
+                                                            Pemberian Vaksin Imunisasi</th>
+                                                  </tr>
+                                                  <tr style="background-color: #A0D8B3;"">
                                                        <th class="umur">
                                                             <div style="width: 210px">Umur (Bulan)
                                                        </th>
@@ -736,7 +861,7 @@
                                                             <div style="width: 370px">24
                                                        </th>
                                                   </tr>
-                                                  <tr>
+                                                  <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
                                                             Pemberian Vaksin</th>
@@ -744,13 +869,15 @@
                                              </thead>
                                              <tbody>
                                                   <tr>
-                                                       <th>**** DPT-HB-Hib (lanjutan)</th>
+                                                       <th style="background-color:#ABD9FF;">**** DPT-HB-Hib (lanjutan)
+                                                       </th>
                                                        <td class="text-center" id="tgl_vaksin_18">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th>**** Campak-Rubella (lanjutan)</th>
+                                                       <th style="background-color:#ABD9FF;">**** Campak-Rubella
+                                                            (lanjutan)</th>
                                                        <td class="text-center" id="tgl_vaksin_19">
                                                        </td>
                                                        <td class="bg-warning"></td>
@@ -762,7 +889,13 @@
                                    <div class="tabel_vitamin_a">
                                         <table>
                                              <thead>
-                                                  <tr class="table-success">
+                                                  <tr
+                                                       style="background-color: #7286D3;
+                                                  ">
+                                                       <th colspan="13" class="text-center text-white">Tabel
+                                                            Pemberian Vaksin Vitamin Wajib</th>
+                                                  </tr>
+                                                  <tr style="background-color: #8EA7E9;">
                                                        <th class="umur">
                                                             <div style="width: 210px">Bulan
                                                        </th>
@@ -773,21 +906,21 @@
                                                             <div style="width: 370px">November
                                                        </th>
                                                   </tr>
-                                                  <tr>
+                                                  <tr style="background-color:#ABD9FF;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
                                                             Pemberian Vitamin</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
-                                                  <tr>
+                                                  <tr style="background-color:#ABD9FF;">
                                                        <th>Vitamin A (Merah)</th>
                                                        <td class="text-center" id="tgl_vaksin_23">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_24">
                                                        </td>
                                                   </tr>
-                                                  <tr>
+                                                  <tr style="background-color:#ABD9FF;">
                                                        <th>Vitamin A (Biru)</th>
                                                        <td class="text-center" id="tgl_vaksin_25">
                                                        </td>
@@ -1001,11 +1134,82 @@
                                                        'Belum Vaksin');
                                              }
                                         }
-                                   })
+                                   });
 
+
+                                   {{-- ! DETAIL KMS --}}
+                                   var kms_detail =
+                                        '{{ route('getBalitaDetail', ':id') }}';
+                                   kms_detail = kms_detail.replace(':id', id);
+
+                                   $.ajax({
+                                        url: kms_detail,
+                                        type: 'GET',
+                                        dataType: 'json',
+                                        success: function(detail) {
+
+                                             // clear the table body
+                                             var table = $(
+                                                  '#kms_table_body');
+                                             table.empty();
+
+                                             $.each(detail, function(index,
+                                                  item) {
+                                                  var row =
+                                                       '<tr>' +
+
+                                                       '<td>' +
+                                                       item
+                                                       .keterangan_penimbangan +
+                                                       ' pada ' +
+                                                       item
+                                                       .tgl_timbang +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .umur_sekarang +
+                                                       ' Bulan' +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .bb_sekarang +
+                                                       ' Kg' +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .pb_sekarang +
+                                                       ' Cm' +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .kategori_bb_u +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .kategori_pb_u +
+                                                       '</td>' +
+
+                                                       '<td class="text-center">' +
+                                                       item
+                                                       .kategori_bb_pb +
+                                                       '</td>' +
+
+                                                       '</tr>';
+                                                  table.append(
+                                                       row);
+                                             });
+                                        }
+                                   });
                               }
                          }
                     });
+
+
                });
           })
      </script>
