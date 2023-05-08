@@ -11,7 +11,7 @@
                          <div class="row mb-5">
                               <div class="col-md-12 form-group mb-3">
                                    <label for="nik_ibu" class="col-form-label">NIK Ibu *</label>
-                                   <input type="text" class="form-control" name="nik_ibu" id="nik_ibu" placeholder="Masukkan NIK dari Ibu Anak">
+                                   <input type="text" class="form-control" name="nik_ibu" id="nik_ibu" value="{{ Session::get('nik_ibu') }}" placeholder="Masukkan NIK dari Ibu Anak">
                                    @error('nik_ibu')
                                         <small class="text-danger">
                                              {{ $message }}

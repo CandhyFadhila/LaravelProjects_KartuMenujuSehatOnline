@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
           'middleware_admin' => \App\Http\Middleware\Middleware_Login_Admin::class,
           'middleware_sudah_login' => \App\Http\Middleware\Middleware_Sudah_Login::class,
           'middleware_user' => \App\Http\Middleware\Middleware_Login_Users::class,
+          'middleware_sudah_login_user' => \App\Http\Middleware\Middleware_Sudah_Login_User::class,
      ];
 }
