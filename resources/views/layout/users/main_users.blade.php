@@ -552,7 +552,7 @@
                                                             <div style="width: 100px">12+***
                                                        </th>
                                                   </tr>
-                                                  <tr style="background-color:#ABD9FF;">
+                                                  <tr style="background-color:#71C9CE;">
                                                        <th>Vaksin</th>
                                                        <th colspan="13" class="text-center">Tanggal
                                                             Pemberian Vaksin Imunisasi</th>
@@ -560,7 +560,7 @@
                                              </thead>
                                              <tbody>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">Hepatitis B (< 24
+                                                       <th style="background-color:#71C9CE;">Hepatitis B (< 24
                                                                  Jam)</th>
                                                        <td class="text-center" id="tgl_vaksin_1">
                                                        </td>
@@ -578,7 +578,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">BCG</th>
+                                                       <th style="background-color:#71C9CE;">BCG</th>
                                                        <td class="text-center" id="tgl_vaksin_2">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_3">
@@ -596,7 +596,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 1</th>
+                                                       <th style="background-color:#71C9CE;">* Polio Tetes 1</th>
                                                        <td class="text-center" id="tgl_vaksin_4">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_5">
@@ -614,7 +614,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 1</th>
+                                                       <th style="background-color:#71C9CE;">* DPT-HB-Hib 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_6">
@@ -631,7 +631,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 2</th>
+                                                       <th style="background-color:#71C9CE;">* Polio Tetes 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_7">
@@ -648,7 +648,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">** PCV 1</th>
+                                                       <th style="background-color:#71C9CE;">** PCV 1</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="text-center" id="tgl_vaksin_8">
@@ -665,7 +665,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 2</th>
+                                                       <th style="background-color:#71C9CE;">* DPT-HB-Hib 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -682,7 +682,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 3</th>
+                                                       <th style="background-color:#71C9CE;">* Polio Tetes 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -699,7 +699,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">** PCV 2</th>
+                                                       <th style="background-color:#71C9CE;">** PCV 2</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -716,7 +716,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* DPT-HB-Hib 3</th>
+                                                       <th style="background-color:#71C9CE;">* DPT-HB-Hib 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -733,7 +733,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">* Polio Tetes 4</th>
+                                                       <th style="background-color:#71C9CE;">* Polio Tetes 4</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -750,7 +750,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">Polio Suntik (IPV)</th>
+                                                       <th style="background-color:#71C9CE;">Polio Suntik (IPV)</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -767,7 +767,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">Campak-Rubella</th>
+                                                       <th style="background-color:#71C9CE;">Campak-Rubella</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -784,7 +784,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">** JE</th>
+                                                       <th style="background-color:#71C9CE;">** JE</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -801,7 +801,7 @@
                                                        <td class="bg-danger text-white"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">** PCV 3</th>
+                                                       <th style="background-color:#71C9CE;">** PCV 3</th>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
                                                        <td class="bg-dark text-white"></td>
@@ -841,7 +841,7 @@
                                                             <div style="width: 370px">24
                                                        </th>
                                                   </tr>
-                                                  <tr style="background-color:#ABD9FF;">
+                                                  <tr style="background-color:#71C9CE;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
                                                             Pemberian Vaksin Imunisasi</th>
@@ -849,14 +849,14 @@
                                              </thead>
                                              <tbody>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">**** DPT-HB-Hib (lanjutan)
+                                                       <th style="background-color:#71C9CE;">**** DPT-HB-Hib (lanjutan)
                                                        </th>
                                                        <td class="text-center" id="tgl_vaksin_18">
                                                        </td>
                                                        <td class="bg-warning"></td>
                                                   </tr>
                                                   <tr>
-                                                       <th style="background-color:#ABD9FF;">**** Campak-Rubella
+                                                       <th style="background-color:#71C9CE;">**** Campak-Rubella
                                                             (lanjutan)</th>
                                                        <td class="text-center" id="tgl_vaksin_19">
                                                        </td>
@@ -870,12 +870,12 @@
                                         <table>
                                              <thead>
                                                   <tr
-                                                       style="background-color: #7286D3;
+                                                       style="background-color: #B04759;
                                                   ">
                                                        <th colspan="13" class="text-center text-white">Tabel
                                                             Pemberian Vaksin Vitamin Wajib</th>
                                                   </tr>
-                                                  <tr style="background-color: #8EA7E9;">
+                                                  <tr style="background-color: #F99B7D;">
                                                        <th class="umur">
                                                             <div style="width: 210px">Bulan
                                                        </th>
@@ -886,21 +886,21 @@
                                                             <div style="width: 370px">November
                                                        </th>
                                                   </tr>
-                                                  <tr style="background-color:#ABD9FF;">
+                                                  <tr style="background-color:#71C9CE;">
                                                        <th>Vaksin</th>
                                                        <th colspan="3" class="text-center">Tanggal
                                                             Pemberian Vaksin Vitamin Wajib</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
-                                                  <tr style="background-color:#ABD9FF;">
+                                                  <tr style="background-color:#71C9CE;">
                                                        <th>Vitamin A (Merah)</th>
                                                        <td class="text-center" id="tgl_vaksin_23">
                                                        </td>
                                                        <td class="text-center" id="tgl_vaksin_24">
                                                        </td>
                                                   </tr>
-                                                  <tr style="background-color:#ABD9FF;">
+                                                  <tr style="background-color:#71C9CE;">
                                                        <th>Vitamin A (Biru)</th>
                                                        <td class="text-center" id="tgl_vaksin_25">
                                                        </td>
