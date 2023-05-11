@@ -1167,7 +1167,8 @@
 
                                              var BBsection = [];
                                              var TBsection = [];
-                                             var BB_PBsection = [];
+                                             var BB_PBsection_0_24 = [];
+                                             var BB_PBsection_24_60 = [];
 
                                              $.each(detail, function(index,
                                                   item) {
@@ -1260,9 +1261,25 @@
                                                             .pb_sekarang
                                                        )
                                                   ];
-                                                  BB_PBsection.push(
-                                                            pointBB_PB
-                                                       );
+                                                  if (item
+                                                       .umur_sekarang >=
+                                                       0 && item
+                                                       .umur_sekarang <=
+                                                       24) {
+                                                       BB_PBsection_0_24
+                                                            .push(
+                                                                 pointBB_PB
+                                                            );
+                                                  } else if (item
+                                                       .umur_sekarang >
+                                                       24 && item
+                                                       .umur_sekarang <=
+                                                       60) {
+                                                       BB_PBsection_24_60
+                                                            .push(
+                                                                 pointBB_PB
+                                                            );
+                                                  }
                                              });
 
                                              {{-- ! KMS --}}
@@ -2401,8 +2418,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Berat: {point.x} Kg<br>',
-                                                                 pointFormat: 'Panjang: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Panjang: {point.x} Cm<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -3415,9 +3432,9 @@
                                                                       lineWidth: 0.2,
 
                                                                       // Berat
-                                                                      data: [],
+                                                                      data: BB_PBsection_0_24,
 
-                                                                      pointStart: [],
+                                                                      pointStart: BB_PBsection_0_24,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -3443,8 +3460,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Berat: {point.x} Kg<br>',
-                                                                 pointFormat: 'Panjang: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Panjang: {point.x} Cm<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -4317,9 +4334,9 @@
                                                                       lineWidth: 0.2,
 
                                                                       // Berat
-                                                                      data: [],
+                                                                      data: BB_PBsection_24_60,
 
-                                                                      pointStart: [],
+                                                                      pointStart: BB_PBsection_24_60,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -4383,7 +4400,7 @@
                                                                       // name: '-3 SD',
                                                                       name: '',
                                                                       lineWidth: 2,
-                                                                      color: '#2A363B',
+                                                                      color: '#F4D03F',
                                                                       data: [
                                                                            2.1,
                                                                            2.9,
@@ -4452,7 +4469,7 @@
                                                                       // name: '-2 SD ',
                                                                       name: '',
                                                                       lineWidth: 1.5,
-                                                                      color: '#CF4647',
+                                                                      color: '#58D68D',
                                                                       data: [
                                                                            2.5,
                                                                            3.4,
@@ -4521,7 +4538,7 @@
                                                                       // name: '-1 SD',
                                                                       name: '',
                                                                       lineWidth: 1.5,
-                                                                      color: '#FFAC41 ',
+                                                                      color: '#229954 ',
                                                                       data: [
                                                                            2.9,
                                                                            3.9,
@@ -4660,7 +4677,7 @@
                                                                       // name: '+1 SD',
                                                                       name: '',
                                                                       lineWidth: 1.5,
-                                                                      color: '#FFAC41 ',
+                                                                      color: '#229954 ',
                                                                       data: [
                                                                            3.9,
                                                                            5.1,
@@ -4728,7 +4745,7 @@
                                                                  {
                                                                       // name: '+2 SD',
                                                                       name: '',
-                                                                      color: '#CF4647',
+                                                                      color: '#58D68D',
                                                                       lineWidth: 1.5,
                                                                       data: [
                                                                            4.4,
@@ -4797,7 +4814,7 @@
                                                                  {
                                                                       // name: '+3 SD',
                                                                       name: '',
-                                                                      color: '#2A363B',
+                                                                      color: '#F4D03F',
                                                                       lineWidth: 2,
                                                                       data: [
                                                                            5.0,
@@ -5469,8 +5486,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Berat: {point.x} Kg<br>',
-                                                                 pointFormat: 'Panjang: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Panjang: {point.x} Cm<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -6483,9 +6500,9 @@
                                                                       lineWidth: 0.2,
 
                                                                       // Berat
-                                                                      data: [],
+                                                                      data: BB_PBsection_0_24,
 
-                                                                      pointStart: [],
+                                                                      pointStart: BB_PBsection_0_24,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -6511,8 +6528,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Berat: {point.x} Kg<br>',
-                                                                 pointFormat: 'Panjang: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Panjang: {point.x} Cm<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -7385,9 +7402,9 @@
                                                                       lineWidth: 0.2,
 
                                                                       // Berat
-                                                                      data: [],
+                                                                      data: BB_PBsection_24_60,
 
-                                                                      pointStart: [],
+                                                                      pointStart: BB_PBsection_24_60,
 
                                                                       enableMouseTracking: true
                                                                  }
