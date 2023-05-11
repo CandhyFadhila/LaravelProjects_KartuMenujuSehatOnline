@@ -3744,7 +3744,10 @@
                                    } else if (bb_pb_rumus_satu >= -2 && bb_pb_rumus_satu <= 1) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
                                    } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
-                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_satu > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3762,7 +3765,10 @@
                                    } else if (bb_pb_rumus_dua >= -2 && bb_pb_rumus_dua <= 1) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
                                    } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
-                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Baik';
+                                        document.getElementById('hasil_kategori_bb_pb').value =
+                                             'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_dua > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3785,6 +3791,8 @@
                                    } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_satu > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3804,6 +3812,8 @@
                                    } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_dua > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3831,6 +3841,8 @@
                                    } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_satu > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3851,6 +3863,8 @@
                                    } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_dua > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3874,6 +3888,8 @@
                                    } else if (bb_pb_rumus_satu > 1 && bb_pb_rumus_satu <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_satu > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };
@@ -3894,6 +3910,8 @@
                                    } else if (bb_pb_rumus_dua > 1 && bb_pb_rumus_dua <= 2) {
                                         document.getElementById('hasil_kategori_bb_pb').value =
                                              'Beresiko Gizi Lebih';
+                                   } else if (bb_pb_rumus_satu > 2 && bb_pb_rumus_satu <= 3) {
+                                        document.getElementById('hasil_kategori_bb_pb').value = 'Gizi Lebih';
                                    } else if (bb_pb_rumus_dua > 3) {
                                         document.getElementById('hasil_kategori_bb_pb').value = 'Obesitas';
                                    };

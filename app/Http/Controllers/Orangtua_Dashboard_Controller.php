@@ -15,7 +15,6 @@ class Orangtua_Dashboard_Controller extends Controller
 
           $balita_kms = AdminBalita::where('orangtua_id', $orangtua_id)
                ->get();
-          
 
           return view('users.orangtua_dashboard', [
                "halaman" => "Halaman OrangTua",
@@ -40,7 +39,19 @@ class Orangtua_Dashboard_Controller extends Controller
 
      public function getBalitaDetail($id = 0)
      {
-          $get_Balita_detail = AdminKMS::where('balita_id', $id)->get();
+          $get_Balita_detail = AdminKMS::where('balita_id', $id)->select(
+               'keterangan_penimbangan',
+               'bb_sekarang',
+               'pb_sekarang',
+               'tgl_timbang',
+               'sd_bb_u',
+               'sd_pb_u',
+               'sd_bb_pb',
+               'umur_sekarang',
+               'kategori_bb_u',
+               'kategori_pb_u',
+               'kategori_bb_pb'
+          )->get();
 
           echo json_encode($get_Balita_detail);
      }
