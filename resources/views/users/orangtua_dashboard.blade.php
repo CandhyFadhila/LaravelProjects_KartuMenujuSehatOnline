@@ -8,6 +8,7 @@
                @if (Session::has('success_orangtua'))
                     toastr.success("{{ Session::get('success_orangtua') }}");
                @endif
+
           });
      </script>
 @endsection
