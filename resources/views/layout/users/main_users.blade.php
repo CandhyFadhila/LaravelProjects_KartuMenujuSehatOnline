@@ -1161,8 +1161,7 @@
                                         success: function(detail) {
 
                                              // clear the table body
-                                             var table = $(
-                                                  '#kms_table_body');
+                                             var table = $('#kms_table_body');
                                              table.empty();
 
                                              var BBsection = [];
@@ -1175,7 +1174,7 @@
                                                   var row =
                                                        '<tr>' +
 
-                                                       '<td>' +
+                                                       '<td class="font-weight-bold">' +
                                                        item
                                                        .keterangan_penimbangan +
                                                        ' pada ' +
