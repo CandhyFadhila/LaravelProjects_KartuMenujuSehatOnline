@@ -1161,7 +1161,8 @@
                                         success: function(detail) {
 
                                              // clear the table body
-                                             var table = $('#kms_table_body');
+                                             var table = $(
+                                                  '#kms_table_body');
                                              table.empty();
 
                                              var BBsection = [];
@@ -1222,12 +1223,10 @@
                                                   {{-- ! BB --}}
                                                   var pointBB = [
                                                        parseFloat(
-                                                            item
-                                                            .umur_sekarang
+                                                            item.umur_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item
-                                                            .bb_sekarang
+                                                            item.bb_sekarang
                                                        )
                                                   ];
                                                   BBsection.push(
@@ -1237,12 +1236,10 @@
                                                   {{-- ! TB --}}
                                                   var pointTB = [
                                                        parseFloat(
-                                                            item
-                                                            .umur_sekarang
+                                                            item.umur_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item
-                                                            .pb_sekarang
+                                                            item.pb_sekarang
                                                        )
                                                   ];
                                                   TBsection.push(
@@ -1252,19 +1249,18 @@
                                                   {{-- ! BB_PB --}}
                                                   var pointBB_PB = [
                                                        parseFloat(
-                                                            item
-                                                            .bb_sekarang
+                                                            item.pb_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item
-                                                            .pb_sekarang
+                                                            item.bb_sekarang
                                                        )
                                                   ];
-                                                  if (item
-                                                       .umur_sekarang >=
-                                                       0 && item
-                                                       .umur_sekarang <=
+                                                  if (item.umur_sekarang >=
+                                                       0 &&
+                                                       item.umur_sekarang <=
                                                        24) {
+                                                       console.log(
+                                                                 'BB_PBsection_0_24');
                                                        BB_PBsection_0_24
                                                             .push(
                                                                  pointBB_PB
@@ -1274,10 +1270,17 @@
                                                        24 && item
                                                        .umur_sekarang <=
                                                        60) {
+                                                       console
+                                                            .log(
+                                                                 'BB_PBsection_24_60');
                                                        BB_PBsection_24_60
                                                             .push(
                                                                  pointBB_PB
                                                             );
+                                                  } else {
+                                                       console
+                                                            .log(
+                                                                 'failed to load');
                                                   }
                                              });
 
@@ -1301,8 +1304,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Umur: {point.x} Bulan<br>',
-                                                                 pointFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Umur: {point.x} Bulan<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -1836,6 +1839,13 @@
                                                                  buttonOptions: {
                                                                       enabled: true
                                                                  }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
+                                                                 }
                                                             }
                                                        });
 
@@ -1855,8 +1865,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Umur: {point.x} Bulan<br>',
-                                                                 pointFormat: 'Tinggi: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Tinggi: {point.y:.1f} Cm<br>',
+                                                                 pointFormat: 'Umur: {point.x} Bulan<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -2397,6 +2407,13 @@
                                                             navigation: {
                                                                  buttonOptions: {
                                                                       enabled: true
+                                                                 }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
                                                                  }
                                                             }
                                                        });
@@ -3442,6 +3459,13 @@
                                                                  buttonOptions: {
                                                                       enabled: true
                                                                  }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
+                                                                 }
                                                             }
                                                        });
                                                   Highcharts.chart(
@@ -4344,6 +4368,13 @@
                                                                  buttonOptions: {
                                                                       enabled: true
                                                                  }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
+                                                                 }
                                                             }
                                                        });
 
@@ -4366,8 +4397,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Umur: {point.x} Bulan<br>',
-                                                                 pointFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 headerFormat: 'Berat: {point.y:.1f} Kg<br>',
+                                                                 pointFormat: 'Umur: {point.x} Bulan<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -4901,6 +4932,13 @@
                                                                  buttonOptions: {
                                                                       enabled: true
                                                                  }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
+                                                                 }
                                                             }
                                                        });
 
@@ -4920,8 +4958,8 @@
                                                                  categories: []
                                                             },
                                                             tooltip: {
-                                                                 headerFormat: 'Umur: {point.x} Bulan<br>',
-                                                                 pointFormat: 'Tinggi: {point.y:.1f} Cm<br>',
+                                                                 headerFormat: 'Tinggi: {point.y:.1f} Cm<br>',
+                                                                 pointFormat: 'Umur: {point.x} Bulan<br>',
                                                                  shared: true
                                                             },
                                                             legend: {
@@ -5465,6 +5503,13 @@
                                                             navigation: {
                                                                  buttonOptions: {
                                                                       enabled: true
+                                                                 }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
                                                                  }
                                                             }
                                                        });
@@ -6496,7 +6541,7 @@
                                                                            symbol: 'circle'
                                                                       },
                                                                       color: 'black',
-                                                                      lineWidth: 0.2,
+                                                                      lineWidth: 0.3,
 
                                                                       // Berat
                                                                       data: BB_PBsection_0_24,
@@ -6509,6 +6554,13 @@
                                                             navigation: {
                                                                  buttonOptions: {
                                                                       enabled: true
+                                                                 }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
                                                                  }
                                                             }
                                                        });
@@ -7412,6 +7464,13 @@
                                                                  buttonOptions: {
                                                                       enabled: true
                                                                  }
+                                                            },
+                                                            exporting: {
+                                                                 buttons: {
+                                                                      contextButton: {
+                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                      }
+                                                                 }
                                                             }
                                                        });
                                              }
@@ -7430,8 +7489,6 @@
      {{-- ! KURVA KMS --}}
      <script src="https://code.highcharts.com/highcharts.js"></script>
      <script src="https://code.highcharts.com/modules/exporting.js"></script>
-     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
      @yield('script_select2')
 </body>
