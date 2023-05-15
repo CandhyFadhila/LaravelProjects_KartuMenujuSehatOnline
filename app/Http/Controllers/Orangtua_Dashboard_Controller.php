@@ -17,7 +17,7 @@ class Orangtua_Dashboard_Controller extends Controller
                ->get();
 
           return view('users.orangtua_dashboard', [
-               "halaman" => "Halaman OrangTua",
+               "halaman" => "Halaman KMS Orangtua " . $nama_ibu,
                "nama_ibu" => $nama_ibu,
                "balita_kms" => $balita_kms
           ]);

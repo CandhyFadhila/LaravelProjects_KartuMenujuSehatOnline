@@ -2,6 +2,7 @@
 
      <div class="section-title">
           <h2>Ahli Gizi</h2>
+          <p>Motto dan pesan para ahli gizi Puskesmas Gayamsari Kota Semarang</p>
      </div>
 
      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -10,8 +11,8 @@
                <div class="swiper-slide">
                     <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                         <h3>Saul Goodman</h3>
-                         <h4>Ceo &amp; Founder</h4>
+                         <h3>Florence Elviana</h3>
+                         <h4>Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                               Proin iaculis purus consequat sem cure digni ssim donec porttitora entum

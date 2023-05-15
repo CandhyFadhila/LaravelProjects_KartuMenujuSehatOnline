@@ -2,7 +2,7 @@
 
      <div class="section-title">
           <h2>Informasi</h2>
-          <p>Demi menjaga kesehatan anak anda dan menjauhi stunting, mari kita lakukan pola hidup sehat dengan poin - poin penting yang dapat diterapkan.</p>
+          <p>Demi menjaga kesehatan anak anda dan menjauhi stunting, mari kita lakukan pola hidup sehat dengan menerapkan poin - poin penting dibawah ini.</p>
      </div>
 
      <div class="row">
@@ -17,8 +17,8 @@
                          </svg>
                          <i class="bx bxl-dribbble"></i>
                     </div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    <h4><a href="">Pola Makan</a></h4>
+                    <p>Saat sedang hamil, Makan dengan makanan yang proporsional dengan pola gizi yang seimbang</p>
                </div>
           </div>
 
@@ -33,8 +33,8 @@
                          </svg>
                          <i class="bx bx-file"></i>
                     </div>
-                    <h4><a href="">Sed Perspiciatis</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    <h4><a href="">Pertumbuhan Anak</a></h4>
+                    <p>Pantau berat badan dan tinggi badan anak naik sesuai dengan garis pertumbuhan dengan warna hijau atau naik 1 garis diatasnya</p>
                </div>
           </div>
 
@@ -49,7 +49,7 @@
                          </svg>
                          <i class="bx bx-tachometer"></i>
                     </div>
-                    <h4><a href="">Magni Dolores</a></h4>
+                    <h4><a href="">Tinggi</a></h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                </div>
           </div>
