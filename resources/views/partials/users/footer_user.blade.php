@@ -2,7 +2,7 @@
      <h3>Kartu Menuju Sehat Online</h3>
      <p>Jaga anak anda sepenuh hati, Hindari dari gejala Stunting secara dini dan mulailah hidup sehat!</p>
      <div class="copyright">
-          &copy; Copyright <strong><span>KMS Online</span></strong>. All Rights Reserved
+          &copy; Copyright - 2023. <strong><span>Kartu Menuju Sehat Online</span></strong>. All Rights Reserved
      </div>
      <div class="credits">
           <!-- All the links in the footer should remain intact. -->

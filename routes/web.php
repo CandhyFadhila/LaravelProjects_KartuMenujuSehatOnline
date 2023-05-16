@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin_Riwayat_Controller;
 use App\Http\Controllers\Orangtua_Dashboard_Controller;
 //TODO --- USER SECTION ---
 use App\Http\Controllers\User_Auth_Controller;
+use App\Http\Controllers\User_Thumbnails_Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,8 +35,10 @@ Route::controller(User_Auth_Controller::class)->group(function () {
      Route::post('session_users/login', 'login');
 });
 
+Route::get('/', [User_Thumbnails_Controller::class, 'index']);
+
 Route::controller(Orangtua_Dashboard_Controller::class)->group(function () {
-     Route::get('/', 'index');
+     Route::get('/user/dashboard', 'index')->name('user.dashboard');
 
      Route::get('/balita/{id}', 'getBalitaOrtu')->name('getBalita_orangtua');
 

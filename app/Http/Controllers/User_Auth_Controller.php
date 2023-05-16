@@ -41,7 +41,7 @@ class User_Auth_Controller extends Controller
 
                // TODO | Then Login in
                Auth::loginUsingId($orangtua->id_orangtua);
-               return redirect('/')->with('success_orangtua', 'Selamat Datang, Ibu "' . $nama_ibu . '" di Halaman KMS Online');
+               return redirect('/user/dashboard')->with('success_orangtua', 'Selamat Datang, Ibu "' . $nama_ibu . '" di Halaman KMS Online');
           } else {
                // user not found, redirect back to login page
                return redirect('session_users')->with('error_nik', 'Login gagal, NIK yang anda masukkan salah.');

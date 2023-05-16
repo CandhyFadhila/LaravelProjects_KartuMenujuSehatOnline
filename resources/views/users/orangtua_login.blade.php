@@ -49,17 +49,6 @@
                          timerProgressBar: true
                     });
                @endif
-
-               @if (Session::has('error_session_user'))
-                    Swal.fire({
-                         icon: 'question',
-                         title: '<strong>Oops..</strong>',
-                         html: 'Anda belum <b>Login</b>, Silahkan <b>Login</b> terlebih dahulu',
-                         showConfirmButton: true,
-                         timer: 3000,
-                         timerProgressBar: true
-                    });
-               @endif
           });
      </script>
 @endsection
