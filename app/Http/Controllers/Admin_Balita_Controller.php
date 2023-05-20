@@ -21,8 +21,7 @@ class Admin_Balita_Controller extends Controller
           if (strlen($cariBalita)) {
                $data_Balita = AdminBalita::where('nama_balita', 'LIKE', "%$cariBalita%")
                     ->orWhere('nik_balita', 'LIKE', "%$cariBalita%")
-                    ->orWhere('bb_lahir', 'LIKE', "%$cariBalita%")
-                    ->orWhere('pb_lahir', 'LIKE', "%$cariBalita%")
+                    ->orWhere('tgl_lahir', 'LIKE', "%$cariBalita%")
                     ->orderBy('nama_balita', 'ASC')
                     ->paginate(5);
           } else {
