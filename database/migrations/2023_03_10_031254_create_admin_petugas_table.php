@@ -18,6 +18,7 @@ return new class extends Migration
                $table->string('nama_petugas');
                $table->text('alamat');
                $table->unsignedBigInteger('role_id');
+               $table->timestamps();
           });
 
           // ! BUAT FOREIGN KEY

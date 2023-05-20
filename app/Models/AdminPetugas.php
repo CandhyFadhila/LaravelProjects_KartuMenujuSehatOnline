@@ -15,8 +15,6 @@ class AdminPetugas extends Model
      // ! YANG TIDAK BOLEH DIISI
      protected $guarded = ['id_petugas'];
 
-     public $timestamps = false;
-
      public function adminrole()
      {
           return $this->belongsTo(AdminRole::class, 'role_id', 'id_role');
