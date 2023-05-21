@@ -170,7 +170,7 @@
                                              </div>
                                         </div>
                                         <div class="col-sm-4 label-on-right">
-                                             <code>Diisi Dengan "Angka BB Saat Lahir"</code>
+                                             <code>Diisi Dengan "Angka BB Saat Lahir (gram)"</code>
                                         </div>
                                    </div>
                                    <div class="row">
@@ -190,7 +190,7 @@
                                              </div>
                                         </div>
                                         <div class="col-sm-4 label-on-right">
-                                             <code>Diisi Dengan "Angka PB Saat Lahir"</code>
+                                             <code>Diisi Dengan "Angka PB Saat Lahir (Cm)"</code>
                                         </div>
                                    </div>
                               </div>

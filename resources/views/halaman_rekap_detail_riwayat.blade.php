@@ -367,7 +367,7 @@
                          @csrf
                          <div class="card">
                               <div class="card-header card-header-info">
-                                   <h4 class="card-title">KMS Vaksin - <strong class="font-weight-bold">Anak
+                                   <h4 class="card-title">KMS Imunisasi - <strong class="font-weight-bold">Anak
                                              {{ $admin_Balita->nama_balita }}
                                         </strong></h4>
                               </div>
