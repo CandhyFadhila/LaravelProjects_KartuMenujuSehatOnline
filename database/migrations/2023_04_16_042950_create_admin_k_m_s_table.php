@@ -18,13 +18,11 @@ return new class extends Migration
 
                // ! ID ANAK
                $table->unsignedBigInteger('balita_id');
-
                $table->string('umur_sekarang', 5)->nullable();
-
                $table->string('keterangan_penimbangan', 50)->nullable();
-
                $table->string('bb_sekarang', 15)->nullable();
                $table->string('pb_sekarang', 15)->nullable();
+               
                // ! BB/U
                $table->string('sd_bb_u', 15)->nullable();
                $table->string('kategori_bb_u')->nullable();
