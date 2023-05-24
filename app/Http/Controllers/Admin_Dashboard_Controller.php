@@ -14,4 +14,11 @@ class Admin_Dashboard_Controller extends Controller
                "active" => "dashboard"
           ]);
      }
+
+     public function show(){
+          return view('monitoring', [
+               "halaman" => "Monitoring All Data",
+               "active" => "monitoring-data"
+          ]);
+     }
 }

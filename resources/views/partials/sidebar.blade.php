@@ -83,6 +83,13 @@
                          <p>Riwayat Balita dan Anak</p>
                     </a>
                </li>
+
+               <li class="nav-item {{ $active === 'monitoring-data' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('admin/monitoring-all-data') }}">
+                         <i class="material-icons">query_stats</i>
+                         <p>Monitoring All Data</p>
+                    </a>
+               </li>
           </ul>
      </div>
 </div>

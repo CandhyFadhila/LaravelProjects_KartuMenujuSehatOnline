@@ -119,3 +119,5 @@ Route::resource('admin/vitamin_anak', Admin_Vitamin_Controller::class)->middlewa
 Route::resource('admin/rekap_riwayat_balita', Admin_Riwayat_Controller::class)->middleware('middleware_admin');
 
 Route::get('admin/rekap_riwayat_balita/detail/{id_balita}', [Admin_Riwayat_Controller::class, 'show'])->middleware('middleware_admin');
+
+Route::get('admin/monitoring-all-data', [Admin_Dashboard_Controller::class, 'show'])->middleware('middleware_admin');
