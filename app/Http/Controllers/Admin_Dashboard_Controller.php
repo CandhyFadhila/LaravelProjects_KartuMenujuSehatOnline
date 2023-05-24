@@ -21,4 +21,8 @@ class Admin_Dashboard_Controller extends Controller
                "active" => "monitoring-data"
           ]);
      }
+
+     public function calculateKMS(){
+          
+     }
 }
