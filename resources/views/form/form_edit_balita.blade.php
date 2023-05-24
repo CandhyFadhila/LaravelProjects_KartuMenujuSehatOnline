@@ -13,8 +13,11 @@
                                    <div class="card-icon">
                                         <i class="material-icons">post_add</i>
                                    </div>
-                                   <h4 class="card-title">Edit Data Balita dan Anak | <strong
-                                             class="font-weight-bold"><u>{{ $edit_Balita->nama_balita }}</u></strong></h4>
+                                   <h4 class="card-title">Edit Data Balita dan Anak |
+                                        <strong class="font-weight-bold">
+                                             <u>{{ $edit_Balita->nama_balita }}</u>
+                                        </strong>
+                                   </h4>
                               </div>
                               <div class="card-body">
                                    <div class="row">
