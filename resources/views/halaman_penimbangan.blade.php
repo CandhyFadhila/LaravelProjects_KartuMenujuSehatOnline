@@ -106,10 +106,33 @@
                                                        {{ $message }}
                                                   </small>
                                              @enderror
-
                                         </div>
                                         <div class="col-sm-3 label-on-right">
                                              <code>Pilih Jenis Kelamin Balita</code>
+                                        </div>
+                                   </div>
+
+                                   <div class="row">
+                                        <label class="col-sm-2 col-form-label">
+                                             Tanggal Penimbangan
+                                        </label>
+                                        <div class="col-sm-6">
+                                             <div class="form-group bmd-form-group is-filled">
+                                                  <input
+                                                       class="form-control @error('tgl_timbang') is-invalid @enderror datepicker"
+                                                       type="text" name="tgl_timbang" id="tgl_timbang"
+                                                       placeholder="Tanggal Penimbangan" required="true"
+                                                       value="{{ old('tgl_timbang') }}" />
+
+                                                  @error('tgl_timbang')
+                                                       <small class="text-danger">
+                                                            {{ $message }}
+                                                       </small>
+                                                  @enderror
+                                             </div>
+                                        </div>
+                                        <div class="col-sm-3 label-on-right">
+                                             <code>Diisi Dengan "Tanggal Timbang Balita"</code>
                                         </div>
                                    </div>
 
@@ -294,29 +317,6 @@
                                         </div>
                                    </div>
 
-                                   <div class="row">
-                                        <label class="col-sm-2 col-form-label">
-                                             Tanggal Penimbangan
-                                        </label>
-                                        <div class="col-sm-6">
-                                             <div class="form-group bmd-form-group is-filled">
-                                                  <input
-                                                       class="form-control @error('tgl_timbang') is-invalid @enderror datepicker"
-                                                       type="text" name="tgl_timbang" id="tgl_timbang"
-                                                       placeholder="Tanggal Penimbangan" required="true"
-                                                       value="{{ old('tgl_timbang') }}" />
-
-                                                  @error('tgl_timbang')
-                                                       <small class="text-danger">
-                                                            {{ $message }}
-                                                       </small>
-                                                  @enderror
-                                             </div>
-                                        </div>
-                                        <div class="col-sm-3 label-on-right">
-                                             <code>Diisi Dengan "Tanggal Timbang Balita"</code>
-                                        </div>
-                                   </div>
                               </div>
                               <div class="card-footer ml-auto mr-auto">
                                    <a href="#">
@@ -349,9 +349,14 @@
                          dataType: 'json',
                          success: function(data) {
                               if (data !== null) {
-                                   $('#nik_anak').val('');
                                    $('#nik_anak').val(data.nik_balita);
                                    $('#tgl_lahir_anak').val(data.tgl_lahir);
+                                   
+                                   if (data.jenis_kelamin === 'P') {
+                                        $('#kelamin_perempuan').prop('checked', true);
+                                   } else if (data.jenis_kelamin === 'L') {
+                                        $('#kelamin_laki_laki').prop('checked', true);
+                                   }
                               }
                          }
                     })
