@@ -2,7 +2,8 @@
 
      <div class="section-title">
           <h2>Ahli Gizi</h2>
-          <p>Motto dan pesan para ahli gizi Puskesmas Gayamsari Kota Semarang</p>
+          <p>Himbauan untuk orangtua dari Ahli Gizi Puskesmas Gayamsari Kota Semarang, agar anak terhindar dari Stunting
+          </p>
      </div>
 
      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -10,14 +11,13 @@
 
                <div class="swiper-slide">
                     <div class="testimonial-item">
-                         <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                         <h3>Florence Elviana</h3>
-                         <h4>Ahli Gizi</h4>
+                         <h3>Gizi yang Seimbang</h3>
+                         <h4>by Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
-                              suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
-                              et. Maecen aliquam, risus at semper.
+                              Konsumsilah makanan yang kaya akan protein, serat, vitamin, mineral, dan asam lemak
+                              omega-3. Jaga asupan makanan yang mengandung zat besi, kalsium, vitamin D, dan asam folat.
+                              Konsultasikan dengan dokter atau ahli gizi untuk menentukan diet yang tepat untuk Anda.
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                          </p>
                     </div>
@@ -25,14 +25,13 @@
 
                <div class="swiper-slide">
                     <div class="testimonial-item">
-                         <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                         <h3>Sara Wilsson</h3>
-                         <h4>Designer</h4>
+                         <h3>Istirahat yang Cukup</h3>
+                         <h4>by Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Export tempor illum tamen malis malis eram quae irure esse labore quem
-                              cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua
-                              noster fugiat irure amet legam anim culpa.
+                              Dapatkan istirahat yang cukup dan tidur yang berkualitas. Istirahat yang baik memainkan
+                              peran penting dalam pertumbuhan bayi dan juga membantu Anda menjaga kesehatan yang baik
+                              selama kehamilan.
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                          </p>
                     </div>
@@ -41,13 +40,13 @@
                <div class="swiper-slide">
                     <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                         <h3>Jena Karlis</h3>
-                         <h4>Store Owner</h4>
+                         <h3>Kelola Stres</h3>
+                         <h4>by Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla
-                              quem veniam duis minim tempor labore quem eram duis noster aute amet eram
-                              fore quis sint minim.
+                              Stres berlebihan dapat berdampak negatif pada kesehatan ibu hamil dan perkembangan bayi.
+                              Cari cara-cara untuk mengelola stres, seperti relaksasi, meditasi, atau melakukan
+                              aktivitas yang membuat Anda bahagia.
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                          </p>
                     </div>
@@ -56,13 +55,13 @@
                <div class="swiper-slide">
                     <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                         <h3>Matt Brandon</h3>
-                         <h4>Freelancer</h4>
+                         <h3>ASI dan Pemberian Makan Bayi yang Tepat</h3>
+                         <h4>by Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export
-                              minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt
-                              elit fore quem dolore labore illum veniam.
+                              Setelah bayi lahir, memberikan ASI eksklusif selama 6 bulan pertama adalah penting untuk
+                              pertumbuhan dan perkembangan optimal. Setelah itu, berikan makanan pendamping ASI secara
+                              bertahap dengan bimbingan ahli gizi atau dokter anak.
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                          </p>
                     </div>
@@ -71,13 +70,13 @@
                <div class="swiper-slide">
                     <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                         <h3>John Larson</h3>
-                         <h4>Entrepreneur</h4>
+                         <h3>Pemantauan Tumbuh Kembang</h3>
+                         <h4>by Ahli Gizi</h4>
                          <p>
                               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam
-                              tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum
-                              fugiat legam esse veniam culpa fore nisi cillum quid.
+                              Selama tahun-tahun awal kehidupan anak, perhatikan tumbuh kembangnya secara teratur. Ikuti
+                              jadwal pemeriksaan kesehatan rutin, vaksinasi, dan berikan perhatian pada tanda-tanda
+                              perkembangan yang tidak biasa.
                               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                          </p>
                     </div>
