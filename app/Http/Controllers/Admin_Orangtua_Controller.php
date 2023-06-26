@@ -65,11 +65,9 @@ class Admin_Orangtua_Controller extends Controller
                'pekerjaan' => 'required',
           ], [
                'nama_ibu' => 'Nama Ibu tidak boleh kosong',
-
                'nik_ibu' => 'NIK tidak boleh kosong',
                'nik_ibu.numeric' => 'NIK tidak boleh mengandung huruf',
                'nik_ibu.unique' => 'NIK tersebut sudah tersedia pada sistem',
-
                'alamat' => 'Alamat tidak boleh kosong',
                'tgl_lahir' => 'Tanggal Lahir tidak boleh kosong',
                'pekerjaan' => 'Pekerjaan Ibu tidak boleh kosong'

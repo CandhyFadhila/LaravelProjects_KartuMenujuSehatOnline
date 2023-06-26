@@ -22,9 +22,7 @@ class User_Auth_Controller extends Controller
 
      public function login(Request $request)
      {
-          // ! DIFERENT WAY
           $nik_ibu = $request->input('nik_ibu');
-
           $orangtua = AdminOrangtua::where('nik_ibu', $nik_ibu)->first();
 
           if ($orangtua) {
@@ -43,7 +41,6 @@ class User_Auth_Controller extends Controller
                Auth::loginUsingId($orangtua->id_orangtua);
                return redirect('/user/dashboard')->with('success_orangtua', 'Selamat Datang, Ibu "' . $nama_ibu . '" di Halaman KMS Online');
           } else {
-               // user not found, redirect back to login page
                return redirect('session_users')->with('error_nik', 'Login gagal, NIK yang anda masukkan salah.');
           }
      }

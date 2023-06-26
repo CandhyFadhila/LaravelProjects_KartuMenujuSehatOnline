@@ -106,7 +106,6 @@ class Admin_Vitamin_Controller extends Controller
      {
           $request->validate([
                'vaksinValue' => 'nullable|string',
-
                'tgl_vitamin' => 'required'
           ], [
                'tgl_vitamin.required' => 'Tanggal vaksin vitamin tidak boleh kosong'
@@ -132,21 +131,17 @@ class Admin_Vitamin_Controller extends Controller
 
           //! Check if the vaksin column already has a value
           $existingVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($column);
-
           if (!empty($existingVaksin)) {
                return back()->with('error_column_vitamin', 'Sudah Pernah Vaksin');
           }
 
           //! Check if the tgl_vaksin_1 column already has a value
           $existingTglVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($tgl_column);
-
           if (!empty($existingTglVaksin)) {
                return back()->with('error_column_tgl_vitamin', 'Sudah Pernah Vaksin');
           }
 
-          DB::table('admin_kms')
-               ->where('balita_id', $balita_id)
-               ->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
+          DB::table('admin_kms')->where('balita_id', $balita_id)->update([$column => $vaksin, $tgl_column => $tgl_vaksin]);
 
           return back()->with('success_vitamin', 'Vaksin updated successfully!');
      }

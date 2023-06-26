@@ -94,30 +94,21 @@ class Admin_Penimbangan_Controller extends Controller
           ], [
                'umur_sekarang' => 'Untuk melakukan perhitungan, Umur tidak boleh kosong',
                'umur_sekarang.numeric' => 'Umur Balita tidak boleh mengandung huruf',
-
                'keterangan_penimbangan' => 'Agar data terstruktur, Keterangan Penimbangan tidak boleh kosong',
-
                'bb_sekarang' => 'Untuk melakukan perhitungan, BB Balita tidak boleh kosong',
                'bb_sekarang.numeric' => 'BB Balita tidak boleh mengandung huruf',
-
                'pb_sekarang' => 'Untuk melakukan perhitungan, PB Balita tidak boleh kosong',
                'pb_sekarang.numeric' => 'PB Balita tidak boleh mengandung huruf',
-
                'jenis_kelamin' => 'Untuk melakukan perhitungan, Silahkan pilih Jenis Kelamin terlebih dahulu',
-
                'tgl_timbang' => 'Tanggal Penimbangan wajib diisi terlebih dahulu'
           ]);
 
           AdminKMS::create([
                'balita_id' => $request->balita_id,
-
                'umur_sekarang' => $request->umur_sekarang,
-
                'keterangan_penimbangan' => $request->keterangan_penimbangan,
-
                'bb_sekarang' => $request->bb_sekarang,
                'pb_sekarang' => $request->pb_sekarang,
-
                // ! BB/U
                'sd_bb_u' => $request->hasil_bb_u,
                'kategori_bb_u' => $request->hasil_kategori_bb_u,
@@ -127,10 +118,8 @@ class Admin_Penimbangan_Controller extends Controller
                // ! BB/PB
                'sd_bb_pb' => $request->hasil_bb_pb,
                'kategori_bb_pb' => $request->hasil_kategori_bb_pb,
-
                'tgl_timbang' => $request->tgl_timbang
           ]);
-
           return back()->with('success_penimbangan', 'Data Berhasil Disimpan');
      }
 

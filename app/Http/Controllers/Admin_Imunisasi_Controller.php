@@ -105,11 +105,11 @@ class Admin_Imunisasi_Controller extends Controller
      {
           $request->validate([
                'vaksinValue' => 'nullable|string',
-
                'tgl_imunisasi' => 'required'
           ], [
                'tgl_imunisasi.required' => 'Tanggal vaksin vitamin tidak boleh kosong'
           ]);
+          
           $balita_id = $request->input('balita_id');
           $vaksin = $request->input('vaksin_imunisasi');
           $tgl_vaksin = $request->input('tgl_imunisasi');
@@ -135,7 +135,8 @@ class Admin_Imunisasi_Controller extends Controller
           } else if ($vaksin === '* Polio Tetes 2') {
                $column = 'vaksin_7';
                $tgl_column = 'tgl_vaksin_7';
-          } else if ($vaksin === '** PCV 1') {
+          } 
+          else if ($vaksin === '** PCV 1') {
                $column = 'vaksin_8';
                $tgl_column = 'tgl_vaksin_8';
           } else if ($vaksin === '* DPT-HB-Hib 2') {
@@ -173,17 +174,14 @@ class Admin_Imunisasi_Controller extends Controller
                $tgl_column = 'tgl_vaksin_19';
           }
 
-          //! Check if the selected column already has a value
           //! Check if the vaksin column already has a value
           $existingVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($column);
-
           if (!empty($existingVaksin)) {
                return back()->with('error_column_imunisasi', 'Sudah Pernah Vaksin');
           }
 
-          //! Check if the tgl_vaksin_1 column already has a value
+          //! Check if the tgl_vaksin column already has a value
           $existingTglVaksin = DB::table('admin_kms')->where('balita_id', $balita_id)->value($tgl_column);
-
           if (!empty($existingTglVaksin)) {
                return back()->with('error_column_tgl_imunisasi', 'Sudah Pernah Vaksin');
           }

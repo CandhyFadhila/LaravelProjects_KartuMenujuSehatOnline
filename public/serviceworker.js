@@ -11,6 +11,16 @@ var filesToCache = [
     '/images/icons/icon-192x192.png',
     '/images/icons/icon-384x384.png',
     '/images/icons/icon-512x512.png',
+    '/images/icons/splash-640x1136.png',
+    '/images/icons/splash-750x1334.png',
+    '/images/icons/splash-1242x2208.png',
+    '/images/icons/splash-1125x2436.png',
+    '/images/icons/splash-828x1792.png',
+    '/images/icons/splash-1242x2688.png',
+    '/images/icons/splash-1536x2048.png',
+    '/images/icons/splash-1668x2224.png',
+    '/images/icons/splash-1668x2388.png',
+    '/images/icons/splash-2048x2732.png'
 ];
 
 // Cache on install

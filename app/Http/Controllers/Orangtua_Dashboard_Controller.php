@@ -13,8 +13,7 @@ class Orangtua_Dashboard_Controller extends Controller
           $nama_ibu = session('nama_ibu');
           $orangtua_id = session('id_orangtua');
 
-          $balita_kms = AdminBalita::where('orangtua_id', $orangtua_id)
-               ->get();
+          $balita_kms = AdminBalita::where('orangtua_id', $orangtua_id)->get();
 
           return view('users.orangtua_dashboard', [
                "halaman" => "Halaman KMS Orangtua " . $nama_ibu,

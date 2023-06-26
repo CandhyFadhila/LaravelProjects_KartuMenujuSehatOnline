@@ -38,6 +38,9 @@
      {{-- ! AJAX --}}
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+     {{-- ! LARAVEL PWA SECTION --}}
+     @laravelPWA
+
      <!-- =======================================================
   * Template Name: MyResume - v4.10.0
   * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
@@ -1223,10 +1226,12 @@
                                                   {{-- ! BB --}}
                                                   var pointBB = [
                                                        parseFloat(
-                                                            item.umur_sekarang
+                                                            item
+                                                            .umur_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item.bb_sekarang
+                                                            item
+                                                            .bb_sekarang
                                                        )
                                                   ];
                                                   BBsection.push(
@@ -1236,10 +1241,12 @@
                                                   {{-- ! TB --}}
                                                   var pointTB = [
                                                        parseFloat(
-                                                            item.umur_sekarang
+                                                            item
+                                                            .umur_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item.pb_sekarang
+                                                            item
+                                                            .pb_sekarang
                                                        )
                                                   ];
                                                   TBsection.push(
@@ -1249,17 +1256,22 @@
                                                   {{-- ! BB_PB --}}
                                                   var pointBB_PB = [
                                                        parseFloat(
-                                                            item.pb_sekarang
+                                                            item
+                                                            .pb_sekarang
                                                        ),
                                                        parseFloat(
-                                                            item.bb_sekarang
+                                                            item
+                                                            .bb_sekarang
                                                        )
                                                   ];
-                                                  if (item.umur_sekarang >=
+                                                  if (item
+                                                       .umur_sekarang >=
                                                        0 &&
-                                                       item.umur_sekarang <=
+                                                       item
+                                                       .umur_sekarang <=
                                                        24) {
-                                                       console.log(
+                                                       console
+                                                            .log(
                                                                  'BB_PBsection_0_24');
                                                        BB_PBsection_0_24
                                                             .push(
@@ -1267,7 +1279,8 @@
                                                             );
                                                   } else if (item
                                                        .umur_sekarang >
-                                                       24 && item
+                                                       24 &&
+                                                       item
                                                        .umur_sekarang <=
                                                        60) {
                                                        console
@@ -1830,8 +1843,6 @@
                                                                       // Berat
                                                                       data: BBsection,
 
-                                                                      pointStart: BBsection,
-
                                                                       enableMouseTracking: true
                                                                  }
                                                             ],
@@ -1843,7 +1854,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -2398,8 +2415,6 @@
 
                                                                       // TINGGI BADAN
                                                                       data: TBsection,
-                                                                      // UMUR BULAN
-                                                                      pointStart: TBsection,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -2412,7 +2427,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -3450,8 +3471,6 @@
                                                                       // Berat
                                                                       data: BB_PBsection_0_24,
 
-                                                                      pointStart: BB_PBsection_0_24,
-
                                                                       enableMouseTracking: true
                                                                  }
                                                             ],
@@ -3463,7 +3482,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -4359,8 +4384,6 @@
                                                                       // Berat
                                                                       data: BB_PBsection_24_60,
 
-                                                                      pointStart: BB_PBsection_24_60,
-
                                                                       enableMouseTracking: true
                                                                  }
                                                             ],
@@ -4372,7 +4395,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -4922,8 +4951,6 @@
 
                                                                       // Berat
                                                                       data: BBsection,
-                                                                      // UMUR
-                                                                      pointStart: BBsection,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -4936,7 +4963,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -5494,8 +5527,6 @@
 
                                                                       // TINGGI BADAN
                                                                       data: TBsection,
-                                                                      // UMUR BULAN
-                                                                      pointStart: TBsection,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -5508,7 +5539,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -6546,8 +6583,6 @@
                                                                       // Berat
                                                                       data: BB_PBsection_0_24,
 
-                                                                      pointStart: BB_PBsection_0_24,
-
                                                                       enableMouseTracking: true
                                                                  }
                                                             ],
@@ -6559,7 +6594,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }
@@ -7444,7 +7485,7 @@
 
                                                                  },
                                                                  {
-                                                                      name: '',
+                                                                      name: 'Data',
                                                                       marker: {
                                                                            enabled: true,
                                                                            symbol: 'circle'
@@ -7454,8 +7495,6 @@
 
                                                                       // Berat
                                                                       data: BB_PBsection_24_60,
-
-                                                                      pointStart: BB_PBsection_24_60,
 
                                                                       enableMouseTracking: true
                                                                  }
@@ -7468,7 +7507,13 @@
                                                             exporting: {
                                                                  buttons: {
                                                                       contextButton: {
-                                                                           menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'separator', 'downloadPDF']
+                                                                           menuItems: [
+                                                                                'viewFullscreen',
+                                                                                'separator',
+                                                                                'downloadPNG',
+                                                                                'separator',
+                                                                                'downloadPDF'
+                                                                           ]
                                                                       }
                                                                  }
                                                             }

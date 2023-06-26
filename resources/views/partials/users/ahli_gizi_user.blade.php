@@ -54,6 +54,19 @@
 
                <div class="swiper-slide">
                     <div class="testimonial-item">
+                         <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                         <h3>Prenatal Care</h3>
+                         <h4>by Ahli Gizi</h4>
+                         <p>
+                              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                              Rutin mengunjungi dokter kandungan adalah penting untuk memastikan pertumbuhan dan perkembangan bayi yang sehat. Ikuti semua janji temu prenatal dan lakukan pemeriksaan yang direkomendasikan. Ini membantu mengidentifikasi masalah potensial dan memberikan penanganan yang tepat waktu.
+                              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                         </p>
+                    </div>
+               </div><!-- End testimonial item -->
+
+               <div class="swiper-slide">
+                    <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                          <h3>ASI dan Pemberian Makan Bayi yang Tepat</h3>
                          <h4>by Ahli Gizi</h4>
@@ -66,7 +79,7 @@
                          </p>
                     </div>
                </div><!-- End testimonial item -->
-
+               
                <div class="swiper-slide">
                     <div class="testimonial-item">
                          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">

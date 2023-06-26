@@ -21,6 +21,9 @@
      <!-- Style -->
      <link rel="stylesheet" href="{{ asset('admin_login_registrasi/css/style.css') }}">
 
+     {{-- ! LARAVEL PWA SECTION --}}
+     @laravelPWA
+
 </head>
 
 <body>

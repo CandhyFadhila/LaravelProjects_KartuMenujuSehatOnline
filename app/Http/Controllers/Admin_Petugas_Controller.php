@@ -28,12 +28,10 @@ class Admin_Petugas_Controller extends Controller
                $data_Petugas = AdminPetugas::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
-          
           return view('halaman_petugas', [
                "halaman" => "Tabel Petugas Aktif Posyandu",
                "active" => "petugas",
 
-               // ! KIRIM DATA DISINI
                "data_Petugas" => $data_Petugas
           ]);
      }
@@ -71,8 +69,6 @@ class Admin_Petugas_Controller extends Controller
                'role_id' => 'Silahkan pilih Role Anda terlebih dahulu'
           ]);
 
-          // ! INSERT KE DB
-          // TODO | KIRI DARI TABEL - KANAN DARI INPUTAN
           AdminPetugas::create([
                'nama_petugas' => $request->nama_petugas,
                'alamat' => $request->alamat,
@@ -131,8 +127,6 @@ class Admin_Petugas_Controller extends Controller
                'alamat' => 'Alamat tidak boleh kosong'
           ]);
 
-          // ! INSERT KE DB
-          // TODO | KIRI DARI TABEL - KANAN DARI INPUTAN
           AdminPetugas::where('id_petugas', $id)->update([
                'nama_petugas' => $request->nama_petugas,
                'alamat' => $request->alamat
