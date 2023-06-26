@@ -3,6 +3,27 @@
 @section('isi_content')
      <section>
           <style>
+               /* CSS TOASTR */
+               .colored-toast.swal2-icon-success {
+                    background-color: #609966 !important;
+               }
+
+               .colored-toast.swal2-icon-warning {
+                    background-color: #ffac2ffd !important;
+               }
+
+               .colored-toast .swal2-title {
+                    color: white;
+               }
+
+               .colored-toast .swal2-close {
+                    color: white;
+               }
+
+               .colored-toast .swal2-html-container {
+                    color: white;
+               }
+
                /* Text Opening 1 */
                @import url("https://fonts.googleapis.com/css?family=Public+Sans&display=swap");
 
@@ -90,11 +111,45 @@
      <script>
           $(document).ready(function() {
                @if (Session::has('success'))
-                    toastr.info("{{ Session::get('success') }}");
+                    (async function() {
+                         const Toast = Swal.mixin({
+                              toast: true,
+                              position: 'top-right',
+                              iconColor: 'white',
+                              customClass: {
+                                   popup: 'colored-toast'
+                              },
+                              showConfirmButton: false,
+                              timer: 4000,
+                              timerProgressBar: true
+                         });
+
+                         await Toast.fire({
+                              icon: 'success',
+                              title: "{{ Session::get('success') }}"
+                         });
+                    })();
                @endif
 
                @if (Session::has('sudah_pernah_login'))
-                    toastr.warning("{{ Session::get('sudah_pernah_login') }}");
+                    (async function() {
+                         const Toast = Swal.mixin({
+                              toast: true,
+                              position: 'top-right',
+                              iconColor: 'white',
+                              customClass: {
+                                   popup: 'colored-toast'
+                              },
+                              showConfirmButton: false,
+                              timer: 4000,
+                              timerProgressBar: true
+                         });
+
+                         await Toast.fire({
+                              icon: 'warning',
+                              title: "{{ Session::get('sudah_pernah_login') }}"
+                         });
+                    })();
                @endif
           });
      </script>

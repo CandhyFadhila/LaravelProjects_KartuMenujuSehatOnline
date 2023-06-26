@@ -1,6 +1,24 @@
 @extends('layout.login_admin')
 
 @section('content_auth')
+     <style>
+          /* CSS TOASTR */
+          .colored-toast.swal2-icon-success {
+               background-color: #159fbb !important;
+          }
+
+          .colored-toast .swal2-title {
+               color: white;
+          }
+
+          .colored-toast .swal2-close {
+               color: white;
+          }
+
+          .colored-toast .swal2-html-container {
+               color: white;
+          }
+     </style>
      <div class="row align-items-stretch justify-content-center no-gutters">
           <div class="col-md-7">
 
@@ -35,11 +53,11 @@
 
                          <div class="row justify-content-center">
                               <div class="col-md-5 form-group text-center">
-                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit"
-                                        name="submit"
+                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit" name="submit"
                                         style="background-image: linear-gradient(to right, #457fca 0%, #5691c8  51%, #457fca  100%)">Masuk</button>
                                    <label for="terms" class="form-check-label custom-label">
-                                        Belum punya akun? - <a href="{{ url('session_admin/registrasi') }}" class="custom-link">
+                                        Belum punya akun? - <a href="{{ url('session_admin/registrasi') }}"
+                                             class="custom-link">
                                              Buat Akun
                                         </a>
                                    </label>
@@ -55,7 +73,24 @@
      <script>
           $(document).ready(function() {
                @if (Session::has('success'))
-                    toastr.info("{{ Session::get('success') }}");
+                    (async function() {
+                         const Toast = Swal.mixin({
+                              toast: true,
+                              position: 'top-right',
+                              iconColor: 'white',
+                              customClass: {
+                                   popup: 'colored-toast'
+                              },
+                              showConfirmButton: false,
+                              timer: 3000,
+                              timerProgressBar: true
+                         });
+
+                         await Toast.fire({
+                              icon: 'success',
+                              title: "{{ Session::get('success') }}"
+                         });
+                    })();
                @endif
 
                @if (Session::has('error_password'))
