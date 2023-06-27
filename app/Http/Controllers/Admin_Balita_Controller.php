@@ -152,7 +152,7 @@ class Admin_Balita_Controller extends Controller
                'pb_lahir' => $request->pb_lahir
           ]);
 
-          Session::flash('success', 'Data Balita berhasil terupdate');
+          Session::flash('success_update', 'Data balita berhasil terupdate');
           return redirect('admin/balita');
      }
 

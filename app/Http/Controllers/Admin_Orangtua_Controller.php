@@ -140,7 +140,7 @@ class Admin_Orangtua_Controller extends Controller
                'pekerjaan' => $request->pekerjaan
           ]);
 
-          Session::flash('success', 'Data Orangtua berhasil terupdate');
+          Session::flash('success_update', 'Data orangtua berhasil terupdate');
           return redirect('admin/orangtua');
      }
 

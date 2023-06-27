@@ -132,7 +132,7 @@ class Admin_Petugas_Controller extends Controller
                'alamat' => $request->alamat
           ]);
 
-          Session::flash('success', 'Data Petugas berhasil terupdate');
+          Session::flash('success_update', 'Data petugas berhasil terupdate');
           return redirect('admin/petugas');
      }
 

@@ -1274,7 +1274,8 @@
                                                        24) {
                                                        console
                                                             .log(
-                                                                 'BB_PBsection_0_24');
+                                                                 'BB_PBsection_0_24'
+                                                                 );
                                                        BB_PBsection_0_24
                                                             .push(
                                                                  pointBB_PB
@@ -1287,7 +1288,8 @@
                                                        60) {
                                                        console
                                                             .log(
-                                                                 'BB_PBsection_24_60');
+                                                                 'BB_PBsection_24_60'
+                                                                 );
                                                        BB_PBsection_24_60
                                                             .push(
                                                                  pointBB_PB
@@ -1295,7 +1297,8 @@
                                                   } else {
                                                        console
                                                             .log(
-                                                                 'failed to load');
+                                                                 'failed to load'
+                                                                 );
                                                   }
                                              });
 

@@ -1,6 +1,28 @@
 @extends('layout.main')
 
 @section('isi_content')
+     <style>
+          /* CSS TOASTR */
+          .colored-toast.swal2-icon-success {
+               background-color: #609966 !important;
+          }
+
+          .colored-toast.swal2-icon-info {
+               background-color: #6d9eb3 !important;
+          }
+
+          .colored-toast .swal2-title {
+               color: white;
+          }
+
+          .colored-toast .swal2-close {
+               color: white;
+          }
+
+          .colored-toast .swal2-html-container {
+               color: white;
+          }
+     </style>
      <div class="container-fluid">
           <div class="row">
                <div class="col-md-12">
@@ -26,15 +48,20 @@
                                                   <form action="{{ url('admin/orangtua') }}" method="GET">
                                                        <div class="form-row">
                                                             <div class="form-group mb-2 col-md-10">
-                                                                 <h4 class="card-title text-dark font-weight-bold">Pencarian Data Orangtua</h4>
-                                                                 <input type="text" class="form-control form-control-lg text-dark font-weight-bold"
+                                                                 <h4 class="card-title text-dark font-weight-bold">Pencarian
+                                                                      Data Orangtua</h4>
+                                                                 <input type="text"
+                                                                      class="form-control form-control-lg text-dark font-weight-bold"
                                                                       id="search" name="search"
                                                                       aria-describedby="namaOrangtua"
                                                                       value="{{ Request::get('search') }}"
                                                                       placeholder="Masukkan Nama, NIK, Pekerjaan atau Alamat orangtua">
-                                                                 <h6 id="search" class="form-text text-capitalize text-muted text-dark font-weight-bold">Dengan
+                                                                 <h6 id="search"
+                                                                      class="form-text text-capitalize text-muted text-dark font-weight-bold">
+                                                                      Dengan
                                                                       mengetikkan
-                                                                      Nama, NIK, Pekerjaan atau Alamat dari Orangtua yang akan
+                                                                      Nama, NIK, Pekerjaan atau Alamat dari Orangtua yang
+                                                                      akan
                                                                       memudahkan
                                                                       pencarian.</h6>
                                                             </div>
@@ -151,7 +178,45 @@
      <script>
           $(document).ready(function() {
                @if (Session::has('success'))
-                    toastr.success("{{ Session::get('success') }}");
+                    (async function() {
+                         const Toast = Swal.mixin({
+                              toast: true,
+                              position: 'top-right',
+                              iconColor: 'white',
+                              customClass: {
+                                   popup: 'colored-toast'
+                              },
+                              showConfirmButton: false,
+                              timer: 3000,
+                              timerProgressBar: true
+                         });
+
+                         await Toast.fire({
+                              icon: 'success',
+                              title: "{{ Session::get('success') }}"
+                         });
+                    })();
+               @endif
+
+               @if (Session::has('success_update'))
+                    (async function() {
+                         const Toast = Swal.mixin({
+                              toast: true,
+                              position: 'top-right',
+                              iconColor: 'white',
+                              customClass: {
+                                   popup: 'colored-toast'
+                              },
+                              showConfirmButton: false,
+                              timer: 3000,
+                              timerProgressBar: true
+                         });
+
+                         await Toast.fire({
+                              icon: 'info',
+                              title: "{{ Session::get('success_update') }}"
+                         });
+                    })();
                @endif
           });
      </script>
