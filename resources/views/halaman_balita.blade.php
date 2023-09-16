@@ -111,10 +111,29 @@
                                                                       <td>{{ $balita->tgl_lahir }}</td>
                                                                       <td>{{ $balita->adminorangtua->nama_ibu }}</td>
                                                                       <td>{{ $balita->jenis_kelamin }}</td>
-                                                                      <td>{{ $balita->bb_lahir ?? '~ Belum Diketahui ~' }} gr
+
+                                                                      {{-- <td>{{ $balita->bb_lahir ?? '~ Belum Diketahui ~' }}
+                                                                           <span class="badge badge-success">
+                                                                                gr
+                                                                           </span> 
+                                                                      </td> --}}
+                                                                      <td>
+                                                                           @if (!empty($balita->bb_lahir))
+                                                                                {{ $balita->bb_lahir }}
+                                                                                <span class="badge badge-success">
+                                                                                     gr
+                                                                                </span>
+                                                                           @else
+                                                                                ~ Belum Diketahui ~
+                                                                           @endif
                                                                       </td>
-                                                                      <td>{{ $balita->pb_lahir ?? '~ Belum Diketahui ~' }} Cm
+
+                                                                      <td>{{ $balita->pb_lahir ?? '~ Belum Diketahui ~' }}
+                                                                           <span class="badge badge-success">
+                                                                                gr
+                                                                           </span> 
                                                                       </td>
+                                                                      
                                                                       <td class="text-center">
                                                                            <a href='{{ url('admin/balita/' . $balita->id_balita . '/edit') }}'
                                                                                 class="btn btn-warning btn-sm">Edit

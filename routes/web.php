@@ -27,11 +27,6 @@ use App\Http\Controllers\User_Thumbnails_Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/offline', function () {
-     return view('vendor.laravelpwa.offline');
-});
-
 // ? USER SECTION
 Route::controller(User_Auth_Controller::class)->group(function () {
      Route::get('session_users', 'index');

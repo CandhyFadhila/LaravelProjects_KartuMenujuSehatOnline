@@ -37,9 +37,6 @@
   * License: https://bootstrapmade.com/license/
      ======================================================== -->
 
-     {{-- ! LARAVEL PWA SECTION --}}
-     @laravelPWA
-
 </head>
 
 <body>
