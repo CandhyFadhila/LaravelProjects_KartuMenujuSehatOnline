@@ -355,8 +355,10 @@
                                    </option>
 
                                    @foreach ($balita_kms as $balita)
-                                        <option value="{{ $balita->id_balita }}">{{ $balita->nama_balita }} - NIK
-                                             {{ $balita->nik_balita }}</option>
+                                        <option value="{{ $balita->id_balita }}">
+                                             {{ $balita->nama_balita }} - NIK
+                                             {{ $balita->nik_balita }}
+                                        </option>
                                    @endforeach
 
                               </select>
@@ -1027,10 +1029,8 @@
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);
-                                   $('#bb_lahir').html(data.bb_lahir ??
-                                        '~Data Belum Terupdate~' + ' Kg');
-                                   $('#pb_lahir').html(data.pb_lahir ??
-                                        '~Data Belum Terupdate~' + ' Cm');
+                                   $('#bb_lahir').html(data.bb_lahir ? data.bb_lahir + ' gram' : '~Data Belum Terupdate~');
+                                   $('#pb_lahir').html(data.pb_lahir ? data.pb_lahir + ' Cm' : '~Data Belum Terupdate~');
 
                                    {{-- ! TGL IMUNISASI --}}
                                    var kms_url = '{{ route('getBalitaImun', ':id') }}';
@@ -1262,39 +1262,22 @@
                                                             .bb_sekarang
                                                        )
                                                   ];
-                                                  if (item
-                                                       .umur_sekarang >=
+                                                  if (item.umur_sekarang >=
                                                        0 &&
-                                                       item
-                                                       .umur_sekarang <=
+                                                       item.umur_sekarang <=
                                                        24) {
-                                                       console
-                                                            .log(
-                                                                 'BB_PBsection_0_24'
-                                                                 );
+                                                       console.log('BB_PBsection_0_24');
                                                        BB_PBsection_0_24
-                                                            .push(
-                                                                 pointBB_PB
-                                                            );
-                                                  } else if (item
-                                                       .umur_sekarang >
+                                                            .push(pointBB_PB);
+                                                  } else if (item.umur_sekarang >
                                                        24 &&
-                                                       item
-                                                       .umur_sekarang <=
+                                                       item.umur_sekarang <=
                                                        60) {
-                                                       console
-                                                            .log(
-                                                                 'BB_PBsection_24_60'
-                                                                 );
+                                                       console.log('BB_PBsection_24_60');
                                                        BB_PBsection_24_60
-                                                            .push(
-                                                                 pointBB_PB
-                                                            );
+                                                            .push(pointBB_PB);
                                                   } else {
-                                                       console
-                                                            .log(
-                                                                 'failed to load'
-                                                                 );
+                                                       console.log('failed to load');
                                                   }
                                              });
 

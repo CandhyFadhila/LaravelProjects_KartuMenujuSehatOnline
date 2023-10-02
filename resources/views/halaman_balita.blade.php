@@ -112,26 +112,28 @@
                                                                       <td>{{ $balita->adminorangtua->nama_ibu }}</td>
                                                                       <td>{{ $balita->jenis_kelamin }}</td>
 
-                                                                      {{-- <td>{{ $balita->bb_lahir ?? '~ Belum Diketahui ~' }}
-                                                                           <span class="badge badge-success">
-                                                                                gr
-                                                                           </span> 
-                                                                      </td> --}}
+                                                                      {{-- ? BB section --}}
                                                                       <td>
                                                                            @if (!empty($balita->bb_lahir))
                                                                                 {{ $balita->bb_lahir }}
                                                                                 <span class="badge badge-success">
-                                                                                     gr
+                                                                                     gram
                                                                                 </span>
                                                                            @else
                                                                                 ~ Belum Diketahui ~
                                                                            @endif
                                                                       </td>
 
-                                                                      <td>{{ $balita->pb_lahir ?? '~ Belum Diketahui ~' }}
-                                                                           <span class="badge badge-success">
-                                                                                gr
-                                                                           </span> 
+                                                                      {{-- ? pb section --}}
+                                                                      <td>
+                                                                           @if (!empty($balita->pb_lahir))
+                                                                                {{ $balita->pb_lahir }}
+                                                                                <span class="badge badge-success">
+                                                                                     Cm
+                                                                                </span>
+                                                                           @else
+                                                                                ~ Belum Diketahui ~
+                                                                           @endif
                                                                       </td>
                                                                       
                                                                       <td class="text-center">
