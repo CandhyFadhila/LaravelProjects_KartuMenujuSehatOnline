@@ -37,6 +37,12 @@
   * License: https://bootstrapmade.com/license/
      ======================================================== -->
 
+     <!-- PWA  -->
+     <meta name="theme-color" content="#6777ef" />
+     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+     <link rel="manifest" href="{{ asset('/manifest.json') }}">
+     {{-- TODO | end of PWA --}}
+
 </head>
 
 <body>
@@ -145,9 +151,31 @@
                     <a href="https://puskesmasgayamsari.wordpress.com" class="linkedin"><i class="bx bx-globe"></i></a>
                </div>
           </div>
-     </footer><!-- End Footer -->
+     </footer>
+     <!-- End Footer -->
+     
      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
                class="bi bi-arrow-up-short"></i></a>
+
+     <!-- PWA  -->
+     <script src="{{ asset('/sw.js') }}"></script>
+     <script>
+          if ("serviceWorker" in navigator) {
+               // Register a service worker hosted at the root of the
+               // site using the default scope.
+               navigator.serviceWorker.register("/sw.js").then(
+                    (registration) => {
+                         console.log("Service worker registration succeeded:", registration);
+                    },
+                    (error) => {
+                         console.error(`Service worker registration failed: ${error}`);
+                    },
+               );
+          } else {
+               console.error("Service workers are not supported.");
+          }
+     </script>
+     {{-- TODO | end of PWA --}}
 
      <!-- Vendor JS Files -->
      <script src="{{ asset('thumbnail/assets/vendor/aos/aos.js') }}"></script>

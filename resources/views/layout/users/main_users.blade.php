@@ -45,6 +45,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
 ======================================================== -->
+
+     <!-- PWA  -->
+     <meta name="theme-color" content="#6777ef" />
+     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+     <link rel="manifest" href="{{ asset('/manifest.json') }}">
+     {{-- TODO | end of PWA --}}
+
      {{-- ! CSS FOR TABEL IMUNISASI --}}
      <style>
           /* ! Add css div_table_vitamin */
@@ -436,8 +443,8 @@
                               </div>
                               {{-- ! TB_PR --}}
                               <div class="col-lg-12 mt-4">
-                                   <div id="chartKMS_tb_u_perempuan" data-highcharts-chart="3" style="overflow: hidden;"
-                                        aria-hidden="false">
+                                   <div id="chartKMS_tb_u_perempuan" data-highcharts-chart="3"
+                                        style="overflow: hidden;" aria-hidden="false">
                                    </div>
                               </div>
 
@@ -986,8 +993,29 @@
 
      {{-- ! LOADER --}}
      <div id="preloader"></div>
-     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-               class="bi bi-arrow-up-short"></i></a>
+     <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+          <i class="bi bi-arrow-up-short"></i>
+     </a>
+
+     <!-- PWA  -->
+     <script src="{{ asset('/sw.js') }}"></script>
+     <script>
+          if ("serviceWorker" in navigator) {
+               // Register a service worker hosted at the root of the
+               // site using the default scope.
+               navigator.serviceWorker.register("/sw.js").then(
+                    (registration) => {
+                         console.log("Service worker registration succeeded:", registration);
+                    },
+                    (error) => {
+                         console.error(`Service worker registration failed: ${error}`);
+                    },
+               );
+          } else {
+               console.error("Service workers are not supported.");
+          }
+     </script>
+     {{-- TODO | end of PWA --}}
 
      <!-- Vendor JS Files -->
      <script src="{{ asset('js/core/jquery.min.js') }}"></script>
@@ -1029,8 +1057,10 @@
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);
-                                   $('#bb_lahir').html(data.bb_lahir ? data.bb_lahir + ' gram' : '~Data Belum Terupdate~');
-                                   $('#pb_lahir').html(data.pb_lahir ? data.pb_lahir + ' Cm' : '~Data Belum Terupdate~');
+                                   $('#bb_lahir').html(data.bb_lahir ? data.bb_lahir +
+                                        ' gram' : '~Data Belum Terupdate~');
+                                   $('#pb_lahir').html(data.pb_lahir ? data.pb_lahir +
+                                        ' Cm' : '~Data Belum Terupdate~');
 
                                    {{-- ! TGL IMUNISASI --}}
                                    var kms_url = '{{ route('getBalitaImun', ':id') }}';
@@ -1262,22 +1292,36 @@
                                                             .bb_sekarang
                                                        )
                                                   ];
-                                                  if (item.umur_sekarang >=
+                                                  if (item
+                                                       .umur_sekarang >=
                                                        0 &&
-                                                       item.umur_sekarang <=
+                                                       item
+                                                       .umur_sekarang <=
                                                        24) {
-                                                       console.log('BB_PBsection_0_24');
+                                                       console
+                                                            .log(
+                                                                 'BB_PBsection_0_24');
                                                        BB_PBsection_0_24
-                                                            .push(pointBB_PB);
-                                                  } else if (item.umur_sekarang >
+                                                            .push(
+                                                                 pointBB_PB
+                                                                 );
+                                                  } else if (item
+                                                       .umur_sekarang >
                                                        24 &&
-                                                       item.umur_sekarang <=
+                                                       item
+                                                       .umur_sekarang <=
                                                        60) {
-                                                       console.log('BB_PBsection_24_60');
+                                                       console
+                                                            .log(
+                                                                 'BB_PBsection_24_60');
                                                        BB_PBsection_24_60
-                                                            .push(pointBB_PB);
+                                                            .push(
+                                                                 pointBB_PB
+                                                                 );
                                                   } else {
-                                                       console.log('failed to load');
+                                                       console
+                                                            .log(
+                                                                 'failed to load');
                                                   }
                                              });
 
