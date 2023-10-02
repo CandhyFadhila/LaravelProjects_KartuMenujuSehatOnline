@@ -21,8 +21,11 @@
      <!-- Style -->
      <link rel="stylesheet" href="{{ asset('admin_login_registrasi/css/style.css') }}">
 
-     {{-- ! LARAVEL PWA SECTION --}}
-     @laravelPWA
+     <!-- PWA  -->
+     <meta name="theme-color" content="#6777ef" />
+     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+     <link rel="manifest" href="{{ asset('/manifest.json') }}">
+     {{-- TODO | end of PWA --}}
 
 </head>
 
@@ -38,6 +41,26 @@
 
      </div>
 
+
+     <!-- PWA  -->
+     <script src="{{ asset('/sw.js') }}"></script>
+     <script>
+          if ("serviceWorker" in navigator) {
+               // Register a service worker hosted at the root of the
+               // site using the default scope.
+               navigator.serviceWorker.register("/sw.js").then(
+                    (registration) => {
+                         console.log("Service worker registration succeeded:", registration);
+                    },
+                    (error) => {
+                         console.error(`Service worker registration failed: ${error}`);
+                    },
+               );
+          } else {
+               console.error("Service workers are not supported.");
+          }
+     </script>
+     {{-- TODO | end of PWA --}}
 
      <script src="{{ asset('admin_login_registrasi/js/jquery-3.3.1.min.js') }}"></script>
      <script src="{{ asset('admin_login_registrasi/js/popper.min.js') }}"></script>
