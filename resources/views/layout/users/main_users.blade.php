@@ -422,7 +422,7 @@
                                    tampilkan detail hasil dari penimbangan terakhir beserta Kurva atau Grafik KMS.
                               </p>
                          </div>
-                         <div class="row mt-4">
+                         <div class="row mt-4" id="konten_kurva">
                               {{-- ! BB_LAKI --}}
                               <div class="col-lg-12">
                                    <div id="chartKMS_bb_u_laki" data-highcharts-chart="0" style="overflow: hidden;"
@@ -1045,7 +1045,7 @@
                     var id = $(this).val();
                     var url = '{{ route('getBalita_orangtua', ':id') }}';
                     url = url.replace(':id', id);
-
+                    
                     $.ajax({
                          url: url,
                          type: 'GET',
@@ -1057,10 +1057,12 @@
                                    $('#tgl_lahir').html(data.tgl_lahir);
                                    $('#nik_balita').html(data.nik_balita);
                                    $('#jenis_kelamin').html(data.jenis_kelamin);
-                                   $('#bb_lahir').html(data.bb_lahir ? data.bb_lahir +
-                                        ' gram' : '~Data Belum Terupdate~');
-                                   $('#pb_lahir').html(data.pb_lahir ? data.pb_lahir +
-                                        ' Cm' : '~Data Belum Terupdate~');
+                                   $('#bb_lahir').html(
+                                        data.bb_lahir ? data.bb_lahir + ' gram' 
+                                        : '~Data Belum Terupdate~');
+                                   $('#pb_lahir').html(
+                                        data.pb_lahir ? data.pb_lahir + ' Cm' 
+                                        : '~Data Belum Terupdate~');
 
                                    {{-- ! TGL IMUNISASI --}}
                                    var kms_url = '{{ route('getBalitaImun', ':id') }}';
@@ -1181,8 +1183,7 @@
                                    });
 
                                    {{-- ! DETAIL KMS --}}
-                                   var kms_detail =
-                                        '{{ route('getBalitaDetail', ':id') }}';
+                                   var kms_detail = '{{ route('getBalitaDetail', ':id') }}';
                                    kms_detail = kms_detail.replace(':id', id);
 
                                    $.ajax({
@@ -1192,17 +1193,15 @@
                                         success: function(detail) {
 
                                              // clear the table body
-                                             var table = $(
-                                                  '#kms_table_body');
+                                             var table = $('#kms_table_body');
                                              table.empty();
-
+                                             
                                              var BBsection = [];
                                              var TBsection = [];
                                              var BB_PBsection_0_24 = [];
                                              var BB_PBsection_24_60 = [];
 
-                                             $.each(detail, function(index,
-                                                  item) {
+                                             $.each(detail, function(index,item) {
                                                   var row =
                                                        '<tr>' +
 
@@ -1326,9 +1325,7 @@
                                              });
 
                                              {{-- ! KMS --}}
-                                             if (data.jenis_kelamin ===
-                                                  "P") {
-
+                                             if (data.jenis_kelamin === "P") {
                                                   {{-- ! BERAT BADAN SECTION --}}
                                                   Highcharts.chart(
                                                        'chartKMS_bb_u_perempuan', {
@@ -4435,9 +4432,7 @@
                                                             }
                                                        });
 
-                                             } else if (data
-                                                  .jenis_kelamin === "L") {
-
+                                             } else if (data.jenis_kelamin === "L") {
                                                   {{-- ! BERAT BADAN SECTION --}}
                                                   Highcharts.chart(
                                                        'chartKMS_bb_u_laki', {
@@ -7547,21 +7542,19 @@
                                                             }
                                                        });
                                              }
-
                                         }
                                    });
                               }
                          }
                     });
-
                });
           })
      </script>
 
-
      {{-- ! KURVA KMS --}}
      <script src="https://code.highcharts.com/highcharts.js"></script>
      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
      @yield('script_select2')
 </body>
