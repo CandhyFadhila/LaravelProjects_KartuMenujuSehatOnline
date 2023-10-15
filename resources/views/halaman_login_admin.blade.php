@@ -19,53 +19,59 @@
                color: white;
           }
      </style>
-     <div class="row align-items-stretch justify-content-center no-gutters">
-          <div class="col-md-7">
 
-               <div class="form h-100 contact-wrap p-5">
-                    <h3 class="text-center">Login</h3>
-                    <form class="mb-5" action="/session_admin/login" method="POST">
-                         @csrf
-                         <div class="row mb-5">
-                              <div class="col-md-12 form-group mb-3">
-                                   <label for="email" class="col-form-label">Email *</label>
+     <div class="row">
+          <div class="col-md-6">
+               <img src="{{ asset('admin_login_registrasi_new/images/undraw_remotely_2j6y.svg') }}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-md-6 contents">
+               <div class="row justify-content-center">
+                    <div class="col-md-8">
+                         <div class="mb-4">
+                              <h3>Sign In</h3>
+                              <p class="mb-4">Selamat datang di platform Dashboard KMS Online, silahkan lakukan login
+                                   terlebih dahulu.
+                              </p>
+                         </div>
+                         <form action="/session_admin/login" method="POST">
+                              @csrf
+                              <div class="form-group first">
+                                   <label for="email">Email *</label>
                                    <input type="email" class="form-control" name="email" id="email"
-                                        value="{{ Session::get('email') }}" placeholder="Email Anda">
+                                        value="{{ Session::get('email') }}">
                                    @error('email')
                                         <small class="text-danger">
                                              {{ $message }}
                                         </small>
                                    @enderror
                               </div>
-
-                              <div class="col-md-12 form-group mb-3">
-                                   <label for="password" class="col-form-label">Password *</label>
-                                   <input type="password" class="form-control" name="password" id="password"
-                                        placeholder="Password Anda">
-                                   <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                              <div class="form-group last mb-4">
+                                   <label for="password">Password *</label>
+                                   <input type="password" class="form-control" name="password" id="password">
                                    @error('password')
                                         <small class="text-danger">
                                              {{ $message }}
                                         </small>
                                    @enderror
                               </div>
-                         </div>
 
-                         <div class="row justify-content-center">
-                              <div class="col-md-5 form-group text-center">
-                                   <button class="btn btn-block btn-grad rounded-0 py-2 px-4" type="submit" name="submit"
-                                        style="background-image: linear-gradient(to right, #457fca 0%, #5691c8  51%, #457fca  100%)">Masuk</button>
-                                   <label for="terms" class="form-check-label custom-label">
-                                        Belum punya akun? - <a href="{{ url('session_admin/registrasi') }}"
-                                             class="custom-link">
-                                             Buat Akun
-                                        </a>
-                                   </label>
-                              </div>
-                         </div>
-                    </form>
+                              <button type="submit" name="submit" class="btn btn-block btn-primary">Sign In</button>
+
+                              <span class="d-block text-center my-4 text-muted">&mdash; belum punya akun? &mdash;
+                              </span>
+                              
+                              <a href="{{ url('session_admin/registrasi') }}">
+                                   <input class="btn btn-block btn-outline-primary" value="Buat Akun Sekarang">
+                              </a>
+                              
+
+
+                         </form>
+                    </div>
                </div>
+
           </div>
+
      </div>
 @endsection
 
