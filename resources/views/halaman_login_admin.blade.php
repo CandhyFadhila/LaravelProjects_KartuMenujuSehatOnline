@@ -105,7 +105,7 @@
                          title: '<strong>Login Gagal</strong>',
                          html: 'Password atau Email yang anda masukkan <b>Tidak Valid</b>',
                          showConfirmButton: false,
-                         timer: 2700,
+                         timer: 3200,
                          timerProgressBar: true
                     });
                @endif
@@ -114,9 +114,9 @@
                     Swal.fire({
                          icon: 'question',
                          title: '<strong>Oops..</strong>',
-                         html: 'Anda belum <b>Login</b>, Silahkan <b>Login</b> terlebih dahulu',
+                         html: 'Anda belum melakukan <b>Login</b>, Silahkan <b>Login</b> dahulu',
                          showConfirmButton: false,
-                         timer: 3000,
+                         timer: 3200,
                          timerProgressBar: true
                     });
                @endif
