@@ -18,11 +18,22 @@
           .colored-toast .swal2-html-container {
                color: white;
           }
+
+          /* visited link */
+          a:visited {
+               color: grey;
+          }
+
+          /* mouse over link */
+          a:hover {
+               color: #6c63ff;
+          }
      </style>
 
      <div class="row">
           <div class="col-md-6">
-               <img src="{{ asset('admin_login_registrasi_new/images/undraw_remotely_2j6y.svg') }}" alt="Image" class="img-fluid">
+               <img src="{{ asset('admin_login_registrasi_new/images/undraw_remotely_2j6y.svg') }}" alt="Image"
+                    class="img-fluid">
           </div>
           <div class="col-md-6 contents">
                <div class="row justify-content-center">
@@ -57,13 +68,12 @@
 
                               <button type="submit" name="submit" class="btn btn-block btn-primary">Sign In</button>
 
-                              <span class="d-block text-center my-4 text-muted">&mdash; belum punya akun? &mdash;
+                              <span class="d-block text-center my-4 text-muted">&mdash; belum punya akun? • 
+                                   <a href="{{ url('session_admin/registrasi') }}">
+                                        Daftar Sekarang
+                                   </a> &mdash;
                               </span>
-                              
-                              <a href="{{ url('session_admin/registrasi') }}">
-                                   <input class="btn btn-block btn-outline-primary" value="Buat Akun Sekarang">
-                              </a>
-                              
+
 
 
                          </form>
