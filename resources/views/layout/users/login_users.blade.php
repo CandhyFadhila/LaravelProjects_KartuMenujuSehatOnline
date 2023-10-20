@@ -9,6 +9,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
      <title>KMS | {{ $halaman }}</title>
      <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+     
 
      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
 
@@ -62,10 +63,12 @@
      </script>
      {{-- TODO | end of PWA --}}
 
+
      <script src="{{ asset('admin_login_registrasi/js/jquery-3.3.1.min.js') }}"></script>
      <script src="{{ asset('admin_login_registrasi/js/popper.min.js') }}"></script>
      <script src="{{ asset('admin_login_registrasi/js/bootstrap.min.js') }}"></script>
      <script src="{{ asset('admin_login_registrasi/js/main.js') }}"></script>
+
 
      {{-- ! SWEATALERT2 + TOASTR --}}
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
