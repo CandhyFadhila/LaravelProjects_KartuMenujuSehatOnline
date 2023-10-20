@@ -18,31 +18,19 @@
           .colored-toast .swal2-html-container {
                color: white;
           }
-
-          /* visited link */
-          a:visited {
-               color: grey;
-          }
-
-          /* mouse over link */
-          a:hover {
-               color: #6c63ff;
-          }
      </style>
 
      <div class="row">
-          <div class="col-md-6">
-               <img src="{{ asset('admin_login_registrasi_new/images/undraw_remotely_2j6y.svg') }}" alt="Image"
-                    class="img-fluid">
+          <div class="col-md-6 order-md-2">
+               <img src="{{ asset('admin_login_registrasi/images/login.svg') }}" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6 contents">
                <div class="row justify-content-center">
                     <div class="col-md-8">
                          <div class="mb-4">
-                              <h3>Sign In</h3>
-                              <p class="mb-4">Selamat datang di platform Dashboard KMS Online, silahkan lakukan login
-                                   terlebih dahulu.
-                              </p>
+                              <h3>Sign In to <strong>Dashboard KMS</strong></h3>
+                              <p class="mb-4">Selamat datang di platform KMS Online, silahkan lakukan login
+                                   terlebih dahulu.</p>
                          </div>
                          <form action="/session_admin/login" method="POST">
                               @csrf
@@ -55,6 +43,7 @@
                                              {{ $message }}
                                         </small>
                                    @enderror
+
                               </div>
                               <div class="form-group last mb-4">
                                    <label for="password">Password *</label>
@@ -64,18 +53,19 @@
                                              {{ $message }}
                                         </small>
                                    @enderror
+
                               </div>
 
-                              <button type="submit" name="submit" class="btn btn-block btn-primary">Sign In</button>
+                              <div class="d-flex mb-4 align-items-center"></div>
 
-                              <span class="d-block text-center my-4 text-muted">&mdash; belum punya akun? • 
-                                   <a href="{{ url('session_admin/registrasi') }}">
-                                        Daftar Sekarang
-                                   </a> &mdash;
+                              <button type="submit" name="submit" class="btn text-white btn-block btn-primary">
+                                   Log In
+                              </button>
+
+                              <span class="d-block text-center my-4 text-muted">&mdash; belum punya akun? •
+                                   <a href="{{ url('session_admin/registrasi') }}">Daftar sekarang</a>
+                                   &mdash;
                               </span>
-
-
-
                          </form>
                     </div>
                </div>
