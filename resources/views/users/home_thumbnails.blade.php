@@ -6,8 +6,7 @@
      <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
      <title>KMS Online | {{ $halaman }}</title>
-     <meta content="" name="description">
-     <meta content="" name="keywords">
+     <meta name="description" content="Ini adalah halaman utama KMS Online yang digunakan oleh orangtua daerah puskesmas gayamsari kota semarang">
      <meta name="csrf_token" content="{{ csrf_token() }}">
 
      <!-- Favicons -->
@@ -147,8 +146,8 @@
                     </div>
                </div>
                <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                    <a href="https://www.instagram.com/puskesmasgayamsari" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="https://puskesmasgayamsari.wordpress.com" class="linkedin"><i class="bx bx-globe"></i></a>
+                    <a href="https://www.instagram.com/puskesmasgayamsari" class="instagram" aria-label="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://puskesmasgayamsari.wordpress.com" class="linkedin" aria-label="wordpress"><i class="bx bx-globe"></i></a>
                </div>
           </div>
      </footer>
