@@ -1,4 +1,4 @@
-@extends('layout.login_admin')
+@extends('master.main.main_layout.login_admin')
 
 @section('content_auth')
      {{-- ! NEW --}}

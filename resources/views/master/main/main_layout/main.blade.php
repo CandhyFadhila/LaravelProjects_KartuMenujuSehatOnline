@@ -37,11 +37,11 @@
 <body class="">
      <div class="wrapper">
           {{-- ! SIDEBAR --}}
-          @include('partials.sidebar')
+          @include('master.main.main_partials.sidebar')
 
           <div class="main-panel">
                {{-- ! NAVBAR --}}
-               @include('partials.navbar')
+               @include('master.main.main_partials.navbar')
                {{-- ! END NAVBAR --}}
 
                {{-- ! ISI --}}
@@ -51,7 +51,7 @@
                {{-- ! END ISI --}}
 
                {{-- ! FOOTER --}}
-               @include('partials.footer')
+               @include('master.main.main_partials.footer')
                {{-- ! END FOOTER --}}
           </div>
 
@@ -315,6 +315,7 @@
 
 
      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
      @yield('script_select2')
 
      {{-- ! AUTO INPUT SELECT --}}

@@ -28,7 +28,7 @@ class Admin_Petugas_Controller extends Controller
                $data_Petugas = AdminPetugas::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
-          return view('halaman_petugas', [
+          return view('master.main.main_page.halaman_petugas', [
                "halaman" => "Tabel Petugas Aktif Posyandu",
                "active" => "petugas",
 
@@ -44,7 +44,7 @@ class Admin_Petugas_Controller extends Controller
      public function create()
      {
           $pilih_role = AdminRole::all();
-          return view('form.form_tambah_petugas', compact('pilih_role'), [
+          return view('master.main.main_form.form_tambah_petugas', compact('pilih_role'), [
                "halaman" => "Form Tambah Data Balita dan Anak",
                "active" => "petugas"
           ]);
@@ -101,7 +101,7 @@ class Admin_Petugas_Controller extends Controller
           // ! AMBIL DATA DARI DB DAN TAMPILKAN YG DIAMBIL SESUAI LINK BUTTON HREF
           // ? $edit_Petugas = AdminPetugas::where("Diambil dari DB link yang dipake", "parameter edit")->first();
           $edit_Petugas = AdminPetugas::where('id_petugas', $id)->first();
-          return view('form.form_edit_petugas', [
+          return view('master.main.main_form.form_edit_petugas', [
                "halaman" => "Form Edit Data Petugas",
                "active" => "petugas",
 

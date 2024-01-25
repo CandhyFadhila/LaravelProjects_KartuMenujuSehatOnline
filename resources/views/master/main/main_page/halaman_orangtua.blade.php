@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('master.main.main_layout.main')
 
 @section('isi_content')
      <style>
@@ -28,20 +28,16 @@
                <div class="col-md-12">
                     <div class="card">
                          <div class="card-header card-header-primary card-header-icon">
-
                               <div class="card-icon">
                                    <i class="material-icons">assignment</i>
                               </div>
                               <h4 class="card-title">
-                                   Data Petugas Posyandu
-                                   <a href="{{ url('admin/petugas/add_data_petugas') }}"
-                                        class="btn btn-primary float-right mb-1">
-                                        Tambah Data Petugas
+                                   Data Orangtua
+                                   <a href="/admin/orangtua/add_data_orangtua" class="btn btn-primary float-right mb-1">
+                                        Tambah Data Orangtua
                                    </a>
                               </h4>
-
                          </div>
-
                          <div class="card-body">
                               <div class="material-datatables">
                                    <div class="dataTables_wrapper dt-bootstrap4">
@@ -49,22 +45,23 @@
                                              <div class="col-sm-12 table-responsive">
 
                                                   {{-- ! SEARCH --}}
-                                                  <form action="{{ url('admin/petugas') }}" method="GET">
+                                                  <form action="{{ url('admin/orangtua') }}" method="GET">
                                                        <div class="form-row">
                                                             <div class="form-group mb-2 col-md-10">
                                                                  <h4 class="card-title text-dark font-weight-bold">Pencarian
-                                                                      Data Petugas</h4>
+                                                                      Data Orangtua</h4>
                                                                  <input type="text"
                                                                       class="form-control form-control-lg text-dark font-weight-bold"
                                                                       id="search" name="search"
-                                                                      aria-describedby="namaPetugas"
+                                                                      aria-describedby="namaOrangtua"
                                                                       value="{{ Request::get('search') }}"
-                                                                      placeholder="Masukkan Nama atau Alamat petugas">
+                                                                      placeholder="Masukkan Nama, NIK, Pekerjaan atau Alamat orangtua">
                                                                  <h6 id="search"
                                                                       class="form-text text-capitalize text-muted text-dark font-weight-bold">
                                                                       Dengan
                                                                       mengetikkan
-                                                                      Nama atau Alamat dari Petugas yang akan
+                                                                      Nama, NIK, Pekerjaan atau Alamat dari Orangtua yang
+                                                                      akan
                                                                       memudahkan
                                                                       pencarian.</h6>
                                                             </div>
@@ -75,19 +72,23 @@
                                                        </div>
                                                   </form>
 
-
-
                                                   <table class="table table-hover">
                                                        <thead>
-                                                            <tr role="row" class="bg-success text-light">
+                                                            <tr role="row" class="bg-warning">
                                                                  <th scope="col" class="font-weight-bold">
                                                                       Nama
+                                                                 </th>
+                                                                 <th scope="col" class="font-weight-bold">
+                                                                      NIK
                                                                  </th>
                                                                  <th scope="col" class="font-weight-bold">
                                                                       Alamat
                                                                  </th>
                                                                  <th scope="col" class="font-weight-bold">
-                                                                      Role
+                                                                      Tanggal Lahir
+                                                                 </th>
+                                                                 <th scope="col" class="font-weight-bold">
+                                                                      Pekerjaan
                                                                  </th>
                                                                  <th scope="col" class="text-center font-weight-bold">
                                                                       Actions
@@ -95,43 +96,33 @@
                                                             </tr>
                                                        </thead>
                                                        <tbody>
-                                                            @foreach ($data_Petugas as $petugas)
+                                                            @foreach ($data_Orangtua as $orangtua)
                                                                  <tr role="row">
-                                                                      <td>
-                                                                           {{ $petugas->nama_petugas }}
-                                                                      </td>
-
-                                                                      <td>
-                                                                           {{ $petugas->alamat }}
-                                                                      </td>
-
-                                                                      <td>
-                                                                           <h4>
-                                                                                <span class="badge badge-success">{{ $petugas->adminrole->role }}
-                                                                                </span>
-                                                                           </h4>
-                                                                      </td>
-
+                                                                      <td>{{ $orangtua->nama_ibu }}</td>
+                                                                      <td>{{ $orangtua->nik_ibu }}</td>
+                                                                      <td>{{ $orangtua->alamat }}</td>
+                                                                      <td>{{ $orangtua->tgl_lahir }}</td>
+                                                                      <td>{{ $orangtua->pekerjaan }}</td>
                                                                       <td class="text-center">
-                                                                           <a href='{{ url('admin/petugas/' . $petugas->id_petugas . '/edit') }}'
-                                                                                class="btn btn-warning btn-sm">Edit
-                                                                           </a>
+                                                                           <a href='{{ url('admin/orangtua/' . $orangtua->id_orangtua . '/edit') }}'
+                                                                                class="btn btn-warning btn-sm">Edit</a>
 
-                                                                           <form action="{{ url('admin/petugas/' . $petugas->id_petugas) }}"
+                                                                           <form action="{{ url('admin/orangtua/' . $orangtua->id_orangtua) }}"
                                                                                 method="POST" class="d-inline">
                                                                                 @csrf
                                                                                 @method('DELETE')
                                                                                 <button type="submit" name="save"
-                                                                                     class="btn btn-rose btn-sm show_confirm_petugas">
+                                                                                     class="btn btn-rose btn-sm show_confirm_ortu">
                                                                                      Hapus
                                                                                 </button>
                                                                            </form>
                                                                       </td>
                                                                  </tr>
                                                             @endforeach
+
                                                        </tbody>
                                                   </table>
-                                                  {{ $data_Petugas->withQueryString()->links() }}
+                                                  {{ $data_Orangtua->withQueryString()->links() }}
                                              </div>
                                         </div>
                                    </div>
@@ -151,10 +142,9 @@
      }, 3800);
 </script>
 
-
 @section('script_select2')
      <script>
-          $('.show_confirm_petugas').click(function(event) {
+          $('.show_confirm_ortu').click(function(event) {
                var form = $(this).closest("form");
                event.preventDefault();
                swal.fire({

@@ -20,7 +20,7 @@ class Admin_Vitamin_Controller extends Controller
      {
           $pilih_Balita = AdminKMS::all();
 
-          return view('halaman_vitamin', [
+          return view('master.main.main_page.halaman_vitamin', [
                "halaman" => "From Vitamin Anak",
                "active" => "vitamin_anak",
 

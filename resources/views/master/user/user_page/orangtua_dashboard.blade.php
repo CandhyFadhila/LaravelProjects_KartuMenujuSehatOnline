@@ -1,4 +1,4 @@
-@extends('layout.users.main_users')
+@extends('master.user.user_layout.main_users')
 
 <style>
      /* CSS TOASTR */

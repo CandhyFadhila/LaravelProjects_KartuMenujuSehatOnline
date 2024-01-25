@@ -10,7 +10,7 @@ class User_Auth_Controller extends Controller
 {
      public function index()
      {
-          return view('users.orangtua_login', [
+          return view('master.user.user_page.orangtua_login', [
                "halaman" => "Login OrangTua"
           ]);
      }

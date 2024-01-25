@@ -12,7 +12,7 @@ class Admin_Auth_Controller extends Controller
 {
      public function index()
      {
-          return view('halaman_login_admin', [
+          return view('master.main.main_page.halaman_login_admin', [
                "halaman" => "Login Admin"
           ]);
      }
@@ -22,7 +22,7 @@ class Admin_Auth_Controller extends Controller
      {
           Session::flash('email', $request->email);
           $request->validate([
-               'email' => 'required',
+               'email' => 'required|email',
                'password' => 'required'
           ], [
                'email.required' => 'Email tidak boleh kosong',
@@ -51,7 +51,7 @@ class Admin_Auth_Controller extends Controller
      // ! REGISTER
      public function register()
      {
-          return view('halaman_regis_admin', [
+          return view('master.main.main_page.halaman_regis_admin', [
                "halaman" => "Register Admin"
           ]);
      }

@@ -28,7 +28,7 @@ class Admin_Orangtua_Controller extends Controller
                $data_Orangtua = AdminOrangtua::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
-          return view('halaman_orangtua', [
+          return view('master.main.main_page.halaman_orangtua', [
                "halaman" => "Tabel Orang Tua",
                "active" => "orangtua",
 
@@ -43,7 +43,7 @@ class Admin_Orangtua_Controller extends Controller
       */
      public function create()
      {
-          return view('form.form_tambah_orangtua', [
+          return view('master.main.main_form.form_tambah_orangtua', [
                "halaman" => "Form Tambah Data Orang Tua",
                "active" => "orangtua"
           ]);
@@ -107,7 +107,7 @@ class Admin_Orangtua_Controller extends Controller
           // ! AMBIL DATA DARI DB DAN TAMPILKAN YG DIAMBIL SESUAI LINK BUTTON HREF
           // ? $edit_Petugas = AdminPetugas::where("Diambil dari DB link yang dipake", "parameter edit")->first();
           $edit_Orangtua = AdminOrangtua::where('id_orangtua', $id)->first();
-          return view('form.form_edit_orangtua', [
+          return view('master.main.main_form.form_edit_orangtua', [
                "halaman" => "Form Edit Data Ibu",
                "active" => "orangtua",
 

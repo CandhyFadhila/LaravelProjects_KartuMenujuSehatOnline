@@ -1,17 +1,17 @@
-@extends('layout.main')
+@extends('master.main.main_layout.main')
 
 @section('isi_content')
      <div class="container-fluid">
           <div class="row">
                <div class="col-md-12">
-                    <form id="VitaminBalita" method="POST" action="{{ url('admin/vitamin_anak/store') }}"
+                    <form id="ImunisasiBalita" method="POST" action="{{ url('admin/imunisasi_anak/store') }}"
                          class="form-horizontal" novalidate="novalidate">
                          @csrf
                          <div class="card">
-                              <div class="card-header card-header-rose">
-                                   <h4 class="card-title font-weight-bold">Pemberian Vitamin</h4>
+                              <div class="card-header card-header-warning">
+                                   <h4 class="card-title font-weight-bold">Imunisasi</h4>
                                    <p class="card-category font-weight-bold">
-                                        Vitamin Balita dan Anak
+                                        Imunisasi Balita dan Anak
                                    </p>
                               </div>
                               <div class="card-body">
@@ -87,42 +87,118 @@
                                    </div>
 
                                    <div class="row">
-                                        <label class="col-sm-2 col-form-label">Pilih Vitamin Wajib</label>
+                                        <label class="col-sm-2 col-form-label">Pilih Imunisasi Dasar Lengkap</label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group">
-                                                  <select id="vaksin_vitamin" class="pilih-vaksin form-control"
-                                                       name="vaksin_vitamin" onchange="fillForm()">
+                                                  <select id="vaksin_imunisasi" class="pilih-vaksin form-control"
+                                                       name="vaksin_imunisasi" onchange="fillForm()">
 
-                                                       <option value="option_select" disabled selected>Pilih Vitamin Wajib
+                                                       <option value="option_select" disabled selected>Pilih Imunisasi Dasar
+                                                            Lengkap
                                                        </option>
 
-                                                       <option value="Vitamin A - Merah (Oktober)">Vaksin Wajib Vitamin A -
-                                                            Merah (Oktober)
+                                                       <option value="Hepatitis B (< 24 Jam)">Balita Umur 0 Bulan dan Belum
+                                                            Imunisasi
                                                        </option>
 
-                                                       <option value="Vitamin A - Biru (Oktober)">Vaksin Wajib Vitamin A -
-                                                            Biru (Oktober)
+                                                       <option value="BCG Pertama">Balita Umur 0 Bulan dan Sudah Imunisasi
+                                                            Hepatitis B
                                                        </option>
 
-                                                       <option value="Vitamin A - Merah (November)">Vaksin Wajib Vitamin A -
-                                                            Merah (November)
+                                                       <option value="* Polio Tetes 1 Pertama">Balita Umur 0 Bulan dan Sudah
+                                                            Imunisasi BCG
                                                        </option>
 
-                                                       <option value="Vitamin A - Biru (November)">Vaksin Wajib Vitamin A -
-                                                            Biru (November)
+                                                       {{-- ! 1 BULAN --}}
+                                                       <option value="BCG Kedua">Balita Umur 1 - 11 Bulan dan Sudah Imunisasi
+                                                            BCG
+                                                            Fase 1
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 1 Kedua">Balita Umur 1 - 11 Bulan dan
+                                                            Sudah
+                                                            Imunisasi Polio Tetes 1 Fase 1
+                                                       </option>
+
+                                                       {{-- ! 2 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 1">Balita Umur 2 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            Polio Tetes 1 Fase 2
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 2">Balita Umur 2 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 1
+                                                       </option>
+
+                                                       <option value="** PCV 1">Balita Umur 2 - 11 Bulan dan Sudah Imunisasi
+                                                            Polio
+                                                            Tetes 2
+                                                       </option>
+
+                                                       {{-- ! 3 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 2">Balita Umur 3 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            PCV 1
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 3">Balita Umur 3 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 2
+                                                       </option>
+
+                                                       <option value="** PCV 2">Balita Umur 3 - 11 Bulan dan Sudah Imunisasi
+                                                            Polio
+                                                            Tetes 3
+                                                       </option>
+
+                                                       {{-- ! 4 BULAN --}}
+                                                       <option value="* DPT-HB-Hib 3">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi
+                                                            PCV 2
+                                                       </option>
+
+                                                       <option value="* Polio Tetes 4">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi DPT-HB-Hib 3
+                                                       </option>
+
+                                                       <option value="Polio Suntik (IPV)">Balita Umur 4 - 11 Bulan dan Sudah
+                                                            Imunisasi Polio Tetes 4
+                                                       </option>
+
+                                                       {{-- ! 8 - 9 Bulan --}}
+                                                       <option value="Campak-Rubella">Balita Umur 9 - 11 Bulan dan Sudah
+                                                            Imunisasi Polio Suntik (IPV)
+                                                       </option>
+
+                                                       <option value="** JE">Balita Umur 10 - 11 Bulan dan Sudah
+                                                            Imunisasi Campak-Rubella
+                                                       </option>
+
+                                                       <option value="** PCV 3">Balita Umur 12 Bulan Keatas dan Sudah
+                                                            Imunisasi JE
+                                                       </option>
+
+                                                       {{-- ! 18 - 24 Bulan --}}
+                                                       <option value="**** DPT-HB-Hib (lanjutan)">Balita Umur 18 - 24 Bulan
+                                                            dan Sudah
+                                                            Imunisasi PCV 3
+                                                       </option>
+
+                                                       <option value="**** Campak-Rubella (lanjutan)">Balita Umur 18 - 24
+                                                            Bulan dan Sudah
+                                                            Imunisasi Campak-Rubella
                                                        </option>
 
                                                   </select>
                                              </div>
                                         </div>
                                         <div class="col-sm-4 label-on-right">
-                                             <code>Diisi Dengan "Memilih Vitamin Wajib"</code>
+                                             <code>Diisi Dengan "Memilih Imunisasi Dasar Lengkap"</code>
                                         </div>
                                    </div>
 
                                    <div class="row">
                                         <label class="col-sm-2 col-form-label">
-                                             Nama Vitamin
+                                             Nama Vaksin
                                         </label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group is-filled">
@@ -138,17 +214,18 @@
 
                                    <div class="row">
                                         <label class="col-sm-2 col-form-label">
-                                             Tanggal Pemberian Vaksin Vitamin A
+                                             Tanggal Pemberian Vaksin Dasar
+                                             Lengkap
                                         </label>
                                         <div class="col-sm-6">
                                              <div class="form-group bmd-form-group is-filled">
                                                   <input
-                                                       class="form-control @error('tgl_vitamin') is-invalid @enderror datepicker"
-                                                       type="text" name="tgl_vitamin" id="tgl_vitamin"
-                                                       placeholder="Tanggal Vaksin Wajib" required="true"
-                                                       value="{{ old('tgl_vitamin') }}" />
+                                                       class="form-control @error('tgl_imunisasi') is-invalid @enderror datepicker"
+                                                       type="text" name="tgl_imunisasi" id="tgl_imunisasi"
+                                                       placeholder="Tanggal Vaksin Imunisasi Dasar Lengkap" required="true"
+                                                       value="{{ old('tgl_imunisasi') }}" />
 
-                                                  @error('tgl_vitamin')
+                                                  @error('tgl_imunisasi')
                                                        <small class="text-danger">
                                                             {{ $message }}
                                                        </small>
@@ -156,13 +233,14 @@
                                              </div>
                                         </div>
                                         <div class="col-sm-3 label-on-right">
-                                             <code>Diisi Dengan "Tanggal Vaksin Vitamin A - Merah atau Biru"</code>
+                                             <code>Diisi Dengan "Tanggal Vaksin Imunisasi Dasar
+                                                  Lengkap"</code>
                                         </div>
                                    </div>
                               </div>
                               <div class="card-footer ml-auto mr-auto">
                                    <a href="#">
-                                        <button type="submit" class="btn btn-rose">
+                                        <button type="submit" class="btn btn-warning">
                                              <span class="btn-label">
                                                   <i class="material-icons">check</i>
                                              </span>
@@ -177,47 +255,17 @@
      </div>
 @endsection
 
-@section('script_select2')
-     <script>
-          $(document).ready(function() {
-               $('#balita_id').select2();
-               $('#vaksin_vitamin').select2();
-
-               @if (Session::has('success_vitamin'))
-                    Swal.fire({
-                         icon: 'success',
-                         title: '<strong>Data Berhasil Diperbarui</strong>',
-                         html: 'Data pemberian Vitamin A <b>Berhasil</b> diperbarui',
-                         showConfirmButton: false,
-                         timer: 2200,
-                         timerProgressBar: true
-                    });
-               @endif
-
-               @if (Session::has('error_column_vitamin'))
-                    Swal.fire({
-                         icon: 'error',
-                         title: '<strong>Data Gagal Diperbarui</strong>',
-                         html: 'Anak yang anda pilih <b>Sudah Diberikan VItamin A</b> sebelumnya',
-                         showConfirmButton: false,
-                         timer: 2700,
-                         timerProgressBar: true
-                    });
-               @endif
-          });
-     </script>
-@endsection
-
 @section('select_auto')
      <script>
           $(document).ready(function() {
                $('#balita_id').change(function() {
                     var id = $(this).val();
-                    var url = '{{ route('getBalita_vitamin', ':id') }}';
-                    url = url.replace(':id', id);
+
+                    var url_balita = '{{ route('getBalita_imunisasi', ':id') }}';
+                    url_balita = url_balita.replace(':id', id);
 
                     $.ajax({
-                         url: url,
+                         url: url_balita,
                          type: 'GET',
                          dataType: 'json',
                          success: function(data) {
@@ -234,9 +282,41 @@
      </script>
 @endsection
 
+
+@section('script_select2')
+     <script>
+          $(document).ready(function() {
+               $('#balita_id').select2();
+               $('#vaksin_imunisasi').select2();
+
+               @if (Session::has('success_imunisasi'))
+                    Swal.fire({
+                         icon: 'success',
+                         title: '<strong>Data Berhasil Diperbarui</strong>',
+                         html: 'Data pemberian Vaksin Dasar Wajib <b>Berhasil</b> diperbarui',
+                         showConfirmButton: false,
+                         timer: 2200,
+                         timerProgressBar: true
+                    });
+               @endif
+
+               @if (Session::has('error_column_imunisasi'))
+                    Swal.fire({
+                         icon: 'error',
+                         title: '<strong>Data Gagal Diperbarui</strong>',
+                         html: 'Anak tersebut <b>Sudah Diberikan Vaksin Wajib</b> yang anda pilih sebelumnya',
+                         showConfirmButton: false,
+                         timer: 2700,
+                         timerProgressBar: true
+                    });
+               @endif
+          });
+     </script>
+@endsection
+
 <script>
      function fillForm() {
-          var vaksin = document.getElementById("vaksin_vitamin");
+          var vaksin = document.getElementById("vaksin_imunisasi");
           var vaksinValue = document.getElementById("vaksinValue");
           vaksinValue.value = " Vaksin ( " + vaksin.value + " )";
      }

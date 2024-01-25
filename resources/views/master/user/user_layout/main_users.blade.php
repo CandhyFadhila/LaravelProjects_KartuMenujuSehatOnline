@@ -330,7 +330,7 @@
      <header id="header" class="d-flex flex-column justify-content-center">
 
           <!-- .nav-menu -->
-          @include('partials.users.sidebar_user')
+          @include('master.user.user_partials.sidebar_user')
 
      </header>
      <!-- End Header -->
@@ -338,7 +338,7 @@
      {{-- ! ======= Hero Section ======= --}}
      <section id="hero" class="d-flex flex-column justify-content-center">
 
-          @include('partials.users.hero_user')
+          @include('master.user.user_partials.hero_user')
 
      </section>
      <!-- End Hero -->
@@ -965,7 +965,7 @@
           {{-- ! ======= Rekomendasi Makanan/Dll Section ======= --}}
           <section id="rekomendasi" class="services">
 
-               @include('partials.users.rekomendasi_user')
+               @include('master.user.user_partials.rekomendasi_user')
 
           </section>
           <!-- End Rekomendasi Section -->
@@ -973,7 +973,7 @@
           {{-- ! ======= Ahli Gizi Section ======= --}}
           <section id="testimonials" class="testimonials section-bg">
 
-               @include('partials.users.ahli_gizi_user')
+               @include('master.user.user_partials.ahli_gizi_user')
 
           </section>
           <!-- End Ahli Gizi Section -->
@@ -985,7 +985,7 @@
      {{-- ! ======= Footer ======= --}}
      <footer id="footer">
 
-          @include('partials.users.footer_user')
+          @include('master.user.user_partials.footer_user')
 
      </footer>
      <!-- End Footer -->

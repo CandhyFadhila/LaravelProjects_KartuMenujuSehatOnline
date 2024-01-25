@@ -19,7 +19,7 @@ class Admin_Imunisasi_Controller extends Controller
      {
           $pilih_Balita = AdminKMS::all();
 
-          return view('halaman_imunisasi', [
+          return view('master.main.main_page.halaman_imunisasi', [
                "halaman" => "From Imunisasi Anak",
                "active" => "imunisasi_anak",
 

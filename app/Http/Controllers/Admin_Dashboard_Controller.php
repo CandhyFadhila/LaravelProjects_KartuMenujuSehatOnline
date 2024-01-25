@@ -10,7 +10,7 @@ class Admin_Dashboard_Controller extends Controller
 {
      public function halaman_main()
      {
-          return view('dashboard', [
+          return view('master.main.main_page.dashboard', [
                "halaman" => "Dashboard",
                "active" => "dashboard"
           ]);
@@ -25,7 +25,7 @@ class Admin_Dashboard_Controller extends Controller
           $GiziLebih = AdminKMS::where('kategori_bb_pb', 'Gizi Lebih')->count();
           $Obesitas = AdminKMS::where('kategori_bb_pb', 'Obesitas')->count();
 
-          return view('monitoring', [
+          return view('master.main.main_page.monitoring', [
                "halaman" => "Monitoring All Data",
                "active" => "monitoring-data",
 

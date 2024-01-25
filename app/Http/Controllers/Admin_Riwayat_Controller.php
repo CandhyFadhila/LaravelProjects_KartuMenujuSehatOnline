@@ -27,7 +27,7 @@ class Admin_Riwayat_Controller extends Controller
                $data_Balita = AdminBalita::orderBy('nama_balita', 'asc')->paginate($paginate);
           }
 
-          return view('halaman_rekap_riwayat_balita', [
+          return view('master.main.main_page.halaman_rekap_riwayat_balita', [
                "halaman" => "Data Riwayat Balita dan Anak",
                "active" => "rekap_riwayat_balita",
 

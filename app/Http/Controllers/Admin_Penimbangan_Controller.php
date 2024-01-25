@@ -18,7 +18,7 @@ class Admin_Penimbangan_Controller extends Controller
      {
           $pilih_Balita = AdminBalita::all();
 
-          return view('halaman_penimbangan', [
+          return view('master.main.main_page.halaman_penimbangan', [
                "halaman" => "Form Penimbangan Anak",
                "active" => "timbang_balita",
 

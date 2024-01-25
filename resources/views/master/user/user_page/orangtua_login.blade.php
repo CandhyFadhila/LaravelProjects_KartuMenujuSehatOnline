@@ -1,4 +1,4 @@
-@extends('layout.users.login_users')
+@extends('master.user.user_layout.login_users')
 
 @section('login_user')
      <div class="row align-items-stretch justify-content-center no-gutters">

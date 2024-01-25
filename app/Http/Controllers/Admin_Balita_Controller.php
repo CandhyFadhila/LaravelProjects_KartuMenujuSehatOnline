@@ -28,7 +28,7 @@ class Admin_Balita_Controller extends Controller
                $data_Balita = AdminBalita::orderBy('created_at', 'desc')->paginate($paginate);
           }
 
-          return view('halaman_balita', [
+          return view('master.main.main_page.halaman_balita', [
                "halaman" => "Tabel Balita dan Anak",
                "active" => "balita",
 
@@ -47,7 +47,7 @@ class Admin_Balita_Controller extends Controller
      {
           $pilih_ibu = AdminOrangtua::all();
 
-          return view('form.form_tambah_balita', compact('pilih_ibu'), [
+          return view('master.main.main_form.form_tambah_balita', compact('pilih_ibu'), [
                "halaman" => "Form Tambah Data Balita dan Anak",
                "active" => "balita"
           ]);
@@ -120,7 +120,7 @@ class Admin_Balita_Controller extends Controller
           // ! AMBIL DATA DARI DB DAN TAMPILKAN YG DIAMBIL SESUAI LINK BUTTON HREF
           // ? $edit_Petugas = AdminPetugas::where("Diambil dari DB link yang dipake", "parameter edit")->first();
           $edit_Balita = AdminBalita::where('id_balita', $id)->first();
-          return view('form.form_edit_balita', [
+          return view('master.main.main_form.form_edit_balita', [
                "halaman" => "Form Edit Data Balita dan Anak",
                "active" => "balita",
 
